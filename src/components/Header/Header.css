@@ -1,0 +1,41 @@
+.header{
+  padding-left: 104px;
+  padding-right: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title{
+  /* font-family: Roboto Slab; */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  padding-top: 30px;
+  padding-bottom: 26px;
+}
+
+.header__link{
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+}
+
+.header__login-button{
+  border-style: none;
+  border-radius: 2px;
+  text-align: center;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  width: 176px;
+  height:48px;
+}
