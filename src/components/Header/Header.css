@@ -63,6 +63,50 @@
   background-color: #1A1B22;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
-  border-radius: 100px;
   margin-left: 24px;
+}
+
+@media screen and (max-width: 768px){
+  .header{
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 66px;
+  }
+
+  .header__title{
+    padding-top: 22px;
+    padding-left: 40px;
+  }
+
+  .header__links{
+    padding-right: 40px;
+  }
+  
+  .header__link{
+    padding-top: 22px;
+  }
+  
+  .header__link_button{
+    /* font-family: Roboto; */
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 19px;
+    padding-bottom: 13px;
+  }
+  
+  .header__link_hidden{
+    display: none;
+  }
+  
+  .header__link_selected{
+    height: 24px;
+  } 
+  
+  .header__login-button{
+    width: 152px;
+    height: 40px;
+    margin-left: 16px;
+  }
 }
