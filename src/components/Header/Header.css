@@ -91,10 +91,6 @@
   .header__link{
     padding-top: 16px;
   }
-
-  .header__link_selected{
-    /* height: 66px; */
-  }
   
   .header__link-button{
     font-weight: 500;
