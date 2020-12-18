@@ -2,6 +2,13 @@
   max-width: 1440px;
   background-color: #1A1B22;
   margin: auto;
+
+  /* fonts */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 }
 
 @media screen and (max-width: 768px){

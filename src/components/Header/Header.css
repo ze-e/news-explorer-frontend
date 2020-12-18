@@ -9,7 +9,7 @@
 }
 
 .header__title{
-  /* font-family: Roboto Slab; */
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -23,7 +23,7 @@
 }
 
 .header__link{
-  /* font-family: Roboto; */
+  font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -32,7 +32,7 @@
 }
 
 .header__link_button{
-  /* font-family: Roboto; */
+  font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -53,7 +53,7 @@
 .header__login-button{
   border-style: none;
   border-radius: 100px;
-  /* font-family: Roboto; */
+  font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -72,35 +72,35 @@
 
 @media screen and (max-width: 768px){
   .header{
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 0px;
     height: 66px;
   }
 
   .header__title{
     font-size: 20px;
-    padding-top: 22px;
     padding-left: 40px;
+    height: 66px;
+    padding-top: 16px;
   }
 
   .header__links{
     padding-right: 40px;
+    height: 66px;
   }
-  
+
   .header__link{
-    padding-top: 22px;
+    padding-top: 16px;
+  }
+
+  .header__link_selected{
+    /* height: 66px; */
   }
   
   .header__link-button{
     font-weight: 500;
     font-size: 16px;
-    padding-top: 19px;
-    padding-bottom: 13px;
+    height: 66px;
   }
-  
-  .header__link_selected{
-    height: 24px;
-  } 
   
   .header__login-button{
     width: 152px;

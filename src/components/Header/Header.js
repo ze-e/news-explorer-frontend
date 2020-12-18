@@ -15,7 +15,7 @@ export default function Header(props) {
           <button className="header__profile-button">myName<span className="header__profile-button-icon">-</span></button>
         </li>
         <li className="header__link">
-        <button className="header__collapse-button">--</button>
+          <button className="header__collapse-button">--</button>
         </li>
       </ul>
     </nav>

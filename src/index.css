@@ -1,5 +1,10 @@
+/* fonts */
+@import url(./fonts/fonts.css);
+
+/* normalize */
 @import url(./vendor/normalize.css);
 @import url(./fix-default-css.css);
 
+/* components */
 @import url(./components/App/App.css);
 @import url(./components/Header/Header.css);
