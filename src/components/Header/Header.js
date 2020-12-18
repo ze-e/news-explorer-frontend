@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Header(props) {
   return (
+    <>
     <nav className="header">
       <a className="header__title-link"><h1 className="header__title">NewsExplorer</h1></a>
       <ul className="header__links">
@@ -13,7 +14,11 @@ export default function Header(props) {
         <li className="header__link header__link_hidden">
           <button className="header__profile-button">myName<span className="header__profile-button-icon">-</span></button>
         </li>
+        <li className="header__link">
+        <button className="header__collapse-button">--</button>
+        </li>
       </ul>
     </nav>
+    </>
   ) 
 }

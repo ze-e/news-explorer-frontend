@@ -52,7 +52,7 @@
 
 .header__login-button{
   border-style: none;
-  border-radius: 1px;
+  border-radius: 100px;
   /* font-family: Roboto; */
   font-style: normal;
   font-weight: 500;
@@ -66,6 +66,10 @@
   margin-left: 24px;
 }
 
+.header__collapse-button{
+  visibility: hidden;
+}
+
 @media screen and (max-width: 768px){
   .header{
     padding-left: 0px;
@@ -74,6 +78,7 @@
   }
 
   .header__title{
+    font-size: 20px;
     padding-top: 22px;
     padding-left: 40px;
   }
@@ -86,18 +91,11 @@
     padding-top: 22px;
   }
   
-  .header__link_button{
-    /* font-family: Roboto; */
-    font-style: normal;
+  .header__link-button{
     font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
     padding-top: 19px;
     padding-bottom: 13px;
-  }
-  
-  .header__link_hidden{
-    display: none;
   }
   
   .header__link_selected{
@@ -108,5 +106,28 @@
     width: 152px;
     height: 40px;
     margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 501px){
+  .header{
+    height: 66px;
+  }
+
+  .header__title{
+    font-size: 16px;
+    padding-top: 16px;
+    padding-left: 16px;
+  }
+
+  .header__links{
+    visibility: hidden;
+  }
+
+  .header__collapse-button{
+    background-color: #1A1B22;
+    visibility: visible;
+    border: none;
+    color: white;
   }
 }
