@@ -70,24 +70,29 @@
   visibility: hidden;
 }
 
+/* visibility toggle */
+.header__link_hidden{
+  visibility: hidden;
+}
+
 /* logged in */
 
 .header.header__logged_in{
   background-color: #FFFFFF;
-  color:#1A1B22
+  color:#1A1B22;
 }
 
-.header__link_selected.header__logged_in{
+.header.header__logged_in .header__link_selected{
   border-bottom: solid 3px #1A1B22;
   margin-left: 24px;
 }
 
-.header__button.header__logged_in{
+.header.header__logged_in .header__button{
   background-color: #FFFFFF;
   color: #1A1B22;
   border: 1px solid #1A1B22;
   margin-left: 24px;
-  width: 112px;
+  min-width: 112px;
   height: 48px;
   display: flex;
   align-items: center;
@@ -138,12 +143,19 @@
     font-weight: 500;
     font-size: 16px;
     height: 66px;
+    padding-top: 19px;
+
   }
   
-  .header__login-button{
+  .header__button{
     width: 152px;
     height: 40px;
     margin-left: 16px;
+  }
+
+  .header.header__logged_in .header__button{
+    min-width: 112px;
+    height: 48px;
   }
 }
 
@@ -182,5 +194,8 @@
     border: none;
     align-self: center;
     background-color: transparent;
+  }
+  .header.header__logged_in .header__collapse-button{
+    background-image: url("../../images/icon/menu-black.svg");
   }
 }
