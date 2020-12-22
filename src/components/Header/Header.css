@@ -50,7 +50,7 @@
   height:48px;
 } 
 
-.header__login-button{
+.header__button{
   border-style: none;
   border-radius: 100px;
   font-family: 'Roboto', Arial, sans-serif;
@@ -68,6 +68,47 @@
 
 .header__collapse-button{
   visibility: hidden;
+}
+
+/* logged in */
+
+.header.header__logged_in{
+  background-color: #FFFFFF;
+  color:#1A1B22
+}
+
+.header__link_selected.header__logged_in{
+  border-bottom: solid 3px #1A1B22;
+  margin-left: 24px;
+}
+
+.header__button.header__logged_in{
+  background-color: #FFFFFF;
+  color: #1A1B22;
+  border: 1px solid #1A1B22;
+  margin-left: 24px;
+  width: 112px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.header__button-icon{
+  width: 18px;
+  height: 16px;
+  background-image: url("../../images/icon/header-signed-in.svg");
+  background-position: center;
+  object-fit: cover; 
+  background-repeat: no-repeat;
+  border: none;
+  align-self: center;
+  background-color: transparent;
+
+  padding-left: 19px;
 }
 
 
