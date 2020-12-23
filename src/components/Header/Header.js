@@ -3,7 +3,7 @@ import React from 'react';
 export default function Header(props) {
   return (
     <>
-    <nav className="header header_open">
+    <nav className="header">
       <a className="header__title-link"><h1 className="header__title">NewsExplorer</h1></a>
       <ul className="header__links">
         <li className="header__link header__link_selected">Home</li>

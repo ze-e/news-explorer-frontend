@@ -6,7 +6,6 @@
   color: #FFFFFF;
   border-bottom: solid 1px #C4C4C4;
   height:80px;
-  background-color: #1A1B22;
 }
 
 .header__title{
@@ -61,7 +60,7 @@
   line-height: 24px;
   width: 176px;
   height:48px;
-  background-color: #1A1B22;
+  background: none;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
   margin-left: 24px;

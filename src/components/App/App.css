@@ -10,6 +10,14 @@
   -moz-text-size-adjust: 100%;
 }
 
+.App__main-bg{
+  background-image: url('../../images/bg.png');
+  object-fit: cover; 
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 768px){
   .App{
     max-width: 768px;
@@ -17,8 +25,8 @@
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 501px){
   .App{
-    max-width: 320px;
+    max-width: 501px;
   }
 }

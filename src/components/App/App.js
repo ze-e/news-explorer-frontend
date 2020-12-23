@@ -6,8 +6,10 @@ import Main from '../Main/Main';
 export default function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Main></Main>
+      <div className="App__main-bg">
+        <Header></Header>
+        <Main></Main>
+      </div>
     </div>
   );
 }
