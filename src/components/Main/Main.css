@@ -42,6 +42,7 @@
 
   width:608px;
   height: 64px;
+  margin-bottom: 80px;
 }
 
 .main__search-button{
@@ -67,6 +68,7 @@
   .main__search-field{
     width: 448px;
     height: 56px;
+    margin-bottom: 80px;
   }
 
   .main__search-button{
