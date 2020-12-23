@@ -21,3 +21,8 @@ button{
     border-style: none;
     border-image: none;
 }
+
+p{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}

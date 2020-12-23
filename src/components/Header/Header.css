@@ -6,6 +6,7 @@
   color: #FFFFFF;
   border-bottom: solid 1px #C4C4C4;
   height:80px;
+  position: sticky;
 }
 
 .header__title{
@@ -77,17 +78,17 @@
 
 /* logged in */
 
-.header.header__logged_in{
+.signedIn .header{
   background-color: #FFFFFF;
   color:#1A1B22;
 }
 
-.header.header__logged_in .header__link_selected{
+.signedIn .header .header__link_selected{
   border-bottom: solid 3px #1A1B22;
   margin-left: 24px;
 }
 
-.header.header__logged_in .header__button{
+.signedIn .header .header__button{
   background-color: #FFFFFF;
   color: #1A1B22;
   border: 1px solid #1A1B22;
@@ -153,7 +154,7 @@
     margin-left: 16px;
   }
 
-  .header.header__logged_in .header__button{
+  .signedIn .header .header__button{
     min-width: 112px;
     height: 48px;
   }
@@ -195,7 +196,7 @@
     align-self: center;
     background-color: transparent;
   }
-  .header.header__logged_in .header__collapse-button{
+  .signedIn .header .header__collapse-button{
     background-image: url("../../images/icon/menu-black.svg");
   }
 

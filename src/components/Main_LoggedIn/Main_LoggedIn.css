@@ -1,0 +1,89 @@
+.mainLoggedIn{
+  color: #1A1B22;
+  display: flex;
+  flex-direction: column;
+  margin-left: 104px;
+  margin-right: 104px;
+}
+
+.mainLoggedIn__caption{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 0.5);
+  margin-bottom: 28px;
+  margin-top: 40px;
+}
+
+.mainLoggedIn__title{
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 34px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.mainLoggedIn__keywords-title{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  margin-top: 0px;
+
+}
+
+.mainLoggedIn__keywords-list{
+  font-weight: bold;
+  margin-bottom: 56px;
+
+}
+
+@media screen and (max-width: 768px){
+  .mainLoggedIn{
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .mainLoggedIn__caption{
+    font-size: 14px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  .mainLoggedIn__title{
+    font-size: 30px;
+    margin-bottom: 16px;
+
+  }
+
+  .mainLoggedIn__keywords-list{
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 592px){
+  .mainLoggedIn{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .mainLoggedIn__caption{
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .mainLoggedIn__title{
+    margin-bottom: 50px;
+  }
+
+  .mainLoggedIn__keywords-list{
+    margin-bottom: 56px;
+  }
+}
