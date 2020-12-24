@@ -4,30 +4,41 @@
     margin: 24px 16px 10px 16px;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .newsCard__image{
     border-radius: 16px 16px 0px 0px;
+    background-image: url("../../images/sample_img.png");
+    width: 288px;
+    height: 196px; 
+    align-self: center;
+    position: relative;
   }
 
   .newsCard__keyword{
-    width: 83px;
-    height: 40px;
-    margin: 8px 20px; 
+    padding: 8px 20px; 
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
   }
 
   .newsCard__delete{
-    width: 24px;
-    height: 24px;
-    margin: 8px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
     background-image: url("../../images/icon/trash.svg");
     background-position: center;
     object-fit: cover; 
     background-repeat: no-repeat;
     border: none;
     align-self: center;
-    background-color: transparent;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 
   .newsCard__date{

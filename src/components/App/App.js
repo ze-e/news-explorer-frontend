@@ -9,8 +9,9 @@ export default function App() {
     <div className="App">
       <div className="App__main-bg">
         <Header></Header>
-        <SavedNews></SavedNews>
+        <Main></Main>
       </div>
+      <SavedNews></SavedNews>
     </div>
   );
 }
