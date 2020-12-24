@@ -1,6 +1,7 @@
 @media screen and (max-width: 592px){
   .newsCard{
     background: #FFFFFF;
+    border-radius: 16px 16px 0px 0px;
     margin: 24px 16px 10px 16px;
     display: flex;
     flex-direction: column;
@@ -9,10 +10,15 @@
   .newsCard__image{
     border-radius: 16px 16px 0px 0px;
     background-image: url("../../images/sample_img.png");
-    width: 288px;
-    height: 196px; 
+    background-position: center;
+    min-width: 288px;
+    min-height: 196px;
     align-self: center;
     position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: black;
   }
 
   .newsCard__keyword{
@@ -59,8 +65,11 @@
     font-size: 22px;
     line-height: 24px;
     color: #1A1B22;
+    white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 48px;
   }
 
   .newsCard__description{
@@ -73,8 +82,11 @@
     line-height: 22px;
     color: #1A1B22;
 
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    height: 66px;
   }
 
   .newsCard__source{
@@ -89,7 +101,6 @@
     letter-spacing: 0.4px;
     text-transform: uppercase;
     color: #B6BCBF;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
   }
 }
