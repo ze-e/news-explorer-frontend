@@ -1,12 +1,16 @@
 .newsCardList{
   width: 1440px;
   height: 1292px;
-  padding: 62px 102px 32px 62px;
-
+  padding: 62px 102px 32px 102px;
+  margin: auto;
   background: #F5F6F7;
+}
+
+.newsCardList__container{
   display: grid;
   grid-gap: 16px;
   grid-template-columns:repeat(auto-fit, minmax(400px, 3fr));
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px){
@@ -14,6 +18,9 @@
     width: 768px;
     height: 912px;
     padding: 32px 40px 32px 40px;
+  }
+
+  .newsCardList__container{
     grid-gap: 8px;
     grid-template-columns:repeat(auto-fit, minmax(224px, 3fr));
   }
@@ -22,6 +29,9 @@
 @media screen and (max-width: 592px){
   .newsCardList{
     padding: 24px 16px 15px 16px;
+  }
+
+  .newsCardList__container{
     grid-gap: 10px;
     grid-template-columns:repeat(auto-fit, minmax(288px, 1fr));
   }
