@@ -6,11 +6,13 @@
   background: #F5F6F7;
 }
 
-.newsCardList__container{
+.newsCardList__grid{
+  width: 1232px;
+  padding: 0px;
   display: grid;
   grid-gap: 16px;
   grid-template-columns:repeat(auto-fit, minmax(400px, 3fr));
-  justify-content: center;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px){
@@ -20,7 +22,7 @@
     padding: 32px 40px 32px 40px;
   }
 
-  .newsCardList__container{
+  .newsCardList__grid{
     grid-gap: 8px;
     grid-template-columns:repeat(auto-fit, minmax(224px, 3fr));
   }
@@ -31,7 +33,7 @@
     padding: 24px 16px 15px 16px;
   }
 
-  .newsCardList__container{
+  .newsCardList__grid{
     grid-gap: 10px;
     grid-template-columns:repeat(auto-fit, minmax(288px, 1fr));
   }
