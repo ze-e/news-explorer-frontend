@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
+import About from '../About/About';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Main></Main>
       </div>
       <SavedNews></SavedNews>
+      <About></About>
     </div>
   );
 }
