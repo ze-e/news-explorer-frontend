@@ -4,6 +4,7 @@
   flex-direction: column;
   margin-left: 104px;
   margin-right: 104px;
+  background-color: #ffffff;
 }
 
 .SavedNewsHeader__caption{
@@ -68,6 +69,14 @@
 }
 
 @media screen and (max-width: 592px){
+  .SavedNewsHeader{
+    visibility: hidden;
+  }
+
+  .signedIn .SavedNewsHeader{
+    visibility: visible;
+  }
+
   .SavedNewsHeader{
     margin-left: 16px;
     margin-right: 16px;

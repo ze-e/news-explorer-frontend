@@ -25,6 +25,12 @@
 }
 
 .newsCard__keyword{
+  visibility: hidden;
+}
+
+.signedIn .newsCard__keyword{
+  visibility: visible;
+
   padding: 8px 20px; 
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -40,7 +46,11 @@
   line-height: 24px;
 }
 
-.newsCard__delete{
+.signedIn .newsCard__button{
+  background-image: url("../../images/icon/bookmark.svg");
+}
+
+.newsCard__button{
   width: 40px;
   height: 40px;
   padding: 8px;
@@ -130,7 +140,7 @@
     left: 8px;
   }
 
-  .newsCard__delete{
+  .newsCard__button{
     top: 8px;
     right: 8px;
   }
@@ -165,7 +175,7 @@
     min-height: 196px;
   }
 
-  .newsCard__delete{
+  .newsCard__button{
     top: 16px;
     right: 16px;
   }

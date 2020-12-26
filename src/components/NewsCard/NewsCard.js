@@ -6,7 +6,7 @@ export default function NewsCard() {
     <div className="newsCard">
       <div className="newsCard__image">
         <button className="newsCard__keyword">Keyword</button>
-        <button className="newsCard__delete"></button>
+        <button className="newsCard__button"></button>
       </div>
       <h4 className="newsCard__date">January 1, 2021</h4>
       <h3 className="newsCard__title">
