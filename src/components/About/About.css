@@ -27,7 +27,6 @@
   font-size: 40px;
   line-height: 46px;
   margin-bottom: 24px;
-
 }
 
 .about__description{
@@ -57,7 +56,6 @@
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 16px;
-
   }
 
   .about__description{
@@ -75,6 +73,7 @@
   
   .about__img{
     width: 272px;
+    height: 272px;
     margin: auto;
     align-self: center;
   }

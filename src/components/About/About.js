@@ -1,9 +1,10 @@
 import React from 'react';
+import avatar from '../../images/about_img.png';
 
 export default function About() {
   return (
     <section className="about">
-      <img className="about__img" src="../../images/about_img.png" alt="profile-picture"></img>
+      <img className="about__img" src={avatar} alt="profile-picture" />
       <div className="about__text">
         <h2 className="about__title">About the author</h2>
         <p className="about__description">

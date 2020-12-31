@@ -1,0 +1,64 @@
+.footer{
+  display: flex;
+  margin: 32px 78px 26px 104px;
+  justify-content: space-between;
+}
+
+.footer__nav{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer__copyright{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+}
+
+.footer__nav-link{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1B22;
+  margin-right: 60px;
+}
+
+.footer__nav-button{
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  object-fit: cover; 
+  background-repeat: no-repeat;
+  border: none;
+  align-self: center;
+  background-color: transparent;
+  margin-right: 28px;
+}
+
+.footer__nav-button_facebook{
+  background-image: url("../../images/icon/social-facebook.svg");
+}
+
+.footer__nav-button_github{
+  background-image: url("../../images/icon/social-github.svg");
+}
+
+@media screen and (max-width: 768px){
+  .footer{
+    margin: 24px 0px 18px 40px;
+  }
+  .footer__copyright{
+    margin-right: 28px;
+  }
+}
+
+@media screen and (max-width: 591px){
+ 
+}
