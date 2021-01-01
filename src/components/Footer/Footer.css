@@ -1,10 +1,20 @@
 .footer{
   display: flex;
-  margin: 32px 78px 26px 104px;
   justify-content: space-between;
 }
 
+.footer__links{
+  display: flex;
+}
+
 .footer__nav{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.footer__social{
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -27,10 +37,9 @@
   line-height: 24px;
   text-align: center;
   color: #1A1B22;
-  margin-right: 60px;
 }
 
-.footer__nav-button{
+.footer__social-button{
   width: 24px;
   height: 24px;
   background-position: center;
@@ -39,7 +48,6 @@
   border: none;
   align-self: center;
   background-color: transparent;
-  margin-right: 28px;
 }
 
 .footer__nav-button_facebook{
@@ -52,13 +60,29 @@
 
 @media screen and (max-width: 768px){
   .footer{
-    margin: 24px 0px 18px 40px;
-  }
-  .footer__copyright{
-    margin-right: 28px;
+    margin: 24px 40px 18px 40px;
   }
 }
 
 @media screen and (max-width: 591px){
- 
+  .footer{
+    margin: 20px 16px 20px 16px;
+    row-gap: 18px;
+  }
+
+  .footer__nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 74px;
+    margin-right: 18px;
+  }
+
+  .footer__social-item{
+    margin-right: 26px;
+  }
+  .footer__social-item:last-of-type{
+    margin-right: 0px;
+  }
 }
