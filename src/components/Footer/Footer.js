@@ -10,8 +10,8 @@ export default function Footer() {
           <li className="footer__nav-item"><a className="footer__nav-link">Practicum by Yandex</a></li>
         </ul>
         <ul className="footer__social">
+          <li className="footer__social-item"><button className="footer__social-button footer__social-button_github"></button></li>
           <li className="footer__social-item"><button className="footer__social-button footer__social-button_facebook"></button></li>
-          <li className="footer__social-item"><button className="footer__social-button footer__nav-button_github"></button></li>
         </ul>
       </div>
     </section>
