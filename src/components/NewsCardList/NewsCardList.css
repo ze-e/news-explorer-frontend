@@ -1,8 +1,13 @@
+/* set width for full cardlist and cards and remove container */
+
 .newsCardList{
   width: 1440px;
   height: 1292px;
   padding: 62px 102px 32px 102px;
   margin: auto;
+
+  display: inline-block;
+  position: relative;
 }
 
 .newsCardList__grid{
