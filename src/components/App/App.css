@@ -35,6 +35,10 @@
 @media screen and (max-width: 592px){
   .App{
     max-width: 592px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .App__main-bg{
