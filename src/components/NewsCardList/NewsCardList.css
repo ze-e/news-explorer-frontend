@@ -1,51 +1,25 @@
 /* set width for full cardlist and cards and remove container */
 
 .newsCardList{
-  width: 1440px;
-  height: 1292px;
-  padding: 62px 102px 32px 102px;
-  margin: auto;
-
-  display: inline-block;
   position: relative;
-}
-
-.newsCardList__grid{
-  width: 1232px;
-  padding: 0px;
+  max-width: 1232px;
+  /* max-height: 1168px; */
   display: grid;
   grid-gap: 16px;
-  grid-template-columns:repeat(auto-fit, minmax(400px, 3fr));
+  grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
   margin: auto;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1240px){
   .newsCardList{
-    width: 768px;
-    height: 912px;
-    padding: 32px 0px 32px 0px;
-
-  }
-
-  .newsCardList__grid{
-    width: 688px;
-    padding: 0px;
+    grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
+    max-width: 688px;
     grid-gap: 8px;
-    grid-template-columns:repeat(auto-fit, minmax(224px, 3fr));
   }
 }
 
 @media screen and (max-width: 592px){
   .newsCardList{
-    width: 320px;
-    padding: 24px 16px 15px 16px;
+    max-width: 320px;
   }
-
-  .newsCardList__grid{
-    width: 288px;
-    padding: 0px;
-    grid-gap: 10px;
-    grid-template-columns:repeat(auto-fit, minmax(288px, 1fr));
-  }
-
 }

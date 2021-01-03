@@ -22,7 +22,7 @@
   background-image: none;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1240px){
   .App{
     max-width: 768px;
   }
@@ -32,13 +32,13 @@
   }
 }
 
-@media screen and (max-width: 591px){
+@media screen and (max-width: 592px){
   .App{
-    max-width: 591px;
+    max-width: 592px;
   }
 
   .App__main-bg{
     object-fit: none;
-    background-size: 591px 591px; 
+    background-size: 592px 592px; 
   }
 }

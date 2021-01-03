@@ -19,6 +19,7 @@
   background: #FFFFFF;
   border-radius: 80px;
   margin: auto;
+  margin-top: 56px;
   margin-bottom: 32px;
 
   font-family: "Roboto";
@@ -33,10 +34,12 @@
   height: 64px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1240px){
   .savedNews__show-more{
     width: 240px;
     height: 56px;
+    margin-top: 22px;
+
   }
 }
 @media screen and (max-width: 592px){
@@ -48,5 +51,7 @@
   .savedNews__show-more{
     width:288px;
     height:56px;
+    margin-top: 15px;
+
   }
 }
