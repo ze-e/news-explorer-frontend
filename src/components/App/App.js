@@ -7,11 +7,13 @@ import About from '../About/About';
 import Footer from '../Footer/Footer';
 
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import Navigation from '../Navigation/Navigation';
 
 export default function App() {
   return (
+    <>
+    <Navigation />
     <div className="App">
-      <PopupWithForm></PopupWithForm>
       <div className="App__main-bg">
         <Header/>
         <Main/>
@@ -20,5 +22,6 @@ export default function App() {
       <About/>
       <Footer/>
     </div>
+    </>
   );
 }
