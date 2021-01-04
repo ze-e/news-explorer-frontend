@@ -13,12 +13,12 @@ export default function App() {
     <div className="App">
       <PopupWithForm></PopupWithForm>
       <div className="App__main-bg">
-        <Header></Header>
-        <Main></Main>
+        <Header/>
+        <Main/>
       </div>
-      <SavedNews></SavedNews>
-      <About></About>
-      <Footer></Footer>
+      <SavedNews/>
+      <About/>
+      <Footer/>
     </div>
   );
 }
