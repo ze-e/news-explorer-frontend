@@ -32,6 +32,10 @@
   padding-top: 30px;
 }
 
+.header__link:hover{
+  cursor: pointer;
+}
+
 .header__link_button{
   font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;

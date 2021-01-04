@@ -34,6 +34,11 @@
   height: 64px;
 }
 
+.savedNews__show-more:hover{
+  cursor: pointer;
+  opacity: 0.9;
+}
+
 @media screen and (max-width: 1240px){
   .savedNews__show-more{
     width: 240px;

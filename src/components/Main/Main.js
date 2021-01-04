@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchForm from '../SearchForm/SearchForm'
 
 export default function Main(props) {
   return (
@@ -8,10 +9,7 @@ export default function Main(props) {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
-      <form className="main__search-form">
-        <input className="main__search-field" type="search" placeholder="Nature"></input>
-        <button className="main__search-button" type="submit">Search</button>
-      </form>
+    <SearchForm />
     </section>
   ) 
 }
