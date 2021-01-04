@@ -21,14 +21,6 @@
   margin: auto;
   position: relative;
 }
-@media screen and (max-width: 320px){
-  .popup__form{
-    max-width: 240px;
-    max-height: 258px;
-    padding: 30px 40px 30px 40px;
-    box-sizing: border-box;
-  }
-}
 
 .popup__close{
   width: 40px;
@@ -51,15 +43,6 @@
 .popup__close:hover{
   cursor: pointer;
   opacity: 0.6;
-}
-
-@media screen and (max-width: 320px){
-  .popup__close{
-    width: 30px;
-    height: 30px;
-    top: -30px;
-    right: -30px;
-  }
 }
 
 .popup__container{
@@ -128,20 +111,11 @@
   color: #2F71E5;
 }
 
-@media screen and (max-width: 320px){
-  .popup__submit{
-    width: 160px;
-  }
-}
-
-.popup__submit.popup__submit_disabled, .popup__submit.popup__submit_disabled:hover{
-  background: #FFFFFF;
+.popup__submit.popup__submit_disabled{
+  background: #E6E8EB;
   color: #000000;
   opacity: 0.2;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 2px;
-  }
+}
 
   .popup__title{
     font-family: "Roboto";
@@ -153,14 +127,6 @@
     margin-block-start: 0px;
     margin-block-end: 0px;
     margin-bottom: 22px;
-  }
-  
-  @media screen and (max-width: 320px){
-    .popup__title{
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 36px;
-    }
   }
 
   .popup_state_opened{
@@ -187,3 +153,31 @@
   margin-bottom: 8px;
 }
 
+@media screen and (max-width: 592px){
+  .popup{
+    min-height: 100%;
+  }
+  .popup__form{
+    margin-top: 56px;
+    margin-bottom: 0px;
+    min-height: 100%;
+    display: block;
+    position: static;
+  }
+  .popup__close{
+    top: 0px;
+    right: 0px;
+  }
+  .popup__input{
+    width: 100%;
+  }
+
+  .popup__link-text{
+    text-align: center;
+  }
+
+  .popup__submit{
+    min-width: 100%;
+  }
+
+}
