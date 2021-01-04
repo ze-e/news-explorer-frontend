@@ -67,6 +67,14 @@
   right: 24px;
 }
 
+.newsCard__button:hover{
+  background-image: url("../../images/icon/bookmark-hover.svg");
+}
+
+.newsCard__button.newsCard__button_marked{
+  background-image: url("../../images/icon/boomark-marked.svg");
+}
+
 .newsCard__date{
   padding: 8px 24px 24px 24px;
   font-family: "Source Sans Pro";
