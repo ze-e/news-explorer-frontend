@@ -9,6 +9,8 @@ import Footer from '../Footer/Footer';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Navigation from '../Navigation/Navigation';
 
+
+
 export default function App() {
   return (
     <>

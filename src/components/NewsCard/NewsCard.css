@@ -11,7 +11,7 @@
 
 .newsCard__image{
   border-radius: 16px 16px 0px 0px;
-  background-image: url("../../images/sample_img.png");
+  background-image: url("../../images/sample_images/sample_img_1.png");
   background-position: center;
   min-width: 400px;
   min-height: 272px;
