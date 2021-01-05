@@ -8,7 +8,7 @@
   margin: auto;
 }
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1250px){
   .newsCardList{
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
     max-width: 688px;

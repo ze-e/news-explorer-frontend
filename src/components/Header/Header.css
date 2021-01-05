@@ -122,7 +122,7 @@
 }
 
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1250px){
   .header{
     padding: 0px;
     height: 66px;
@@ -209,5 +209,14 @@
 @media screen and (max-width: 640px){
   .header{
     max-width: 320px;
+  }
+  .header__collapse-button{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  .header__links{
+    max-width: 320px;
+    padding-right: 0px;
   }
 }

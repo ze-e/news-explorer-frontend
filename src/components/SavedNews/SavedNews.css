@@ -39,7 +39,7 @@
   opacity: 0.9;
 }
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1250px){
   .savedNews__show-more{
     width: 240px;
     height: 56px;

@@ -21,7 +21,7 @@
   background-image: none;
 }
 
-@media screen and (max-width: 1240px){
+@media screen and (max-width: 1250px){
   .App{
     max-width: 768px;
   }
