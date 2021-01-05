@@ -33,16 +33,24 @@
 
 @media screen and (max-width: 709px){
   .App{
-    /* min-width: 592px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
   }
 
   .App__main-bg{
     object-fit: none;
-    /* background-size: 592px 592px;  */
+    background-size: 709px 709px; 
+  }
+}
+
+@media screen and (max-width: 640px){
+  .App{
+    max-width: 320px;
+  }
+  .App__main-bg{
+    object-fit: none;
+    background-size: 320px 536px; 
   }
 }

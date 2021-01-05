@@ -165,9 +165,6 @@
 }
 
 @media screen and (max-width: 709px){
-  .header{
-    height: 66px;
-  }
 
   .header__title{
     font-size: 16px;
@@ -208,3 +205,9 @@
     background-image: url("../../images/icon/close-white.svg");
   }
 } 
+
+@media screen and (max-width: 640px){
+  .header{
+    max-width: 320px;
+  }
+}

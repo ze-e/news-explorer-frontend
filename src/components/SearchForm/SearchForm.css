@@ -52,7 +52,8 @@
   .search-field{
     width: 448px;
     height: 56px;
-    margin-bottom: 80px;
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 
   .search-button{
@@ -62,6 +63,9 @@
 }
 
 @media screen and (max-width: 709px){
+  .search-form{
+    margin-bottom: 0px;
+  }
   .search-field{
     margin-bottom: 16px;
     width: 288px;
@@ -71,9 +75,9 @@
   }
 
   .search-button{
-    margin-bottom: 32px;
     width: 288px;
     margin-left: 0px;
     position: static;
+    margin-bottom: 32px;
   }
 }
