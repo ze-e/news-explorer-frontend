@@ -11,17 +11,16 @@
 
 .newsCard__image{
   border-radius: 16px 16px 0px 0px;
-  background-image: url("../../images/sample_images/sample_img_1.png");
+  background-repeat: no-repeat;
   background-position: center;
+
   min-width: 400px;
   min-height: 272px;
   
   align-self: center;
   position: relative;
   width: 100%;
-  background-repeat: no-repeat;
   text-align: center;
-  background-color: black;
 }
 
 .newsCard__keyword{

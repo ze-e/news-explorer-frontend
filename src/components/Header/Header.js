@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header(props) {
   return (
     <>
     <nav className="header">
-      <a className="header__title-link"><h1 className="header__title">NewsExplorer</h1></a>
+      <Link className="header__title-link" to="/"><h1 className="header__title">NewsExplorer</h1></Link>
       <ul className="header__links">
         <li className="header__link header__link_selected">Home</li>
         <li className="header__link header__link_selected header__link_hidden">Saved Article</li>

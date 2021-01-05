@@ -1,27 +1,17 @@
 import React from 'react';
 
-export default function NewsCard() {
+export default function NewsCard(props) {
+
   return (
     <>
-    <div className="newsCard">
-      <div className="newsCard__image">
-        <button className="newsCard__keyword">Keyword</button>
+      <div className="newsCard__image" style={{backgroundImage: `url(../images/sample_images/${props.card.image})`}}>
+        <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className="newsCard__button"></button>
       </div>
-      <h4 className="newsCard__date">January 1, 2021</h4>
-      <h3 className="newsCard__title">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </h3>
-      <p className="newsCard__description">
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-        mollit anim id est laborum.
-      </p>
-      <p className="newsCard__source">Sample Source</p>
-    </div>
+      <h4 className="newsCard__date">{props.card.date}</h4>
+      <h3 className="newsCard__title">{props.card.title}</h3>
+      <p className="newsCard__description">{props.card.description}</p>
+      <p className="newsCard__source">{props.card.source}</p>
     </>
   );
 }
