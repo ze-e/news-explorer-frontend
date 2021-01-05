@@ -6,6 +6,7 @@
 
   width: 400px;
   height: 578px;
+  border-radius: 16px;
 }
 
 .newsCard__image{
@@ -14,7 +15,6 @@
   background-position: center;
   min-width: 400px;
   min-height: 272px;
-  border-radius: 0px;
   
   align-self: center;
   position: relative;

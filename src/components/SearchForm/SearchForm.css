@@ -61,11 +61,13 @@
   }
 }
 
-@media screen and (max-width: 592px){
+@media screen and (max-width: 709px){
   .search-field{
     margin-bottom: 16px;
     width: 288px;
     position: static;
+    display: flex;
+    flex-direction: column;
   }
 
   .search-button{

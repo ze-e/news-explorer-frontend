@@ -33,15 +33,16 @@
 
 @media screen and (max-width: 709px){
   .App{
-    min-width: 592px;
+    /* min-width: 592px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   }
 
   .App__main-bg{
     object-fit: none;
-    background-size: 592px 592px; 
+    /* background-size: 592px 592px;  */
   }
 }
