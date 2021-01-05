@@ -153,7 +153,7 @@
   margin-bottom: 8px;
 }
 
-@media screen and (max-width: 592px){
+@media screen and (max-width: 709px){
   .popup{
     min-height: 100%;
   }

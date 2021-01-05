@@ -1,4 +1,3 @@
-/* set width for full cardlist and cards and remove container */
 
 .newsCardList{
   position: relative;
@@ -18,7 +17,7 @@
   }
 }
 
-@media screen and (max-width: 592px){
+@media screen and (max-width: 709px){
   .newsCardList{
     max-width: 320px;
   }
