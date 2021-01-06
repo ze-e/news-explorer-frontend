@@ -1,6 +1,7 @@
 .newsCardList{
   background: #F5F6F7;
   text-align: center;
+
 }
 
 .newsCardList__container{
@@ -9,9 +10,9 @@
   display: grid;
   grid-gap: 16px;
   grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
-  margin: auto;
   padding-top: 62px;
   text-align: left;
+  margin: auto;
 }
 
 

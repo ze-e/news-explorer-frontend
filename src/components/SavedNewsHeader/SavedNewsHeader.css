@@ -4,6 +4,8 @@
   flex-direction: column;
   background-color: #ffffff;
   padding-bottom: 56px;
+  margin-left: 102px;
+  margin-right: 102px;
 }
 
 .SavedNewsHeader__caption{
