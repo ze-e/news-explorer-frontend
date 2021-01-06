@@ -14,6 +14,8 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 export default function App() {
 
   const [isOpen, setisOpen] = React.useState(false);
+  const [isLoggedIn, setisLoggedIn] = React.useState(false);
+
 
   function handleOpen(){
     setisOpen(true);
@@ -23,11 +25,15 @@ export default function App() {
     setisOpen(false);
   }
 
+  function handleLogin(){
+    setisLoggedIn(true);
+  }
+
   return (
     <>
-    <PopupWithForm isOpen={isOpen} onClose={handleClose} />
+    <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
     <Navigation />
-    <div className="App">
+    <div className={`App ${isLoggedIn  && 'loggedIn'}`}>
         <Switch>
 
           <Route exact path="/">
