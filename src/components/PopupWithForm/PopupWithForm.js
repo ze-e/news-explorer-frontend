@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function PopupWithForm() {
+export default function PopupWithForm(props) {
 
   return (
-    <section className="popup popup_state_opened" >
+    <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
       <div className="popup__container">
         <form className="popup__form">
-          <button className="popup__close" type="button"></button>
+          <button className="popup__close" type="button" onClick={props.onClose}></button>
           <h4 className="popup__title">Sign in</h4>
           <p className="popup__input-label">Email</p>
           <input className="popup__input" type="popup" name="email" placeholder="Email"></input>

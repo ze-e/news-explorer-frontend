@@ -8,20 +8,31 @@ import SavedNews from '../SavedNews/SavedNews';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
 
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import Navigation from '../Navigation/Navigation';
-
+import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
 export default function App() {
+
+  const [isOpen, setisOpen] = React.useState(false);
+
+  function handleOpen(){
+    setisOpen(true);
+  }
+
+  function handleClose(){
+    setisOpen(false);
+  }
+
   return (
     <>
+    <PopupWithForm isOpen={isOpen} onClose={handleClose} />
     <Navigation />
     <div className="App">
         <Switch>
 
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header/>
+            <Header onOpen={handleOpen}/>
             <Main/>
           </div>
           </Route>
