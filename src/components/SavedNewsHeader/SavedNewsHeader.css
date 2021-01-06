@@ -70,13 +70,6 @@
 }
 
 @media screen and (max-width: 709px){
-  .SavedNewsHeader{
-    visibility: hidden;
-  }
-
-  .signedIn .SavedNewsHeader{
-    visibility: visible;
-  }
 
   .SavedNewsHeader{
     margin-left: 16px;
