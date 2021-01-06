@@ -8,7 +8,7 @@ export default function SavedNews() {
     
     <div className="savedNews">
       <h2 className="savedNews__title">Search Results</h2>
-      {/* <SavedNewsHeader></SavedNewsHeader> */}
+      <SavedNewsHeader></SavedNewsHeader>
       <NewsCardList></NewsCardList>
       <button className="savedNews__show-more">Show More</button>
     </div>
