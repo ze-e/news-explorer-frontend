@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchForm from '../SearchForm/SearchForm';
 
 export default function Main() {
   return (
@@ -8,6 +9,7 @@ export default function Main() {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
+      <SearchForm />
     </section>
   ) 
 }

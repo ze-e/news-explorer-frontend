@@ -9,17 +9,19 @@ export default function NewsCardList() {
 
   return (
     <div className="newsCardList">
-    {cards.length > 0 ?
-     cards.map(card => (
-      <div className="newsCard" key={card._id}>
-        <NewsCard card={card}/>
+      <div className="newsCardList__container">
+      {cards.length > 0 ? 
+        cards.map(card => (
+          <div className="newsCard" key={card._id}>
+            <NewsCard card={card}/>
+          </div>
+        ))
+        :
+        //show loading screen if cards haven't loaded
+        <Loading />
+      }
       </div>
-    ))
-    
-    :
-    //show loading screen if cards haven't loaded
-    <Loading />
-    }
+      <button className="newsCardList__show-more">Show More</button>
     </div>
   );
 }

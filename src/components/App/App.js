@@ -17,17 +17,23 @@ export default function App() {
     <>
     <Navigation />
     <div className="App">
-      <div className="App__main-bg">
-        <Header/>
         <Switch>
-          <Route path="/">
+
+          <Route exact path="/">
+          <div className="App__main-bg">
+            <Header/>
             <Main/>
+          </div>
           </Route>
-          <Route path="/saved-news">
-            <SavedNews/>
+
+          <Route exact path="/saved-news">
+            <span className="App__saved-news">
+              <Header/>
+              <SavedNews/>
+            </span>
           </Route>
+
         </Switch>
-      </div>
       <About/>
       <Footer/>
     </div>
