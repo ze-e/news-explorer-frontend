@@ -83,7 +83,14 @@
   background: none;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
+}
+
+.header__item{
   margin-left: 24px;
+}
+
+.header__item:first-of-type{
+  margin-left: 0px;
 }
 
 .header__collapse-button{
@@ -151,16 +158,11 @@
     font-size: 20px;
     padding-left: 40px;
     height: 66px;
-    padding-top: 16px;
   }
 
   .header__links{
     padding-right: 40px;
     height: 66px;
-  }
-
-  .header__item{
-    padding-top: 16px;
   }
   
   .header__link-button{
@@ -174,7 +176,14 @@
   .header__button{
     width: 152px;
     height: 40px;
+  }
+
+  .header__item{
     margin-left: 16px;
+  }
+
+  .header__item:first-of-type{
+    margin-left: 0px;
   }
 
   .App__saved-news .header .header__button{
