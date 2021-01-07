@@ -26,9 +26,12 @@ export default function App() {
   }
 
   function handleLogin(){
-    console.log("working");
     setisLoggedIn(true);
     handleClose();
+  }
+
+  function handleLogout(){
+    setisLoggedIn(false);
   }
 
   return (
@@ -40,14 +43,14 @@ export default function App() {
 
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpen} loggedIn={isLoggedIn}/>
+            <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn}/>
             <Main/>
           </div>
           </Route>
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header onOpen={handleOpen} loggedIn={isLoggedIn}/>
+              <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn}/>
               <SavedNews/>
             </span>
           </Route>
