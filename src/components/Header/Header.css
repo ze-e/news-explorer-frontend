@@ -118,6 +118,10 @@
   margin-left: 24px;
 }
 
+.header__link_selected{
+  height: auto;
+}
+
 .App__saved-news .header .header__button{
   background-color: #FFFFFF;
   color: #1A1B22;
@@ -136,7 +140,7 @@
 .header__button-icon{
   width: 18px;
   height: 16px;
-  background-image: url("../../images/icon/header-signed-in.svg");
+  background-image: url("../../images/icon/logout-white.svg");
   background-position: center;
   object-fit: cover; 
   background-repeat: no-repeat;
