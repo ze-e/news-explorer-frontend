@@ -3,7 +3,6 @@
   border-radius: 16px 16px 0px 0px;
   display: flex;
   flex-direction: column;
-
   width: 400px;
   height: 578px;
   border-radius: 16px;
@@ -13,10 +12,8 @@
   border-radius: 16px 16px 0px 0px;
   background-repeat: no-repeat;
   background-position: center;
-
   min-width: 400px;
   min-height: 272px;
-  
   align-self: center;
   position: relative;
   width: 100%;
@@ -29,15 +26,13 @@
 
 .signedIn .newsCard__keyword{
   visibility: visible;
-
   padding: 8px 20px; 
   background-color: #FFFFFF;
   border-radius: 10px;
   position: absolute;
   top: 24px;
   left: 24px;
-  font-weight: 500;
-  
+  font-weight: 500; 
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -93,7 +88,6 @@
   line-height: 24px;
   color: #1A1B22;
   white-space: nowrap;
-
   overflow: hidden;
   text-overflow: ellipsis;
   height: 60px;
@@ -101,25 +95,21 @@
 
 .newsCard__description{
   padding: 0px 24px 40px 24px;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
   color: #1A1B22;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
   height: 88px;
 }
 
 .newsCard__source{
   padding-left: 24px;
   padding-right: 24px;
-
   font-family: "Roboto Slab";
   font-style: normal;
   font-weight: bold;
