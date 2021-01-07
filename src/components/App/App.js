@@ -26,26 +26,28 @@ export default function App() {
   }
 
   function handleLogin(){
+    console.log("working");
     setisLoggedIn(true);
+    handleClose();
   }
 
   return (
     <>
     <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
     <Navigation />
-    <div className={`App ${isLoggedIn  && 'loggedIn'}`}>
+    <div className="App">
         <Switch>
 
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpen}/>
+            <Header onOpen={handleOpen} loggedIn={isLoggedIn}/>
             <Main/>
           </div>
           </Route>
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header/>
+              <Header onOpen={handleOpen} loggedIn={isLoggedIn}/>
               <SavedNews/>
             </span>
           </Route>

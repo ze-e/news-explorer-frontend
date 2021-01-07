@@ -34,6 +34,11 @@
 }
 
 .header__link{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.header__item{
   font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -42,7 +47,7 @@
   padding-top: 30px;
 }
 
-.header__link:hover{
+.header__item:hover{
   cursor: pointer;
 }
 
@@ -154,7 +159,7 @@
     height: 66px;
   }
 
-  .header__link{
+  .header__item{
     padding-top: 16px;
   }
   
