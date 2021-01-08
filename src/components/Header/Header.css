@@ -93,7 +93,7 @@
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 
-  margin-left: 24px;
+  /* margin-left: 24px; */
   min-width: 112px;
   display: flex;
   align-items: center;
