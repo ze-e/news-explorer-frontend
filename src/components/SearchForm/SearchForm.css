@@ -52,8 +52,8 @@
   .search-field{
     width: 448px;
     height: 56px;
-    margin-top: 48px;
-    margin-bottom: 48px;
+    /* margin-top: 48px;
+    margin-bottom: 48px; */
   }
 
   .search-button{
