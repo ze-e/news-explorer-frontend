@@ -18,7 +18,7 @@ export default function Header(props) {
           <div className="header__button">myName<button className="header__button-icon" onClick={props.onLogout}></button></div>
         </li>
         <li className="header__item">
-          <button className="header__collapse-button"></button>
+          <button className="header__collapse-button" onClick={props.onOpenNav}></button>
         </li>
       </ul>
     </nav>

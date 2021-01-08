@@ -37,7 +37,7 @@
   flex-direction: column;
 }
 
-.nav__link{
+.nav__item{
   font-family: 'Roboto', Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -47,6 +47,18 @@
   margin-left: 16px;
   margin-right: 16px;
 
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav__title-link{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav__link{
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .nav__link_button{

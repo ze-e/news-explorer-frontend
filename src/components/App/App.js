@@ -27,7 +27,8 @@ export default function App() {
 
   function handleLogin(){
     setisLoggedIn(true);
-    handleClose();
+    setisOpen(false);
+    setisNavOpen(false);
   }
 
   function handleLogout(){
@@ -41,20 +42,20 @@ export default function App() {
   return (
     <>
     <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
-    <Navigation isOpen={isNavOpen}/>
+    <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
     <div className="App">
         <Switch>
 
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} handleNav={onOpen}/>
+            <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
             <Main/>
           </div>
           </Route>
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} handleNav={onOpen}/>
+              <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
               <SavedNews/>
             </span>
           </Route>
