@@ -229,21 +229,15 @@
     padding-left: 16px;
   }
 
-  .header__links{
+  /* .header__links{
     visibility: hidden;
-  }
+  } */
 
 
   .header__collapse-button{
     background-color: #1A1B22;
-    visibility: visible;
     border: none;
     color: white;
-  }
-
-  .header__collapse-button{
-    background-color: #1A1B22;
-    visibility: visible;
     width: 16px;
     height: 16px;
 
@@ -269,6 +263,8 @@
     max-width: 320px;
   }
   .header__collapse-button{
+    visibility: visible;
+
     position: absolute;
     right: 16px;
     top: 16px;
@@ -276,5 +272,6 @@
   .header__links{
     max-width: 320px;
     padding-right: 0px;
+    visibility: hidden;
   }
 }
