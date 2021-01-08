@@ -16,6 +16,7 @@
   font-size: 20px;
   line-height: 24px;
   padding-top: 30px;
+  padding-bottom: 26px;
   color: #FFFFFF;
 }
 
@@ -44,6 +45,8 @@
   font-size: 18px;
   line-height: 24px;
   padding-top: 30px;
+  padding-bottom: 26px;
+
 }
 
 .header__item:hover{
@@ -66,7 +69,7 @@
 
 .header__link_selected{
   border-bottom: solid 3px #FFFFFF;
-  height:48px;
+  padding-bottom: 24px;
 } 
 
 .header__button{
@@ -122,14 +125,11 @@
 
 .App__saved-news .header .header__link_selected{
   border-bottom: solid 3px #1A1B22;
+  padding-bottom: 24px;
 }
 
 .App__saved-news .header__link{
   color: #1A1B22;
-}
-
-.header__link_selected{
-  height: auto;
 }
 
 .App__saved-news .header .header__button{
@@ -202,6 +202,10 @@
   .header__item:first-of-type{
     margin-left: 0px;
   }
+
+  .header__link_selected{
+    padding-bottom: 10px;
+  } 
 
   .App__saved-news .header .header__button{
     min-width: 112px;

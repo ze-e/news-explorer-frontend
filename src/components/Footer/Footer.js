@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
       <p className="footer__copyright">© 2020 Supersite, Powered by News API</p>
       <div className="footer__links">
         <ul className="footer__nav">
-          <li className="footer__nav-item"><Link to="/" className="footer__nav-link">Home</Link></li>
+          <li className="footer__nav-item"><NavLink to="/" className="footer__nav-link">Home</NavLink></li>
           <li className="footer__nav-item"><div className="footer__nav-link">Practicum by Yandex</div></li>
         </ul>
         <ul className="footer__social">
