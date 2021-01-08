@@ -1,17 +1,18 @@
 .nav{
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
   z-index: 5;
   visibility: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
 }
 
 .nav__container{
   background: #000000;
   color: #FFFFFF;
   z-index: 10;
-
 }
 
 .nav__top{
@@ -138,6 +139,26 @@
 
   padding-left: 19px;
 }
-.nav.nav_open{
-  visibility: visible;
+
+@media screen and (max-width: 709px){
+  .nav__container{
+    max-width: 709px;
+    min-width: 640px;
+  }
+  .nav.nav_open{
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .nav__container{
+    max-width: 640px;
+    min-width: 320px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .nav__container{
+    width: 320px;
+  }
 }

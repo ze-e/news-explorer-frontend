@@ -42,8 +42,9 @@ export default function App() {
   return (
     <>
     <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
-    <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
     <div className="App">
+    <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
+
         <Switch>
 
           <Route exact path="/">
