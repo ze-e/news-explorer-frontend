@@ -10,7 +10,7 @@ export default function NewsCard(props) {
 
   return (
     <>
-      <div className="newsCard__image" style={{backgroundImage: `url(../images/sample_images/${props.card.image})`}}>
+      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
         <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
       </div>
