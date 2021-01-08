@@ -15,7 +15,7 @@ export default function App() {
 
   const [isOpen, setisOpen] = React.useState(false);
   const [isLoggedIn, setisLoggedIn] = React.useState(false);
-
+  const [isNavOpen, setisNavOpen] = React.useState(false);
 
   function handleOpen(){
     setisOpen(true);
@@ -34,23 +34,27 @@ export default function App() {
     setisLoggedIn(false);
   }
 
+  function handleNav(){
+    setisNavOpen(!isNavOpen);
+  }
+
   return (
     <>
     <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
-    <Navigation />
+    <Navigation isOpen={isNavOpen}/>
     <div className="App">
         <Switch>
 
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn}/>
+            <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} handleNav={onOpen}/>
             <Main/>
           </div>
           </Route>
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn}/>
+              <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} handleNav={onOpen}/>
               <SavedNews/>
             </span>
           </Route>

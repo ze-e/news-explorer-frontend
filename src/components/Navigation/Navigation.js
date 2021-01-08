@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Navigation(props) {
   return (
     <>
-    <section className="nav">
+    <section className={`nav ${props.isOpen && "nav_open"}`}>
     <nav className="nav__container">
       <div className="nav__top">
         <Link className="nav__title-link" to="/"><h1 className="nav__title">NewsExplorer</h1></Link>
