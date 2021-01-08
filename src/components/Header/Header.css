@@ -45,12 +45,19 @@
   font-size: 18px;
   line-height: 24px;
   padding-top: 30px;
-  padding-bottom: 26px;
-
+  padding-bottom: 18px;
 }
 
 .header__item:hover{
   cursor: pointer;
+}
+
+.header__item{
+  margin-left: 24px;
+}
+
+.header__item:first-of-type{
+  margin-left: 0px;
 }
 
 .header__link_button{
@@ -95,14 +102,6 @@
   text-overflow: ellipsis; 
 }
 
-.header__item{
-  margin-left: 24px;
-}
-
-.header__item:first-of-type{
-  margin-left: 0px;
-}
-
 .header__collapse-button{
   visibility: hidden;
 }
@@ -125,7 +124,6 @@
 
 .App__saved-news .header .header__link_selected{
   border-bottom: solid 3px #1A1B22;
-  padding-bottom: 24px;
 }
 
 .App__saved-news .header__link{
@@ -175,6 +173,16 @@
     font-size: 20px;
     padding-left: 40px;
     height: 66px;
+    padding-top: 20px;
+  }
+
+  .header__item{
+    font-family: 'Roboto', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 24px;
   }
 
   .header__links{
@@ -182,12 +190,12 @@
     height: 66px;
   }
   
-  .header__link-button{
+  .header__link_button{
     font-weight: 500;
     font-size: 16px;
     height: 66px;
-    padding-top: 19px;
-
+    padding-top: 14px;
+    padding-bottom: 0px;
   }
   
   .header__button{
@@ -204,12 +212,12 @@
   }
 
   .header__link_selected{
-    padding-bottom: 10px;
+    padding-bottom: 16px;
   } 
 
   .App__saved-news .header .header__button{
     min-width: 112px;
-    height: 48px;
+    height: 40px;
   }
 }
 
@@ -224,6 +232,7 @@
   .header__links{
     visibility: hidden;
   }
+
 
   .header__collapse-button{
     background-color: #1A1B22;
