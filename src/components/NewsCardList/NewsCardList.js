@@ -3,9 +3,13 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 import cardList from '../../config/testcards.json';
+import blankCardList from '../../config/testcards_blank.json';
+
 
 export default function NewsCardList() {
   const cards = cardList;
+  //const cards = blankCardList;
+
   const [loading, setLoading] = React.useState(false);
 
   function handleLoading(props){
@@ -26,7 +30,7 @@ export default function NewsCardList() {
         <Loading loading={true} handleLoading={handleLoading} />
       }
       </div>
-      <button className="newsCardList__show-more">Show More</button>
+      {cards.length > 0 && <button className="newsCardList__show-more">Show More</button>}
     </div>
   );
 }
