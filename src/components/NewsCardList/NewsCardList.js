@@ -9,7 +9,7 @@ export default function NewsCardList() {
   const cards = cardList;
   const [loading, setLoading] = React.useState(false);
 
-  function handleLoading(){
+  function handleLoading(props){
     setLoading(false);
   }
 

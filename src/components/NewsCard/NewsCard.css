@@ -24,7 +24,7 @@
   visibility: hidden;
 }
 
-.signedIn .newsCard__keyword{
+.App__saved-news .newsCard__keyword{
   visibility: visible;
   padding: 8px 20px; 
   background-color: #FFFFFF;
@@ -40,7 +40,15 @@
   line-height: 24px;
 }
 
-.signedIn .newsCard__button{
+.App__saved-news .newsCard__button{
+  background-image: url("../../images/icon/trash.svg");
+}
+
+.App__saved-news .newsCard__button:hover{
+  background-image: url("../../images/icon/trash-hover.svg");
+}
+
+.App__saved-news .newsCard__button.newsCard__button_marked{
   background-image: url("../../images/icon/trash.svg");
 }
 

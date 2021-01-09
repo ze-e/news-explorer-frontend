@@ -7,7 +7,8 @@ export default function Main() {
 
   const [showResults, setShowResults] = React.useState(false);
 
-  function search(){
+  function handleSearch(e){
+    e.preventDefault();
     setShowResults(true);
   }
 
@@ -18,8 +19,8 @@ export default function Main() {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
-      <SearchForm />
-      {showResults && <NewsCardList search={search} />}
+      <SearchForm onSearch={handleSearch} />
+      {showResults && <NewsCardList />}
 
     </section>
   ) 
