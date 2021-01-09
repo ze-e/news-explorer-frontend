@@ -20,7 +20,9 @@ export default function Main() {
         and save them in your personal account.
       </h3> 
       <SearchForm onSearch={handleSearch} />
-      {showResults && <NewsCardList />}
+      {showResults &&
+      <NewsCardList />
+      }
 
     </section>
   ) 

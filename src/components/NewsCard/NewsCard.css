@@ -144,6 +144,11 @@
     right: 8px;
   }
 
+  .App__saved-news .newsCard__keyword{
+    top: 8px;
+    left: 8px;
+  }
+
   .newsCard__keyword{
     top: 8px;
     left: 8px;
@@ -195,5 +200,10 @@
   .newsCard__description{
     padding: 0px 16px 8px 16px;
     height: 88px;
+  }
+
+  .App__saved-news .newsCard__keyword{
+    top: 16px;
+    left: 16px;
   }
 }
