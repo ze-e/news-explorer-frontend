@@ -3,7 +3,6 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 import cardList from '../../config/testcards.json';
-import nothingFoundImage from '../../images/not-found.png';
 
 export default function NewsCardList() {
   const cards = cardList;
