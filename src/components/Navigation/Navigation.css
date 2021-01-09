@@ -151,12 +151,16 @@
     margin-right: auto;
   }
   .nav.nav_open{
-    visibility: visible;
+    visibility: hidden;
   }
 }
 
 @media screen and (max-width: 640px){
   .nav__container{
     max-width: 320px;
+  }
+
+  .nav.nav_open{
+    visibility: visible;
   }
 }
