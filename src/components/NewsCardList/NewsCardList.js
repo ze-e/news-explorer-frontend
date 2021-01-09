@@ -7,6 +7,11 @@ import nothingFoundImage from '../../images/not-found.png';
 
 export default function NewsCardList() {
   const cards = cardList;
+  const [loading, setLoading] = React.useState(false);
+
+  function handleLoading(){
+    setLoading(false);
+  }
 
   return (
     <div className="newsCardList">
@@ -18,11 +23,7 @@ export default function NewsCardList() {
           </div>
         ))
         :
-        <section className="preloader">
-        <img src={nothingFoundImage}></img>
-        <h2 className="preloader__title">Nothing found</h2>
-        <p className="preloader__text">Sorry, but nothing matched your search terms.</p>
-        </section>
+        <Loading loading={true}/>
       }
       </div>
       <button className="newsCardList__show-more">Show More</button>
