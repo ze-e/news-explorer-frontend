@@ -80,7 +80,7 @@
 }
 
 .popup__submit{
-  font-family: "Roboto";
+  font-family: "Roboto", Times, serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -118,7 +118,7 @@
 }
 
   .popup__title{
-    font-family: "Roboto";
+    font-family: "Roboto", Times, serif;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
@@ -144,7 +144,7 @@
 }
 
 .popup__input-label{
-  font-family: Inter;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

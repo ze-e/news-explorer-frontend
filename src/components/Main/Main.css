@@ -8,14 +8,14 @@
 }
 
 .main__title{
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Times, serif;;
   font-style: normal;
   font-weight: normal;
   font-size: 36px;
   line-height: 40px;
 }
 .main__subtitle{
-  font-family: "Roboto";
+  font-family: "Roboto", Times, serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;

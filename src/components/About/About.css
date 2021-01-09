@@ -24,14 +24,14 @@
 }
 
 .about__title{
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Times, serif;
   font-size: 40px;
   line-height: 46px;
   margin-bottom: 24px;
 }
 
 .about__description{
-  font-family: "Roboto";
+  font-family: "Roboto", Times, serif;
   font-size: 18px;
   line-height: 24px;
 }
