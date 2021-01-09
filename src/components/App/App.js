@@ -10,6 +10,8 @@ import Footer from '../Footer/Footer';
 
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import {formValidator} from '../utils/formvalidator'
+
 
 export default function App() {
 
@@ -41,9 +43,14 @@ export default function App() {
 
   return (
     <>
-    <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
+    <PopupWithForm 
+      isOpen={isOpen} 
+      onClose={handleClose} 
+      onLogin={handleLogin} 
+      fieldValidator={formValidator.fieldValidator}
+    />
+    
     <div className="App">
-
         <Switch>
           <Route exact path="/">
           <div className="App__main-bg">
