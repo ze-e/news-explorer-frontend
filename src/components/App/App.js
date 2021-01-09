@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer';
 
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import {formValidator} from '../utils/formvalidator'
+import {formValidator} from '../../utils/formvalidator';
 
 
 export default function App() {
@@ -49,7 +49,7 @@ export default function App() {
       onLogin={handleLogin} 
       fieldValidator={formValidator.fieldValidator}
     />
-    
+
     <div className="App">
         <Switch>
           <Route exact path="/">
