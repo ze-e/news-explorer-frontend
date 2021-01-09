@@ -5,7 +5,11 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 
 export default function Main() {
 
-  const [loading, setLoading] = React.useState(false);
+  const [showResults, setShowResults] = React.useState(false);
+
+  function search(){
+    setShowResults(true);
+  }
 
   return (
     <section className="main">
@@ -15,7 +19,7 @@ export default function Main() {
         and save them in your personal account.
       </h3> 
       <SearchForm />
-      {loading ? <Preloader /> : <NewsCardList />}
+      {showResults && <NewsCardList search={search} />}
 
     </section>
   ) 

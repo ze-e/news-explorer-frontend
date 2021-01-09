@@ -23,7 +23,7 @@ export default function NewsCardList() {
           </div>
         ))
         :
-        <Loading loading={true}/>
+        <Loading loading={true} handleLoading={handleLoading} />
       }
       </div>
       <button className="newsCardList__show-more">Show More</button>
