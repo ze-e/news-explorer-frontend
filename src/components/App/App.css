@@ -41,7 +41,7 @@
 
   .App__main-bg{
     object-fit: none;
-    background-size: 709px 709px; 
+    /* background-size: 709px 709px;  */
   }
 }
 
