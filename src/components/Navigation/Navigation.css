@@ -9,6 +9,10 @@
   left: 0px;
 }
 
+.nav.nav_open{
+  visibility: hidden;
+}
+
 .nav__container{
   background: #000000;
   color: #FFFFFF;
