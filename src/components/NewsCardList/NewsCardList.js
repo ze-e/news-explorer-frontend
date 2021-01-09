@@ -3,6 +3,7 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 import cardList from '../../config/testcards.json';
+import nothingFoundImage from '../../images/not-found.png';
 
 export default function NewsCardList() {
   const cards = cardList;
@@ -17,8 +18,11 @@ export default function NewsCardList() {
           </div>
         ))
         :
-        //show loading screen if cards haven't loaded
-        <Loading />
+        <section className="preloader">
+        <img src={nothingFoundImage}></img>
+        <h2 className="preloader__title">Nothing found</h2>
+        <p className="preloader__text">Sorry, but nothing matched your search terms.</p>
+        </section>
       }
       </div>
       <button className="newsCardList__show-more">Show More</button>

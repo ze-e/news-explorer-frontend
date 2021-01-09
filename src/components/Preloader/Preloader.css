@@ -3,5 +3,15 @@
   background-color: #F5F6F7;
   margin: auto;
   text-align: center;
-  padding: 50% 0px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.preloader__text{
+  padding-top: 24px;
+}
+
+.preloader__title{
+  padding-top: 30px;
+
 }
