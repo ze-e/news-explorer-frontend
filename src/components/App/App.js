@@ -43,13 +43,12 @@ export default function App() {
     <>
     <PopupWithForm isOpen={isOpen} onClose={handleClose} onLogin={handleLogin}/>
     <div className="App">
-    <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
 
         <Switch>
-
           <Route exact path="/">
           <div className="App__main-bg">
             <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
+            <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
             <Main/>
           </div>
           </Route>
@@ -57,6 +56,7 @@ export default function App() {
           <Route exact path="/saved-news">
             <span className="App__saved-news">
               <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
+              <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
               <SavedNews/>
             </span>
           </Route>

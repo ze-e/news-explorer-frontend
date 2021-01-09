@@ -134,7 +134,6 @@
   background-color: #FFFFFF;
   color: #1A1B22;
   border: 1px solid #1A1B22;
-  margin-left: 24px;
   min-width: 112px;
   height: 48px;
   display: flex;
@@ -186,7 +185,6 @@
   }
 
   .header__links{
-    padding-right: 40px;
     height: 66px;
   }
   
@@ -229,11 +227,6 @@
     padding-left: 16px;
   }
 
-  /* .header__links{
-    visibility: hidden;
-  } */
-
-
   .header__collapse-button{
     background-color: #1A1B22;
     border: none;
@@ -258,13 +251,13 @@
   }
 } 
 
+
 @media screen and (max-width: 640px){
   .header{
     max-width: 320px;
   }
   .header__collapse-button{
     visibility: visible;
-
     position: absolute;
     right: 16px;
     top: 16px;
