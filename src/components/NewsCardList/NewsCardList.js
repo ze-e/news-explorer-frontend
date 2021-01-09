@@ -15,6 +15,7 @@ export default function NewsCardList() {
 
   return (
     <div className="newsCardList">
+    <h3 className="newsCardList__title">Search results</h3>
       <div className="newsCardList__container">
       {cards.length > 0 ? 
         cards.map(card => (

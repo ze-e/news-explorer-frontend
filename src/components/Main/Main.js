@@ -13,6 +13,7 @@ export default function Main() {
   }
 
   return (
+  <>
     <section className="main">
       <h2 className="main__title">What's going on in the world?</h2>
       <h3 className="main__subtitle">
@@ -20,10 +21,10 @@ export default function Main() {
         and save them in your personal account.
       </h3> 
       <SearchForm onSearch={handleSearch} />
-      {showResults &&
-      <NewsCardList />
-      }
-
     </section>
+    {showResults && 
+    <NewsCardList />
+    }
+  </>
   ) 
 }
