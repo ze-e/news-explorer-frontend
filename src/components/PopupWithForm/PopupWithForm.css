@@ -112,6 +112,10 @@
   background-color: transparent;
 }
 
+.popup_success .popup__link-text {
+  align-self: auto;
+}
+
 .popup__submit.popup__submit_disabled{
   background: #E6E8EB;
   color: #B6BCBF;
@@ -152,6 +156,10 @@
   line-height: 15px;
   color: #2F71E5;
   margin-bottom: 8px;
+}
+
+.popup__container.popup_success{
+  max-width: 430px;
 }
 
 @media screen and (max-width: 709px){

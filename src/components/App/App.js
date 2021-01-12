@@ -17,12 +17,14 @@ export default function App() {
 
   const [isSignInOpen, setIsSignInOpen] = React.useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = React.useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = React.useState(false);
   const [isLoggedIn, setisLoggedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
   function closeAllPopups(){
     setIsSignInOpen(false);
     setIsSignUpOpen(false);
+    setIsSuccessOpen(false);
     setisNavOpen(false);
   }
 
@@ -39,7 +41,16 @@ export default function App() {
   function handleLogin(){
     setisLoggedIn(true);
     closeAllPopups();
-    setisNavOpen(false);
+  }
+
+  function handleSignup(){
+    closeAllPopups();
+    handleOpenSuccess();
+  }
+
+  function handleOpenSuccess(){
+    closeAllPopups();
+    setIsSuccessOpen(true);
   }
 
   function handleLogout(){
@@ -65,10 +76,17 @@ export default function App() {
       isOpen={isSignUpOpen} 
       onOpen={handleOpenSignIn}
       onClose={closeAllPopups} 
-      onLogin={handleLogin} 
+      onSignup={handleSignup} 
       fieldValidator={formValidator.fieldValidator}
       type={'signUp'}
     />  
+
+    <PopupWithForm 
+      isOpen={isSuccessOpen} 
+      onOpen={handleOpenSignIn}
+      onClose={closeAllPopups} 
+      type={'success'}
+    /> 
 
     <div className="App">
         <Switch>

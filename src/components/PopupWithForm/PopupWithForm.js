@@ -18,6 +18,9 @@ export default function PopupWithForm(props) {
       case 'signUp':
         setContent(signUp);
         break;
+      case 'success':
+        setContent(success);
+        break;
     }
   },[props.type])
 
@@ -44,7 +47,8 @@ export default function PopupWithForm(props) {
   }
 
   const signIn =
-    (<form className="popup__form">
+    (<div className="popup__container">
+    <form className="popup__form">
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign in</h4>
       <p className="popup__input-label">Email</p>
@@ -55,10 +59,13 @@ export default function PopupWithForm(props) {
       <span className={`popup__input-error" id="password-input-error ${passwordError !=='' && 'popup__error_visible'}`}>{passwordError}</span>
       <button className="popup__submit" type="button" onClick={props.onLogin}>Sign in</button>
       <p className="popup__link-text">or <button className="popup__link" type="button"  onClick={props.onOpen}>Sign up</button></p>
-    </form>);
+    </form>
+    </div>
+    );
 
   const signUp =
-    (<form className="popup__form">
+    (<div className="popup__container">
+    <form className="popup__form">
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign up</h4>
       <p className="popup__input-label">Email</p>
@@ -71,15 +78,25 @@ export default function PopupWithForm(props) {
       <input className="popup__input" type="popup" name="username" required minLength="2" maxLength="12" value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
       <span className={`popup__input-error" id="username-input-error ${usernameError !=='' && 'popup__error_visible'}`}>{usernameError}</span>
       
-      <button className="popup__submit" type="button" onClick={props.onLogin}>Sign up</button>
+      <button className="popup__submit" type="button" onClick={props.onSignup}>Sign up</button>
       <p className="popup__link-text">or <button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>
-    </form>);
+    </form>
+    </div>
+    );
+
+  const success =
+  (<div className="popup__container popup_success">
+  <form className="popup__form">
+    <button className="popup__close" type="button" onClick={props.onClose}></button>
+    <h4 className="popup__title">Registration successfully completed!</h4>
+    <p className="popup__link-text popup_success"><button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>
+  </form>
+  </div>
+  );
 
   return (
     <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
-      <div className="popup__container">
-        {content}
-      </div>
+      {content}
     </section>  
   )
 }
