@@ -18,7 +18,7 @@ export default function App() {
   const [isSignInOpen, setIsSignInOpen] = React.useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = React.useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = React.useState(false);
-  const [isLoggedIn, setisLoggedIn] = React.useState(false);
+  const [isSignedIn, setisSignedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
   function closeAllPopups(){
@@ -38,12 +38,12 @@ export default function App() {
     setIsSignUpOpen(true);
   }
 
-  function handleLogin(){
-    setisLoggedIn(true);
+  function handleSignIn(){
+    setisSignedIn(true);
     closeAllPopups();
   }
 
-  function handleSignup(){
+  function handleSignUp(){
     closeAllPopups();
     handleOpenSuccess();
   }
@@ -53,8 +53,8 @@ export default function App() {
     setIsSuccessOpen(true);
   }
 
-  function handleLogout(){
-    setisLoggedIn(false);
+  function handleSignOut(){
+    setisSignedIn(false);
   }
 
   function handleNav(){
@@ -67,7 +67,7 @@ export default function App() {
       isOpen={isSignInOpen} 
       onOpen={handleOpenSignUp}
       onClose={closeAllPopups} 
-      onLogin={handleLogin} 
+      onSignin={handleSignIn} 
       formValidator={formValidator.formValidator}
       fieldValidator={formValidator.fieldValidator}
       type={'signIn'}
@@ -77,7 +77,7 @@ export default function App() {
       isOpen={isSignUpOpen} 
       onOpen={handleOpenSignIn}
       onClose={closeAllPopups} 
-      onSignup={handleSignup} 
+      onSignup={handleSignUp} 
       formValidator={formValidator.formValidator}
       fieldValidator={formValidator.fieldValidator}
       type={'signUp'}
@@ -94,16 +94,16 @@ export default function App() {
         <Switch>
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpenSignIn} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
-            <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
+            <Header onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
+            <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <Main/>
           </div>
           </Route>
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header onOpen={handleOpenSignIn} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
-              <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
+              <Header onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
+              <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews/>
             </span>
           </Route>
