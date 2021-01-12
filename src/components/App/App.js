@@ -74,7 +74,7 @@ export default function App() {
         <Switch>
           <Route exact path="/">
           <div className="App__main-bg">
-            <Header onOpen={handleOpenSignIn} onLogout={closeAllPopups} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
+            <Header onOpen={handleOpenSignIn} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
             <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
             <Main/>
           </div>
@@ -82,7 +82,7 @@ export default function App() {
 
           <Route exact path="/saved-news">
             <span className="App__saved-news">
-              <Header onOpen={handleOpenSignIn} onLogout={closeAllPopups} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
+              <Header onOpen={handleOpenSignIn} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
               <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
               <SavedNews/>
             </span>

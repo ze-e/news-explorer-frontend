@@ -109,6 +109,7 @@
 .popup__link{
   text-decoration: none;
   color: #2F71E5;
+  background-color: transparent;
 }
 
 .popup__submit.popup__submit_disabled{
