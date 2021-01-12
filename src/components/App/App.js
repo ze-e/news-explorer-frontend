@@ -21,6 +21,7 @@ export default function App() {
 
   function handleOpen(){
     setisOpen(true);
+    setisNavOpen(false);
   }
 
   function handleClose(){
@@ -55,7 +56,7 @@ export default function App() {
           <Route exact path="/">
           <div className="App__main-bg">
             <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
-            <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
+            <Navigation onOpen={handleOpen} isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
             <Main/>
           </div>
           </Route>
@@ -63,7 +64,7 @@ export default function App() {
           <Route exact path="/saved-news">
             <span className="App__saved-news">
               <Header onOpen={handleOpen} onLogout={handleLogout} loggedIn={isLoggedIn} onOpenNav={handleNav}/>
-              <Navigation isOpen={isNavOpen} onOpenNav={handleNav} onLogin={handleLogin}/>
+              <Navigation onOpen={handleOpen} isOpen={isNavOpen} onOpenNav={handleNav}/>
               <SavedNews/>
             </span>
           </Route>
