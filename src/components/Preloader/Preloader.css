@@ -14,3 +14,13 @@
 .preloader__title{
   padding-top: 30px;
 }
+
+.preloader__image{
+  animation: spin .75s infinite linear;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

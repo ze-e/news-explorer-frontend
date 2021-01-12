@@ -7,8 +7,8 @@ import blankCardList from '../../config/testcards_blank.json';
 
 
 export default function NewsCardList() {
-  const cards = cardList;
-  //const cards = blankCardList;
+  //const cards = cardList;
+  const cards = blankCardList;
 
   const [loading, setLoading] = React.useState(false);
 
