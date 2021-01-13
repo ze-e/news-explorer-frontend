@@ -10,8 +10,8 @@ export default function PopupWithForm(props) {
   const [emailError, setEmailError] = React.useState('');
   const [usernameError, setUsernameError] = React.useState('');
   const [passwordError, setPasswordError] = React.useState('');
-  const [signInFormInvalid, setSignInFormInvalid] = React.useState(true)
-  const [signUpFormInvalid, setSignUpFormInvalid] = React.useState(true)
+  const [signInFormInvalid, setSignInFormInvalid] = React.useState(true);
+  const [signUpFormInvalid, setSignUpFormInvalid] = React.useState(true);
 
   //state
   const [content, setContent] = React.useState('');
@@ -47,21 +47,21 @@ export default function PopupWithForm(props) {
     //set value
     setEmail(e.target.value);
     //set error
-    props.fieldValidator(e.target, setEmailError)
+    props.fieldValidator(e.target, setEmailError);
   }
   
   function handlePassword(e) {
     //set value
     setPassword(e.target.value);
     //set error
-    props.fieldValidator(e.target, setPasswordError)
+    props.fieldValidator(e.target, setPasswordError);
   }
 
   function handleUsername(e) {
     //set value
     setUsername(e.target.value);
     //set error
-    props.fieldValidator(e.target, setUsernameError)
+    props.fieldValidator(e.target, setUsernameError);
   }
 
   function handleSignIn(e){
