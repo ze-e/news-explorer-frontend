@@ -28,6 +28,8 @@ export default function PopupWithForm(props) {
       case 'success':
         setContent(success);
         break;
+      default:
+        setContent('');
     }
   },[props.type])
   

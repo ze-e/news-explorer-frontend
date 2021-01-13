@@ -7,7 +7,7 @@ export default function Preloader(props) {
 
   return (
   <section className="preloader">
-    {props.loading ? <img className="preloader__image" src={loadingImage}></img> : <img src={nothingFoundImage}></img>}
+    {props.loading ? <img className="preloader__image" src={loadingImage} alt="loading..."></img> : <img src={nothingFoundImage} alt="nothing found"></img>}
     {!props.loading && <h2 className="preloader__title">Nothing found</h2>}
     {props.loading ? 
       <p className="preloader__text">Searching for news...</p>:
