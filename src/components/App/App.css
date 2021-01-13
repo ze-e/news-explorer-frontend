@@ -49,6 +49,8 @@
     max-width: 320px;
   }
   .App__main-bg{
+    background-image: url('../../images/bg-mobile.png');
+\
     object-fit: scale-down;
     background-position: center;
     background-clip: border-box;
