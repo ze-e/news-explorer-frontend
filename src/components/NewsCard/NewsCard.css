@@ -69,6 +69,41 @@
   right: 24px;
 }
 
+.newsCard__button-hover{
+  width: 182px;
+  padding: 11px;
+  border: none;
+  align-self: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  visibility: hidden;
+
+  font: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14.06px;
+}
+
+.newsCard__button:hover + .newsCard__button-hover{
+  visibility: visible;
+}
+
+.newsCard__button:hover + .newsCard__button-hover.newsCard__button-hover_signedIn{
+  visibility: hidden;
+}
+
+.App__saved-news .newsCard__button:hover + .newsCard__button-hover.newsCard__button-hover_signedIn{
+  visibility: visible;
+}
+
+.App__saved-news .newsCard__button:hover + .newsCard__button-hover{
+  visibility: hidden;
+}
+
 .newsCard__button:hover{
   background-image: url("../../images/icon/bookmark-hover.svg");
 }

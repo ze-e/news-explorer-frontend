@@ -12,7 +12,9 @@ export default function Header(props) {
         <NavLink className="header__link" exact to="/saved-news" activeClassName="header__link_selected">Saved Article</NavLink>
       </li>
         <li className={`header__item header__link_button ${props.signedIn && 'header__link_hidden'}`}>
-          <button className="header__button" type="button" onClick={props.onOpen}>Sign in</button>
+          {/* <button className="header__button" type="button" onClick={props.onOpen}>Sign in</button> */}
+          <button className="header__button" type="button" onClick={props.onSignin}>Sign in</button>
+
         </li>
         <li className={`header__item header__link_button ${!props.signedIn && 'header__link_hidden'}`}>
           <div className="header__button">myName<button className="header__button-icon" onClick={props.onSignOut}></button></div>
