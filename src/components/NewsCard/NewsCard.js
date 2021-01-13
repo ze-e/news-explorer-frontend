@@ -5,7 +5,7 @@ export default function NewsCard(props) {
   const [bookmarked, setBookmarked] = React.useState(false);
 
   function handleBookmark() {
-    setBookmarked(!bookmarked);
+    props.isSignedIn && setBookmarked(!bookmarked);
   }
 
   return (
@@ -13,6 +13,7 @@ export default function NewsCard(props) {
       <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
         <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
+        <button className={`newsCard__popup-button ${props.isSignedIn && "newsCard__popup-button_signedIn"}`} onClick={handleBookmark}></button>
       </div>
       <h4 className="newsCard__date">{props.card.date}</h4>
       <h3 className="newsCard__title">{props.card.title}</h3>

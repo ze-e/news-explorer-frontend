@@ -2,7 +2,7 @@ import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import NewsCardList from '../NewsCardList/NewsCardList';
 
-export default function Main() {
+export default function Main(props) {
 
   const [showResults, setShowResults] = React.useState(false);
 
@@ -22,7 +22,7 @@ export default function Main() {
       <SearchForm onSearch={handleSearch} />
     </section>
     {showResults && 
-    <NewsCardList />
+    <NewsCardList isSignedIn={props.isSignedIn}/>
     }
   </>
   ) 

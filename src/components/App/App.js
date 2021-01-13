@@ -97,7 +97,7 @@ export default function App() {
           <div className="App__main-bg">
             <Header onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
             <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-            <Main/>
+            <Main isSignedIn={isSignedIn}/>
           </div>
           </Route>
 
@@ -105,7 +105,7 @@ export default function App() {
             <span className="App__saved-news">
               <Header onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
               <Navigation onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <SavedNews/>
+              <SavedNews isSignedIn={isSignedIn}/>
             </span>
           </Route>
 
