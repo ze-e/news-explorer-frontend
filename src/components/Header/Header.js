@@ -9,7 +9,7 @@ export default function Header(props) {
       <ul className="header__links">
       <li className="header__item"><NavLink className="header__link" exact to="/" activeClassName="header__link_selected">Home</NavLink></li>
       <li className={`header__item ${!props.signedIn && 'header__link_hidden'}`}>
-        <NavLink className="header__link" exact to="/saved-news" activeClassName="header__link_selected">Saved Article</NavLink>
+        <NavLink className="header__link" exact to="/saved-news" activeClassName="header__link_selected">Saved Articles</NavLink>
       </li>
         <li className={`header__item header__link_button ${props.signedIn && 'header__link_hidden'}`}>
           {/* <button className="header__button" type="button" onClick={props.onOpen}>Sign in</button> */}
