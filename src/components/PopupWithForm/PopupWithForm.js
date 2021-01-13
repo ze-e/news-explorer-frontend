@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function PopupWithForm(props) {
   //form fields
@@ -64,36 +64,35 @@ export default function PopupWithForm(props) {
 
   function handleSignIn(e){
     //check if the form is valid before sending
-    // if(!signInFormInvalid){
+    if(!signInFormInvalid){
       e.preventDefault();     
       props.onSignIn();
-    // }
+    }
   }
 
   function handleSignUp(e){
     //check if the form is valid before sending
-    // if(!signUpFormInvalid){
+    if(!signUpFormInvalid){
       e.preventDefault();     
       props.onSignUp();
-    // }
+    }
 }
 
 
 const signInRef = React.useRef();
 const signUpRef = React.useRef();
 
-// function validateSignInForm(){
-//   props.formValidator(signInRef.current,'.popup__input') ? setSignInFormInvalid(true) : setSignInFormInvalid(false);
-// }
+function validateSignInForm(){
+  props.formValidator(signInRef.current,'.popup__input') ? setSignInFormInvalid(true) : setSignInFormInvalid(false);
+}
 
-// function validateSignUpForm(){
-//   props.formValidator(signUpRef.current,'.popup__input') ? setSignUpFormInvalid(true) : setSignUpFormInvalid(false);
-// }
+function validateSignUpForm(){
+  props.formValidator(signUpRef.current,'.popup__input') ? setSignUpFormInvalid(true) : setSignUpFormInvalid(false);
+}
 
   const signIn =
   (<div className="popup__container">)
-    {/* <form className="popup__form" onChange={validateSignInForm} ref={signInRef}> */}
-    <form className="popup__form" ref={signInRef}>
+    <form className="popup__form" onChange={validateSignInForm} onSubmit={handleSignIn} ref={signInRef}>
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign in</h4>
       <p className="popup__input-label">Email</p>
@@ -102,8 +101,7 @@ const signUpRef = React.useRef();
       <p className="popup__input-label">Password</p>  
       <input className="popup__input" id="password-input" type="password" name="password" required minLength="2" maxLength="12" placeholder="Enter password" value={password} onChange={handlePassword} /> 
       <span className={`popup__input-error" id="password-input-error ${passwordError !=='' && 'popup__error_visible'}`}>{passwordError}</span>
-      {/* <button className={`popup__submit ${signInFormInvalid && 'popup__submit_disabled'}`} disabled={signInFormInvalid} type="button" onClick={handleSignIn}>Sign in</button> */}
-      <button className={`popup__submit`} type="button" onClick={handleSignIn}>Sign in</button>
+      <button className={`popup__submit ${signInFormInvalid && 'popup__submit_disabled'}`} disabled={signInFormInvalid} type="submit">Sign in</button>
       <p className="popup__link-text">or <button className="popup__link" type="button"  onClick={props.onOpen}>Sign up</button></p>
     </form>
     </div>
@@ -111,9 +109,7 @@ const signUpRef = React.useRef();
 
   const signUp =
     (<div className="popup__container">
-    {/* <form className="popup__form" onChange={validateSignUpForm} ref={signUpRef}> */}
-    <form className="popup__form" ref={signUpRef}>
-
+    <form className="popup__form" onChange={validateSignUpForm} onSubmit={handleSignUp} ref={signUpRef}>
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign up</h4>
       <p className="popup__input-label">Email</p>
@@ -124,11 +120,8 @@ const signUpRef = React.useRef();
       <span className={`popup__input-error" id="password-input-error ${passwordError !=='' && 'popup__error_visible'}`}>{passwordError}</span>
       <p className="popup__input-label">Username</p>  
       <input className="popup__input" type="popup" name="username" required minLength="2" maxLength="12" value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
-      <span className={`popup__input-error" id="username-input-error ${usernameError !=='' && 'popup__error_visible'}`}>{usernameError}</span>
-      
-      {/* <button className={`popup__submit ${signUpFormInvalid && 'popup__submit_disabled'}`} disabled={signUpFormInvalid} type="button" onClick={handleSignUp}>Sign up</button> */}
-      <button className={`popup__submit`} type="button" onClick={handleSignUp}>Sign up</button>
-
+      <span className={`popup__input-error" id="username-input-error ${usernameError !=='' && 'popup__error_visible'}`}>{usernameError}</span>     
+      <button className={`popup__submit ${signUpFormInvalid && 'popup__submit_disabled'}`} disabled={signUpFormInvalid} type="submit">Sign up</button>
       <p className="popup__link-text">or <button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>
     </form>
     </div>
