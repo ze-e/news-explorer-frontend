@@ -65,6 +65,15 @@
 }
 
 .popup__input{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+
+  opacity: 0.2;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 31px;
@@ -102,6 +111,12 @@
 }
 
 .popup__link-text{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
   align-self: center;
   margin-top: 16px;
 }

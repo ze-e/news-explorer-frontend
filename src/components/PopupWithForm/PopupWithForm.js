@@ -116,13 +116,13 @@ function validateSignUpForm(){
       <h4 className="popup__title">Sign up</h4>
       <p className="popup__input-label">Email</p>
       <input className="popup__input" type="popup" name="email" required minLength="2" maxLength="40" value={email} onChange={handleEmail} placeholder="Enter email"></input>
-      <span className={`popup__input-error" id="email-input-error ${emailError !=='' && 'popup__error_visible'}`}>{emailError}</span>
+      <span className={`popup__input-error ${emailError !=='' && 'popup__error_visible'}`} id="email-input-error">{emailError}</span>
       <p className="popup__input-label">Password</p>  
       <input className="popup__input" type="popup" name="password" required minLength="2" maxLength="12" value={password} onChange={handlePassword} placeholder="Enter password"></input>  
-      <span className={`popup__input-error" id="password-input-error ${passwordError !=='' && 'popup__error_visible'}`}>{passwordError}</span>
+      <span className={`popup__input-error ${passwordError !=='' && 'popup__error_visible'}`} id="password-input-error">{passwordError}</span>
       <p className="popup__input-label">Username</p>  
       <input className="popup__input" type="popup" name="username" required minLength="2" maxLength="12" value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
-      <span className={`popup__input-error" id="username-input-error ${usernameError !=='' && 'popup__error_visible'}`}>{usernameError}</span>     
+      <span className={`popup__input-error ${usernameError !=='' && 'popup__error_visible'}`} id="username-input-error">{usernameError}</span>     
       <button className={`popup__submit ${signUpFormInvalid && 'popup__submit_disabled'}`} disabled={signUpFormInvalid} type="submit">Sign up</button>
       <p className="popup__link-text">or <button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>
     </form>
