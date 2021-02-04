@@ -14,6 +14,10 @@
   font-size: 60px;
   line-height: 64px;
   max-width: 608px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-top: 80px;
+  margin-bottom: 32px;
 }
 .main__subtitle{
   font-family: "Roboto", Times, serif;
@@ -24,23 +28,22 @@
   margin-bottom: 88px;
 }
 
-@media screen and (max-width: 709px){
+@media screen and (max-width: 1250px){
   .main{
     max-width: 709px;
   }
   .main__title{
     font-size: 36px;
     line-height: 40px;
-    margin-left: 16px;
-    margin-right: 16px;
     max-width: 385px;
-
+    margin-left: ;
+    margin-top: 38px;
+    margin-bottom: 16px;
   }
-  .main__subtitle{
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 48px;
 
+  .main__subtitle{
+    max-width: 452px;
+    margin-bottom: 48px;
   }
 }
 
@@ -51,5 +54,10 @@
 
   .main__title{
     max-width: 285px;
+  }
+
+  .main__subtitle{
+    max-width: 288px;
+
   }
 }
