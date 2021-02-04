@@ -85,7 +85,6 @@ export default function PopupWithForm(props) {
     }
 }
 
-
 const signInRef = React.useRef();
 const signUpRef = React.useRef();
 
