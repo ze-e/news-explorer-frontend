@@ -4,7 +4,9 @@ import avatar from '../../images/about_img.png';
 export default function About() {
   return (
     <section className="about">
-      <img className="about__img" src={avatar} alt="profile-picture" />
+      <div className="about__img-container">
+        <img className="about__img" src={avatar} alt="profile-picture" />
+      </div>
       <div className="about__text">
         <h2 className="about__title">About the author</h2>
         <p className="about__description">

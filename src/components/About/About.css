@@ -3,20 +3,28 @@
   max-height: 624px;
   background: #FFFFFF;
   display: flex;
+  align-content: center;
+  justify-content: center;
   margin: 80px 104px;
   box-sizing: border-box;
 }
 
+.about__img-container{
+  max-width: 464px;
+  max-height: 464px;
+  flex-shrink: 1;
+}
+
 .about__img{
-  height: 464px;
-  width: 464px;
+  width: 100%;
   border-radius: 1000px;
 }
 
 .about__text{
   margin-left: 56px;
-  margin-top: 131px;
   max-width: 600px;
+  flex-shrink: 2;
+
 
   font-style: normal;
   font-weight: normal;
@@ -45,11 +53,9 @@
   .about__img{
     width: 232px;
     height: 232px;
-    margin-top: 45px;
   }
   
   .about__text{
-    margin-top: 0px;
     margin-left: 32px;
     max-width: 424px;
   }
@@ -79,7 +85,6 @@
   }
   
   .about__text{
-    margin-top: 24px;
     margin-left: 0px;
     max-width: 288px;
   }
