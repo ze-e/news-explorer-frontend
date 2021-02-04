@@ -15,23 +15,6 @@ export default function PopupWithForm(props) {
 
   //state
   const [content, setContent] = React.useState('');
-
-  //set form content
-  React.useEffect(()=>{
-    switch(props.type){
-      case 'signIn': 
-        setContent(signIn);
-        break;
-      case 'signUp':
-        setContent(signUp);
-        break;
-      case 'success':
-        setContent(success);
-        break;
-      default:
-        setContent('');
-    }
-  },[props.type])
   
   //reset fields when opened
   React.useEffect(()=>{
@@ -143,9 +126,31 @@ function validateSignUpForm(){
   </div>
   );
 
-  return (
-    <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
-      {content}
-    </section>  
-  )
+  if (props.type === 'signIn'){
+    return (
+      <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
+        {signIn}
+      </section>  
+    )
+  }
+    else if (props.type === 'signUp'){
+      return (
+      <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
+        {signUp}
+      </section>  
+    )}
+
+    else if (props.type === 'success'){
+      return (
+        <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
+        {success}
+      </section>  
+    )}
+
+    else {
+      return (
+      <section className={`popup ${props.isOpen  && 'popup_state_opened'}` } >
+      </section>
+    )}
+
 }
