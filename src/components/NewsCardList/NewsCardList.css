@@ -53,7 +53,7 @@
   opacity: 0.9;
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 768px){
   .newsCardList__container{
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
     max-width: 688px;
@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (max-width: 709px){
+@media screen and (max-width: 768px){
   .newsCardList__title{
     padding-left: 40px;
     font-size: 30px;
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 320px){
   .newsCardList__title{
     padding-left: 16px;
   }

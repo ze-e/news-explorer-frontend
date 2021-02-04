@@ -144,7 +144,7 @@
   padding-left: 19px;
 }
 
-@media screen and (max-width: 709px){
+@media screen and (max-width: 768px){
   .nav__container{
     max-width: 709px;
     margin-left: auto;
@@ -155,7 +155,7 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 320px){
   .nav__container{
     max-width: 320px;
   }

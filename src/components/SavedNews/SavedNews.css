@@ -18,7 +18,7 @@
   display: none;
 }
 
-@media screen and (max-width: 709px){
+@media screen and (max-width: 768px){
   .savedNews__title{
     font-size: 30px;
     line-height: 34px;

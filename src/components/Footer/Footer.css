@@ -71,7 +71,7 @@
   background-image: url("../../images/icon/social-github.svg");
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 768px){
   .footer{
     margin: 24px 40px 18px 40px;
   }
@@ -102,7 +102,7 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 320px){
   .footer{
     margin: 20px 16px 20px 16px;
     display: flex;

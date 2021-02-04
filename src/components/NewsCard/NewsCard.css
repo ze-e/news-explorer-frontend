@@ -164,7 +164,7 @@
 }
 
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 768px){
   .newsCard{
     max-width: 224px;
     max-height: 420px;
@@ -209,7 +209,7 @@
   }
 }
 
-@media screen and (max-width: 709px){
+@media screen and (max-width: 768px){
   .newsCard{
     min-width: 288px;
   }

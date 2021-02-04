@@ -1,6 +1,4 @@
 .App{
-  max-width: 1440px;
-  margin: auto;
 
   /* fonts */
   -webkit-font-smoothing: antialiased;
@@ -21,33 +19,18 @@
   background-image: none;
 }
 
-@media screen and (max-width: 1250px){
-  .App{
-    max-width: 768px;
-  }
 
-  .App__main-bg{
-    background-size: 768px 400px;
-  }
-}
-
-@media screen and (max-width: 709px){
+@media screen and (max-width: 768px){
   .App{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
-  .App__main-bg{
-    object-fit: none;
-  }
 }
 
-@media screen and (max-width: 640px){
-  .App{
-    max-width: 320px;
-  }
+@media screen and (max-width: 320px){
+
   .App__main-bg{
     background-image: url('../../images/bg-mobile.png');
 

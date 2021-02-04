@@ -28,9 +28,9 @@
   margin-bottom: 88px;
 }
 
-@media screen and (max-width: 1250px){
+@media screen and (max-width: 768px){
   .main{
-    max-width: 709px;
+    width: 100vw;
   }
   .main__title{
     font-size: 36px;
@@ -47,7 +47,7 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 320px){
   .main{
     max-width: 320px;
   }
