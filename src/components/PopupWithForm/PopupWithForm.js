@@ -13,9 +13,6 @@ export default function PopupWithForm(props) {
   const [signInFormInvalid, setSignInFormInvalid] = React.useState(true);
   const [signUpFormInvalid, setSignUpFormInvalid] = React.useState(true);
 
-  //state
-  const [content, setContent] = React.useState('');
-  
   //reset fields when opened
   React.useEffect(()=>{
     setSignInFormInvalid(true);

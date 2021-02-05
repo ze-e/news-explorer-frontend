@@ -72,7 +72,7 @@
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
   .about{
     flex-direction: column;
     margin: 32px 16px;

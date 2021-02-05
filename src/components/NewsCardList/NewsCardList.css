@@ -1,11 +1,12 @@
 .newsCardList{
   background: #F5F6F7;
   text-align: center;
+  padding-left: 104px;
+  padding-right: 104px;
 }
 
 .newsCardList__title{
   padding-top: 80px;
-  padding-left: 55px;
   text-align: left;
   font-family: "Roboto Slab", Times, serif;
   font-size: 40px;
@@ -19,7 +20,6 @@
 
 .newsCardList__container{
   position: relative;
-  max-width: 1232px;
   display: grid;
   grid-gap: 16px;
   grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
@@ -52,11 +52,11 @@
   cursor: pointer;
   opacity: 0.9;
 }
+/* we have to have a breakpoint here, or else it will become 1 row */
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024){
   .newsCardList__container{
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
-    max-width: 688px;
     grid-gap: 8px;
   }
 
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
   .newsCardList__title{
     padding-left: 16px;
   }

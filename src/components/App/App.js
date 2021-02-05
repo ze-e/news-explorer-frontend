@@ -67,7 +67,7 @@ export default function App() {
       isOpen={isSignInOpen} 
       onOpen={handleOpenSignUp}
       onClose={closeAllPopups} 
-      onSignin={handleSignIn} 
+      onSignIn={handleSignIn} 
       fieldValidator={formValidator.fieldValidator}
       formValidator={formValidator.formValidator}
 
@@ -78,7 +78,7 @@ export default function App() {
       isOpen={isSignUpOpen} 
       onOpen={handleOpenSignIn}
       onClose={closeAllPopups} 
-      onSignup={handleSignUp} 
+      onSignUp={handleSignUp} 
       fieldValidator={formValidator.fieldValidator}
       formValidator={formValidator.formValidator}
       type={'signUp'}

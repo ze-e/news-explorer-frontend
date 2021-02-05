@@ -36,18 +36,17 @@
     font-size: 36px;
     line-height: 40px;
     max-width: 385px;
-    margin-left: ;
     margin-top: 38px;
     margin-bottom: 16px;
   }
 
   .main__subtitle{
-    max-width: 452px;
+    max-width: 385px;
     margin-bottom: 48px;
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
   .main{
     max-width: 320px;
   }

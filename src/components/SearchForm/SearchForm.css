@@ -49,7 +49,7 @@
 
 @media screen and (max-width: 768px){
   .search-field{
-    width: 448px;
+    max-width: 385px;
     height: 56px;
   }
 
@@ -59,7 +59,7 @@
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
   .search-form{
     margin-bottom: 0px;
   }

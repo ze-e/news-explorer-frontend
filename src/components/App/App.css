@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 550px){
 
   .App__main-bg{
     background-image: url('../../images/bg-mobile.png');
