@@ -1,7 +1,6 @@
 .savedNews{
   display: flex;
   flex-direction: column;
-  background: #ffffff;
 }
 
 .savedNews__title{
