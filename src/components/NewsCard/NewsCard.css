@@ -12,11 +12,10 @@
   border-radius: 16px 16px 0px 0px;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 400px;
-  min-height: 272px;
+  width: 400px;
+  height: 272px;
   align-self: center;
   position: relative;
-  width: 100%;
   text-align: center;
 }
 
@@ -160,12 +159,12 @@
 /* we have to have a breakpoint here, or else it will become 1 row */
 @media screen and (max-width: 1024){
   .newsCard{
-    max-width: 224px;
-    max-height: 420px;
+    width: 224px;
+    height: 420px;
   }
   .newsCard__image{
-    min-width: 224px;
-    min-height: 150px;
+    width: 224px;
+    height: 150px;
   }
 
   .newsCard__button{
@@ -184,18 +183,18 @@
   }
 
   .newsCard__date{
-    padding: 20px 0px 8px 15px;
+    padding: 16px 0px 12px 18px;
   }
 
   .newsCard__title{
-    padding: 0px 16px 10px 16px;
+    padding: 0px 16px 0px 16px;
     max-height: 72px;
     font-size: 22px;
     line-height: 24px;
   }
 
   .newsCard__description{
-    padding: 0px 16px 12px 16px;
+    padding: 10px 16px 12px 16px;
     max-height: 88px;
     font-size: 16px;
     line-height: 22px;
