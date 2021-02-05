@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .main__title{

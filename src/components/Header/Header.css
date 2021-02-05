@@ -7,6 +7,7 @@
   border-bottom: solid 1px #C4C4C4;
   height:80px;
   position: sticky;
+  box-sizing: border-box;
 }
 
 .header__title{
