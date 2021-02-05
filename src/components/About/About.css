@@ -75,18 +75,21 @@
 @media screen and (max-width: 550px){
   .about{
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
     margin: 32px 16px;
     min-height: 752px;
   }
-  
+  .about__img-container{
+    text-align: center;
+  }
   .about__img{
-    min-width: 272px;
+    width: 272px;
     height: 272px;
   }
   
   .about__text{
     margin-left: 0px;
-    max-width: 288px;
   }
 
   .about__description{

@@ -237,9 +237,7 @@
 
 
 @media screen and (max-width: 550px){
-  .header{
-    max-width: 320px;
-  }
+
   .header__collapse-button{
     visibility: visible;
     position: absolute;
