@@ -171,7 +171,8 @@
 
   .header__title{
     height: 66px;
-    font-size: 16px;
+    font-size: 20px;
+    padding-left: 40px;
   }
 
   .header__links{
