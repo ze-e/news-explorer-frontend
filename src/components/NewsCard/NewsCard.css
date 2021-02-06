@@ -194,6 +194,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 3; 
   }
 
   .newsCard__description{
@@ -201,15 +202,19 @@
     height: 88px;
     font-size: 16px;
     line-height: 22px;
-    /* white-space: nowrap; */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 4; 
   }
 
   .newsCard__source{
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .newsCard__button-hover{
@@ -249,9 +254,10 @@
     font-size: 22px;
     line-height: 24px;
     
-    /* white-space: nowrap; */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 2; 
   }
 
   .newsCard__description{
@@ -259,7 +265,7 @@
     height: 88px;
     font-size: 16px;
     line-height: 22px;
-    /* white-space: nowrap; */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
