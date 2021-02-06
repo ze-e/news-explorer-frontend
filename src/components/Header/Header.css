@@ -170,13 +170,8 @@
   }
 
   .header__title{
-    font-size: 20px;
     height: 66px;
-
     font-size: 16px;
-    padding-top: 22.73px;
-    padding-left: 40px;
-
   }
 
   .header__links{
@@ -239,7 +234,18 @@
 
 
 @media screen and (max-width: 550px){
+  .header{
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 56px;
+  }
 
+  .header__title{
+    padding: 0px;
+    padding-top: 16px;
+    height: 56px;
+    font-size: 16px;
+  }
   .header__collapse-button{
     visibility: visible;
     position: absolute;
