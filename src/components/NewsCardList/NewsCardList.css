@@ -52,7 +52,7 @@
   opacity: 0.9;
 }
 
-/* @media screen and (max-width: 1024){ */
+@media screen and (max-width: 1024){
   .newsCardList__container{
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
     grid-gap: 8px;
@@ -71,7 +71,7 @@
     line-height: 34px;
   }
   
-/* } */
+}
 
 @media screen and (max-width: 550px){
   .newsCardList{
