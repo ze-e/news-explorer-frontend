@@ -24,8 +24,6 @@
   margin-left: 56px;
   max-width: 600px;
   flex-shrink: 2;
-
-
   font-style: normal;
   font-weight: normal;
   color: #1A1B22;
@@ -49,10 +47,10 @@
     margin: 40px;
     margin-bottom: 61px;
   }
-  
-  .about__img{
-    width: 232px;
-    height: 232px;
+
+  .about__img-container{
+    max-width: 232px;
+    max-height: 232px;
   }
   
   .about__text{
@@ -80,9 +78,8 @@
     margin: 32px 16px;
   }
   .about__img-container{
-    text-align: center;
-  }
-  .about__img{
+
+    align-self: center;
     width: 272px;
     height: 272px;
   }

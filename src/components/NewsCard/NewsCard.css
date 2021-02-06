@@ -221,6 +221,7 @@
 @media screen and (max-width: 550px){
   .newsCard{
     width: 288px;
+    height: 440px;
   }
   .newsCard__image{
     width: 288px;
@@ -239,12 +240,16 @@
 
   .newsCard__date{
     padding: 16px 16px 10px 16px;
+    font-size: 18px;
   }
 
   .newsCard__title{
-    padding: 0px 16px 18px 16px;
+    padding: 10px 16px 42px 16px;
     height: 24px;
-    white-space: nowrap;
+    font-size: 22px;
+    line-height: 24px;
+    
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -252,9 +257,15 @@
   .newsCard__description{
     padding: 0px 16px 8px 16px;
     height: 88px;
-    white-space: nowrap;
+    font-size: 16px;
+    line-height: 22px;
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .newsCard__source{
+    padding-bottom: 17px;
   }
 
   .App__saved-news .newsCard__keyword{

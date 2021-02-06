@@ -51,9 +51,9 @@
 
 
   .SavedNewsHeader{
-    margin-left: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .SavedNewsHeader__caption{
@@ -66,8 +66,7 @@
     font-size: 30px;
     margin-bottom: 16px;
   }
-  
-  .SavedNewsHeader__keywords-list{
+  .SavedNewsHeader__keywords-title{
     margin-bottom: 32px;
   }
 }
@@ -76,8 +75,5 @@
   .SavedNewsHeader{
     padding: 0px;
     margin: 0px;
-
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
