@@ -57,6 +57,11 @@
   text-decoration: none;
 }
 
+.nav__item.nav__item_signedOut{
+  visibility: hidden;
+  display: none;
+}
+
 .nav__title-link{
   color: #FFFFFF;
   text-decoration: none;

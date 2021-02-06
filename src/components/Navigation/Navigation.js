@@ -12,7 +12,7 @@ export default function Navigation(props) {
       </div>
       <ul className="nav__links">
         <li className="nav__item nav__link_selected"><NavLink className="nav__link" to="/">Home</NavLink></li>
-        <li className="nav__item nav__link_selected"><NavLink className="nav__link" to="/saved-news">Saved Article</NavLink></li>
+        <li className={`nav__item nav__link_selected ${!props.signedIn && "nav__item_signedOut" }`}><NavLink className="nav__link" to="/saved-news">Saved Article</NavLink></li>
         <li className="nav__item nav__link_button">
           <button className="nav__button" onClick={props.onOpen}>Sign in</button>
         </li>
