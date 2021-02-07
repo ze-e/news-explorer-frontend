@@ -47,11 +47,14 @@
   line-height: 24px;
   padding-top: 30px;
   padding-bottom: 18px;
-  margin-right: 24px;
+  margin-left: 24px;
 }
 
 .header__item:last-of-type{
-  margin-right: 0px;
+  margin-left: 0px;
+}
+.header__item:first-of-type{
+  margin-left: 0px;
 }
 
 .header__item:hover{
@@ -193,11 +196,14 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    margin-right: 16px;
+    margin-left: 16px;
   }
 
   .header__item:last-of-type{
-    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .header__item:first-of-type{
+    margin-left: 0px;
   }
 
   .header__link_selected{
