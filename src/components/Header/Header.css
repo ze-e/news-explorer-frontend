@@ -47,19 +47,17 @@
   line-height: 24px;
   padding-top: 30px;
   padding-bottom: 18px;
+  margin-right: 24px;
+}
+
+.header__item:last-of-type{
+  margin-right: 0px;
 }
 
 .header__item:hover{
   cursor: pointer;
 }
 
-.header__item{
-  margin-left: 24px;
-}
-
-.header__item:first-of-type{
-  margin-left: 0px;
-}
 
 .header__link_button{
   font-family: 'Roboto', Arial, sans-serif;
@@ -105,11 +103,13 @@
 
 .header__collapse-button{
   visibility: hidden;
+  display: none;
 }
 
 /* visibility toggle */
 .header__link_hidden{
   visibility: hidden;
+  display: none;
 }
 
 /* logged in */
@@ -165,14 +165,14 @@
 
 @media screen and (max-width: 768px){
   .header{
-    padding: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
     height: 66px;
   }
 
   .header__title{
     height: 66px;
     font-size: 20px;
-    padding-left: 40px;
   }
 
   .header__links{
@@ -193,11 +193,11 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    margin-left: 16px;
+    margin-right: 16px;
   }
 
-  .header__item:first-of-type{
-    margin-left: 0px;
+  .header__item:last-of-type{
+    margin-right: 0px;
   }
 
   .header__link_selected{
@@ -242,12 +242,12 @@
   }
 
   .header__title{
-    padding: 0px;
     padding-top: 16px;
     height: 56px;
     font-size: 16px;
   }
   .header__collapse-button{
+    display: block;
     visibility: visible;
     position: absolute;
     right: 16px;
