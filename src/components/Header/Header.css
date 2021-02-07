@@ -229,11 +229,6 @@
     background-image: url("../../images/icon/menu-black.svg");
   }
 
-  .App__saved-news .header .header__button{
-    min-width: 112px;
-    height: 40px;
-  }
-
   .header_open .header__collapse-button{
     background-image: url("../../images/icon/close-white.svg");
   }
