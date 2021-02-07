@@ -48,12 +48,12 @@
 }
 
 @media screen and (max-width: 768px){
-
-
   .SavedNewsHeader{
     margin-left: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 0px;
+
   }
 
   .SavedNewsHeader__caption{
@@ -69,6 +69,7 @@
   .SavedNewsHeader__keywords-title{
     margin-bottom: 32px;
   }
+
 }
 
 @media screen and (max-width: 550px){
