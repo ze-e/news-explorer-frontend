@@ -107,6 +107,12 @@
     margin: 20px 16px 20px 16px;
     display: flex;
     flex-direction: column-reverse;
+    width: calc(100vw - 32px);
+  }
+
+  .footer__links{
+    display: flex;
+    justify-content: space-between;
   }
 
   .footer__copyright{
