@@ -104,13 +104,13 @@ export default function App() {
           </Route>
 
           <Route exact path="/saved-news">
-            <span className="App__saved-news">
+            <div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
               onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews isSignedIn={isSignedIn}/>
-            </span>
+            </div>
           </Route>
 
         </Switch>

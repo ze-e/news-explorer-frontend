@@ -57,6 +57,8 @@
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
     grid-gap: 8px;
     padding-top: 32px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .newsCardList__show-more{

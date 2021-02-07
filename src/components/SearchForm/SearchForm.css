@@ -51,6 +51,7 @@
   .search-field{
     max-width: 385px;
     height: 56px;
+    margin-bottom: 48px;
   }
 
   .search-button{
