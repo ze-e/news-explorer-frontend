@@ -27,6 +27,10 @@
     align-items: center;
   }
 
+  .App__saved-news{
+    width: 100%;
+  }
+
   .App__main-bg{
     background-image: url('../../images/bg-tablet.png');
   }

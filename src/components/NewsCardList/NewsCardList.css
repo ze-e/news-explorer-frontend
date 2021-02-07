@@ -3,6 +3,8 @@
   text-align: center;
   padding-left: 104px;
   padding-right: 104px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .newsCardList__title{
@@ -23,6 +25,7 @@
   display: grid;
   grid-gap: 16px;
   grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
   padding-top: 62px;
   text-align: left;
 }
