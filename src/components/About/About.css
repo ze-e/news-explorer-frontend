@@ -45,9 +45,8 @@
 @media screen and (max-width: 768px){
   .about{
     margin: 40px;
-    margin-bottom: 61px;
-    max-width: 767px;
-    width: 100vw;
+    margin-bottom: 61px;    
+    max-width: 100vw;
   }
 
   .about__img-container{
@@ -83,6 +82,7 @@
     align-self: center;
     max-width: 272px;
     max-height: 272px;
+    margin-bottom: 24px;
   }
   
   .about__text{

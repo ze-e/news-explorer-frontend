@@ -1,8 +1,9 @@
 /* override default css */
-html{
+html, body, div{
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
-
 
 ul {
   margin:0px;
@@ -27,18 +28,7 @@ button{
     border-image: none;
 }
 
-p{
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-}
-
-
-h3{
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-}
-
-h4{
+p, h1, h2, h3, h4, h5{
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
