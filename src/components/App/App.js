@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 //components
 import Header from '../Header/Header';
@@ -104,13 +104,14 @@ export default function App() {
           </Route>
 
           <Route exact path="/saved-news">
-            <div className="App__saved-news">
+          {!isSignedIn ? <Redirect to="/" /> : 
+            (<div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
               onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews isSignedIn={isSignedIn}/>
-            </div>
+            </div>)}
           </Route>
 
         </Switch>
