@@ -1,4 +1,8 @@
 /* override default css */
+html{
+  box-sizing: border-box;
+}
+
 
 ul {
   margin:0px;

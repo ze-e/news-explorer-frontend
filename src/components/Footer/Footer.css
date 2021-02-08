@@ -74,6 +74,8 @@
 @media screen and (max-width: 768px){
   .footer{
     margin: 24px 40px 18px 40px;
+    max-width: 768px;
+
   }
 
   .footer__copyright{
@@ -96,6 +98,7 @@
 
   .footer__social-item{
     margin-right: 26px;
+
   }
   .footer__social-item:last-of-type{
     margin-right: 0px;
