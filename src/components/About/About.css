@@ -46,6 +46,8 @@
   .about{
     margin: 40px;
     margin-bottom: 61px;
+    max-width: 767px;
+    width: 100vw;
   }
 
   .about__img-container{
@@ -78,7 +80,6 @@
     margin: 32px 16px;
   }
   .about__img-container{
-
     align-self: center;
     max-width: 272px;
     max-height: 272px;
