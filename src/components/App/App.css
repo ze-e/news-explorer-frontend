@@ -15,6 +15,11 @@
   background-image: url('../../images/bg.png');
   object-fit: cover;
   background-repeat: no-repeat;
+  width: 100%;
+}
+
+.App__saved-news{
+  width: 100%;
 }
 
 .signedIn .App__main-bg{
@@ -30,10 +35,6 @@
     align-items: center;
     width: 100%;
     max-width: 768px;
-  }
-
-  .App__saved-news{
-    width: 100%;
   }
 
   .App__main-bg{
