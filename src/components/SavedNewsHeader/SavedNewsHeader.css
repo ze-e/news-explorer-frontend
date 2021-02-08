@@ -6,7 +6,6 @@
   padding-bottom: 56px;
   padding-left: 102px;
   padding-right: 102px;
-  
 }
 
 .SavedNewsHeader__caption{
@@ -49,7 +48,7 @@
 
 @media screen and (max-width: 768px){
   .SavedNewsHeader{
-    margin-left: 0px;
+    margin-left: 40px;
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
@@ -75,6 +74,8 @@
 @media screen and (max-width: 550px){
   .SavedNewsHeader{
     padding: 0px;
-    margin: 0px;
+    margin-left: 16px;
+    margin-right: 16px;
+
   }
 }
