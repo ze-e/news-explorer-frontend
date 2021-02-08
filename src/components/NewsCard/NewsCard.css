@@ -156,7 +156,7 @@
   color: #B6BCBF;
 }
 
-@media screen and (max-width: 1024){
+@media screen and (max-width: 996px){
   .newsCard{
     width: 224px;
     height: 420px;

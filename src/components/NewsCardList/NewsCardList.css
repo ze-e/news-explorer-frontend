@@ -55,14 +55,16 @@
   opacity: 0.9;
 }
 
-@media screen and (max-width: 1024){
+@media screen and (max-width: 996px){
+  .newsCardList{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   .newsCardList__container{
     grid-template-columns:repeat(auto-fit, minmax(224px, 1fr));
 
     grid-gap: 8px;
     padding-top: 32px;
-    padding-left: 40px;
-    padding-right: 40px;
   }
 
   .newsCardList__show-more{

@@ -1,6 +1,7 @@
 .App{
   max-width: 1440px;
   margin: auto;
+  box-sizing: border-box;
   
   /* fonts */
   -webkit-font-smoothing: antialiased;
@@ -14,8 +15,6 @@
   background-image: url('../../images/bg.png');
   object-fit: cover;
   background-repeat: no-repeat;
-  width: 100%;
-
 }
 
 .signedIn .App__main-bg{
@@ -29,6 +28,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 768px
   }
 
   .App__saved-news{
@@ -42,6 +43,9 @@
 }
 
 @media screen and (max-width: 550px){
+  .App{
+    max-width: 550px;
+  }
   .App__main-bg{
     background-image: url('../../images/bg-mobile.png');
     background-size: 100vw 100vh;
