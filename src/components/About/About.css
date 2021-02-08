@@ -76,13 +76,12 @@
     align-content: center;
     justify-content: center;
     margin: 32px 16px;
-    width: calc(100vw - 32px);
   }
   .about__img-container{
 
     align-self: center;
-    width: 272px;
-    height: 272px;
+    max-width: 272px;
+    max-height: 272px;
   }
   
   .about__text{

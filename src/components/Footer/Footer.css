@@ -75,7 +75,7 @@
   .footer{
     margin: 24px 40px 18px 40px;
     max-width: 768px;
-
+    box-sizing: border-box;
   }
 
   .footer__copyright{
@@ -87,7 +87,7 @@
   .footer__nav{
     justify-content: space-between;
     width: 200px;
-    height: 74px;
+    height: 74px; 
     margin-right: 18px;
   }
 

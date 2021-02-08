@@ -156,7 +156,6 @@
   color: #B6BCBF;
 }
 
-/* we have to have a breakpoint here, or else it will become 1 row */
 @media screen and (max-width: 1024){
   .newsCard{
     width: 224px;
