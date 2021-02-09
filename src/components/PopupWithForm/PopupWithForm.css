@@ -178,10 +178,8 @@
 
 @media screen and (max-width: 500px){
   .popup{
-    min-height: 100vw;
-    height: 100vw;
-    min-width: 100vw;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
   }
   .popup__form{
     margin-top: 56px;
@@ -192,7 +190,7 @@
   }
   .popup__close{
     top: 0px;
-    right: 24px;
+    right: 0px;
   }
   .popup__input{
     width: 100%;
@@ -203,7 +201,7 @@
   }
 
   .popup__submit{
-    min-width: 100%;
+    width: 100%;
   }
 
 }
