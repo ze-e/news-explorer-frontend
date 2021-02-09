@@ -192,7 +192,7 @@
   }
   .popup__close{
     top: 0px;
-    right: 0px;
+    right: 24px;
   }
   .popup__input{
     width: 100%;
