@@ -115,7 +115,7 @@ export default function App() {
           </Route>
 
         </Switch>
-      {/* <About/> */}
+      <About/>
       <Footer/>
     </div>
     </>
