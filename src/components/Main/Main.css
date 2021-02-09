@@ -6,6 +6,8 @@
   flex-direction: column;
   text-align: left;
   box-sizing: border-box;
+  width: 100%;
+
 }
 
 .main__title{
@@ -32,7 +34,7 @@
 @media screen and (max-width: 768px){
   .main{
     max-width: 768px;
-    width: 100vw;
+    width: 100%;
   }
   .main__title{
     font-size: 36px;
