@@ -18,10 +18,8 @@ export default function Header(props) {
         <li className={`header__item header__link_button ${!props.signedIn && 'header__link_hidden'}`}>
           <div className="header__button">myName<button className="header__button-icon" onClick={props.onSignOut}></button></div>
         </li>
-        <li className="header__item">
-          <button className="header__collapse-button" onClick={props.onOpenNav}></button>
-        </li>
       </ul>
+      <button className="header__collapse-button" onClick={props.onOpenNav}></button>
     </nav>
     </>
   ) 
