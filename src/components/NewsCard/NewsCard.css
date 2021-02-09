@@ -130,6 +130,12 @@
   line-height: 30px;
   color: #1A1B22;
   height: 60px;
+
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; */
 }
 
 .newsCard__description{
@@ -141,6 +147,12 @@
   line-height: 22px;
   color: #1A1B22;
   height: 88px;
+
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; */
 }
 
 .newsCard__source{
@@ -154,6 +166,14 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #B6BCBF;
+
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; */
+  text-overflow: ellipsis;
+
 }
 
 @media screen and (max-width: 996px){
@@ -190,9 +210,7 @@
     height: 72px;
     font-size: 22px;
     line-height: 24px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
     -webkit-line-clamp: 3; 
   }
 
@@ -201,9 +219,7 @@
     height: 88px;
     font-size: 16px;
     line-height: 22px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
     -webkit-line-clamp: 4; 
   }
 
@@ -213,7 +229,6 @@
     padding-bottom: 16px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .newsCard__button-hover{
@@ -253,9 +268,6 @@
     font-size: 22px;
     line-height: 24px;
     
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     -webkit-line-clamp: 2; 
   }
 
@@ -264,9 +276,9 @@
     height: 88px;
     font-size: 16px;
     line-height: 22px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    -webkit-line-clamp: 4; 
+
   }
 
   .newsCard__source{
