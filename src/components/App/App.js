@@ -99,7 +99,7 @@ export default function App() {
             onSignin={handleSignIn} 
             onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
-            <Main isSignedIn={isSignedIn}/>
+            {/* <Main isSignedIn={isSignedIn}/> */}
           </div>
           </Route>
 
@@ -115,8 +115,8 @@ export default function App() {
           </Route>
 
         </Switch>
-      <About/>
-      <Footer/>
+      {/* <About/> */}
+      {/* <Footer/> */}
     </div>
     </>
   );

@@ -258,6 +258,7 @@
     max-width: 320px;
     padding-right: 0px;
     visibility: hidden;
+    display: none;
   }
 }
 
