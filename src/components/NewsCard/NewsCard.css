@@ -6,6 +6,7 @@
   width: 400px;
   height: 578px;
   border-radius: 16px;
+  padding: 20px 24px 24px 24px;
 }
 
 .newsCard__image{
@@ -112,19 +113,19 @@
 }
 
 .newsCard__date{
-  padding: 8px 24px 24px 24px;
   font-family: "Source Sans Pro", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
   color: #B6BCBF;
+  margin-bottom: 15px;
+
 }
 
 .newsCard__title{
   visibility: visible;
 
-  padding: 0px 24px 16px 24px;
   font-family: "Roboto Slab", Times, serif;;
   font-style: normal;
   font-weight: normal;
@@ -132,6 +133,7 @@
   line-height: 30px;
   color: #1A1B22;
   height: 60px;
+  margin-bottom: 16px;
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -144,7 +146,6 @@
 .newsCard__description{
   visibility: visible;
 
-  padding: 0px 24px 40px 24px;
   font-family: "Roboto", Times, serif;
   font-style: normal;
   font-weight: normal;
@@ -152,6 +153,8 @@
   line-height: 22px;
   color: #1A1B22;
   height: 88px;
+  margin-bottom: 18px;
+
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -164,8 +167,6 @@
 .newsCard__source{
   visibility: visible;
 
-  padding-left: 24px;
-  padding-right: 24px;
   font-family: "Roboto Slab", Times, serif;;
   font-style: normal;
   font-weight: bold;
@@ -186,6 +187,7 @@
   .newsCard{
     width: 224px;
     height: 420px;
+    padding: 16px;
   }
   .newsCard__image{
     width: 224px;
@@ -208,31 +210,30 @@
   }
 
   .newsCard__date{
-    padding: 16px 0px 12px 18px;
+    margin-bottom: 8px;
   }
 
   .newsCard__title{
-    padding: 0px 16px 0px 16px;
     height: 72px;
     font-size: 22px;
     line-height: 24px;
+    margin-bottom: 10px;
 
     -webkit-line-clamp: 3; 
   }
 
   .newsCard__description{
-    padding: 10px 16px 12px 16px;
     height: 88px;
     font-size: 16px;
     line-height: 22px;
+    margin-bottom: 12px;
+
 
     -webkit-line-clamp: 4; 
   }
 
   .newsCard__source{
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 16px;
+
     white-space: nowrap;
     overflow: hidden;
   }
@@ -247,6 +248,7 @@
   .newsCard{
     width: 288px;
     height: 440px;
+    padding: 16px;
   }
   .newsCard__image{
     width: 288px;
@@ -264,24 +266,25 @@
   }
 
   .newsCard__date{
-    padding: 16px 16px 10px 16px;
     font-size: 18px;
+    margin-bottom: 10px;
   }
 
   .newsCard__title{
-    padding: 10px 16px 42px 16px;
     height: 24px;
     font-size: 22px;
     line-height: 24px;
+    margin-bottom: 14px;
     
     -webkit-line-clamp: 2; 
   }
 
   .newsCard__description{
-    padding: 0px 16px 8px 16px;
     height: 88px;
     font-size: 16px;
     line-height: 22px;
+    margin-bottom: 8px;
+
 
     -webkit-line-clamp: 3; 
 
@@ -289,7 +292,6 @@
 
   .newsCard__source{
     margin-top: 8px;
-    padding-bottom: 17px;
   }
 
   .App__saved-news .newsCard__keyword{
