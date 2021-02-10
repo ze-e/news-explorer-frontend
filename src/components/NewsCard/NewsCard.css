@@ -122,6 +122,8 @@
 }
 
 .newsCard__title{
+  visibility: visible;
+
   padding: 0px 24px 16px 24px;
   font-family: "Roboto Slab", Times, serif;;
   font-style: normal;
@@ -131,14 +133,18 @@
   color: #1A1B22;
   height: 60px;
 
-  /* white-space: nowrap;
+  /* white-space: nowrap; */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; */
+  -webkit-line-clamp: 2;
 }
 
 .newsCard__description{
+  visibility: visible;
+
   padding: 0px 24px 40px 24px;
   font-family: "Roboto", Times, serif;
   font-style: normal;
@@ -148,14 +154,17 @@
   color: #1A1B22;
   height: 88px;
 
-  /* white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5; */
+  -webkit-line-clamp: 5;
 }
 
 .newsCard__source{
+  visibility: visible;
+
   padding-left: 24px;
   padding-right: 24px;
   font-family: "Roboto Slab", Times, serif;;
@@ -167,13 +176,11 @@
   text-transform: uppercase;
   color: #B6BCBF;
 
-  /* white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; */
-  text-overflow: ellipsis;
-
 }
 
 @media screen and (max-width: 996px){
