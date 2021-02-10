@@ -133,10 +133,9 @@
   color: #1A1B22;
   height: 60px;
 
-  /* white-space: nowrap; */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-
+  -webkit-box-pack: end;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
@@ -156,7 +155,7 @@
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  /* white-space: nowrap; */
+  -webkit-box-pack: end;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 5;
@@ -178,7 +177,7 @@
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  /* white-space: nowrap; */
+  -webkit-box-pack: end;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -284,11 +283,12 @@
     font-size: 16px;
     line-height: 22px;
 
-    -webkit-line-clamp: 4; 
+    -webkit-line-clamp: 3; 
 
   }
 
   .newsCard__source{
+    margin-top: 8px;
     padding-bottom: 17px;
   }
 
