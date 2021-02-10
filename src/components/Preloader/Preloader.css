@@ -1,0 +1,37 @@
+.preloader{  
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color:#B6BCBF;
+  background-color: #F5F6F7;
+  margin: auto;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.preloader__text{
+  padding-top: 24px;
+}
+
+.preloader__title{
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1B22;
+  padding-top: 30px;
+}
+
+.preloader__image{
+  animation: spin .75s infinite linear;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

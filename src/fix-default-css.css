@@ -1,0 +1,41 @@
+/* override default css */
+html, body, div{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  margin:0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+button{
+    text-align: center;
+    align-items: normal;
+    margin: 0px;
+    padding: 0px 0px;
+    border-style: none;
+    border-image: none;
+}
+
+p, h1, h2, h3, h4, h5{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+input{
+  border-width: 0px;
+  border-style: none;
+  appearance: textfield;
+  border-image: none;
+}
