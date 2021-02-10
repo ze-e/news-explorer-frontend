@@ -55,7 +55,6 @@
   opacity: 0.9;
 }
 
-/* @media screen and (max-width: 996px){ */
   @media screen and (max-width: 1440px){
 
   .newsCardList{
@@ -85,8 +84,6 @@
 }
 
 @media screen and (max-width: 768px){
-
-/* @media screen and (max-width: 550px){ */
   .newsCardList{
     padding-left: 16px;
     padding-right: 16px; 
