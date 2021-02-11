@@ -12,9 +12,11 @@ import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
-
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
+
+//context
+import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 
 export default function App() {
 
@@ -24,6 +26,7 @@ export default function App() {
   const [isSignedIn, setisSignedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
+  
   const [cards, setCards] = React.useState([]);
 
   function closeAllPopups(){
@@ -78,13 +81,19 @@ function getCards() {
   })
 }
 
-//do when page loads
-React.useEffect(()=>{
-  getCards();
-},[])
+function getUser() {
+  //get user
+  api.getUser()
+  .then((data) => {  
+    setCards(data)
+  })
+  .catch((err) => { 
+    console.log(err);
+  })
+}
 
   return (
-    <>
+    <CurrentUserContext.Provider value={currentUser}>
     <PopupWithForm 
       isOpen={isSignInOpen} 
       onOpen={handleOpenSignUp}
@@ -140,6 +149,6 @@ React.useEffect(()=>{
       <About/>
       <Footer/>
     </div>
-    </>
+    </CurrentUserContext.Provider>
   );
 }
