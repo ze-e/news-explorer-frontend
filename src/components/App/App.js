@@ -1,6 +1,11 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
+//util
+import {formValidator} from '../../utils/formvalidator';
+import { api } from '../../utils/api';
+import { auth }  from '../../utils/auth';
+
 //components
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -10,8 +15,6 @@ import Footer from '../Footer/Footer';
 
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import {formValidator} from '../../utils/formvalidator';
-
 
 export default function App() {
 
@@ -20,6 +23,8 @@ export default function App() {
   const [isSuccessOpen, setIsSuccessOpen] = React.useState(false);
   const [isSignedIn, setisSignedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
+
+  const [cards, setCards] = React.useState([]);
 
   function closeAllPopups(){
     setIsSignInOpen(false);
@@ -61,6 +66,23 @@ export default function App() {
     setisNavOpen(!isNavOpen);
   }
 
+//api
+function getCards() {
+  //get cards
+  api.getCards()
+  .then((data) => {  
+    setCards(data)
+  })
+  .catch((err) => { 
+    console.log(err);
+  })
+}
+
+//do when page loads
+React.useEffect(()=>{
+  getCards();
+},[])
+
   return (
     <>
     <PopupWithForm 
@@ -99,7 +121,7 @@ export default function App() {
             onSignin={handleSignIn} 
             onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
-            <Main isSignedIn={isSignedIn}/>
+            <Main isSignedIn={isSignedIn} cards={cards}/>
           </div>
           </Route>
 
@@ -110,7 +132,7 @@ export default function App() {
               onSignin={handleSignIn} 
               onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <SavedNews isSignedIn={isSignedIn}/>
+              <SavedNews isSignedIn={isSignedIn} cards={cards}/>
             </div>)}
           </Route>
 
