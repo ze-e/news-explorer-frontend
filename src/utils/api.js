@@ -24,7 +24,7 @@ class Api{
   }
   
   getCards(){
-    return fetch(`${this.baseURL}/cards`,{
+    return fetch(`${this.baseURL}/articles`,{
       headers: {
         authorization: this.token
       }
