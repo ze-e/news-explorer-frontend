@@ -70,25 +70,17 @@ export default function App() {
   }
 
 //api
-function getCards() {
-  //get cards
-  api.getCards()
-  .then((data) => {  
-    setCards(data)
-  })
-  .catch((err) => { 
-    console.log(err);
-  })
-}
-
-function getUser() {
-  //get user
-  api.getUser()
-  .then((data) => {  
-    setCards(data)
-  })
-  .catch((err) => { 
-    console.log(err);
+function handleRegisterUser(name, email, password){
+  auth.register(name, email, password)
+  .then((res) => {
+    if(res){
+      //registration succeeded
+      console.log(res);
+    }
+    else{
+      //registration failed
+      console.log("registration failed");
+    }
   })
 }
 

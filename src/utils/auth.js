@@ -1,14 +1,14 @@
 import {baseURL as BASE_URL} from '../config/config' ;
 
 class Auth{
-  register(email, password){
+  register(name, email, password){
     return fetch(`${BASE_URL}/signup`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({"email" : email, "password" : password})
+      body: JSON.stringify({"name" : name, "email" : email, "password" : password})
     })
     .then((res) => {
       if(res.ok){
