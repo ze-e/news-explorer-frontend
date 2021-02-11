@@ -26,7 +26,7 @@ export default function NewsCardList(props) {
           </div>
         ))
         :
-        <Loading loading={true} handleLoading={handleLoading} />
+        <Loading loading={false} handleLoading={handleLoading} />
       }
       </div>
       {cards.length > 0 && <button className="newsCardList__show-more">Show More</button>}

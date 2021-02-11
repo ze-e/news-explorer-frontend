@@ -1,4 +1,4 @@
-import {baseURL as BASE_URL} from './config';
+import {baseURL as BASE_URL} from '../config/config' ;
 
 class Auth{
   register(email, password){
