@@ -76,20 +76,47 @@ export default function App() {
     closeAllPopups();
   }
 
+  function handleSignOut(){
+    setcurrentUser({});
+    localStorage.removeItem('token');
+    setisSignedIn(false);
+  }
+
   function handleOpenSuccess(){
     closeAllPopups();
     setIsSuccessOpen(true);
-  }
-
-  function handleSignOut(){
-    setisSignedIn(false);
   }
 
   function handleNav(){
     setisNavOpen(!isNavOpen);
   }
 
+    //get user and initial cards
+    React.useEffect(()=>{
+      //get user from token
+      if (localStorage.getItem('token')) {
+        const token = localStorage.getItem('token');
+        api.setToken(token);
+        api.getUser()
+        .then((data)=>{
+          setisSignedIn(true);
+          setcurrentUser(data);
 
+          //get cards
+          api.getCards()
+          .then((data) => {  
+            setCards(data)
+          })
+          .catch((err) => { 
+            console.log(err);
+          })
+          
+        })
+        .catch((err) => { 
+          console.log(err);
+        })
+      }
+    },[currentUser, isSignedIn])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -127,7 +154,12 @@ export default function App() {
           <div className="App__main-bg">
             <Header 
             onSignin={handleSignIn} 
-            onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
+            onOpen={handleOpenSignIn} 
+            onSignOut={handleSignOut} 
+            signedIn={isSignedIn} 
+            onOpenNav={handleNav}
+            currentUser={currentUser}
+            />
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <Main isSignedIn={isSignedIn} cards={cards}/>
           </div>
@@ -138,7 +170,12 @@ export default function App() {
             (<div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
-              onOpen={handleOpenSignIn} onSignOut={handleSignOut} signedIn={isSignedIn} onOpenNav={handleNav}/>
+              onOpen={handleOpenSignIn} 
+              onSignOut={handleSignOut} 
+              signedIn={isSignedIn} 
+              onOpenNav={handleNav}
+              currentUser={currentUser}
+              />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews isSignedIn={isSignedIn} cards={cards}/>
             </div>)}
