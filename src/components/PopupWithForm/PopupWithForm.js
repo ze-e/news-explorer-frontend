@@ -45,10 +45,10 @@ export default function PopupWithForm(props) {
   }
 
   function handleSignIn(e){
+    e.preventDefault();     
     //check if the form is valid before sending
     if(!signInFormInvalid){
-      e.preventDefault();     
-      props.onSignIn();
+      props.onSignIn(email, password);
     }
   }
 

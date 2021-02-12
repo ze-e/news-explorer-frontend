@@ -63,7 +63,7 @@ export default function App() {
     handleOpenSuccess();
   }
 
-  function handleSignIn(){
+  function handleSignIn(email, password){
     auth.login(email, password)
     .then((res) => {
       if(res){
