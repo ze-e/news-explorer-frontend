@@ -26,7 +26,7 @@ export default function App() {
   const [isSignedIn, setisSignedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
-  
+  const [currentUser, setcurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
 
   function closeAllPopups(){
@@ -46,14 +46,34 @@ export default function App() {
     setIsSignUpOpen(true);
   }
 
-  function handleSignIn(){
-    setisSignedIn(true);
-    closeAllPopups();
-  }
-
-  function handleSignUp(){
+  function handleSignUp(username, email, password){
+    auth.register(username, email, password)
+    .then((res) => {
+      if(res){
+        //registration succeeded
+        handleSignIn(email, password);
+        console.log(res);
+      }
+      else{
+        //registration failed
+        console.log("registration failed");
+      }
+    })
     closeAllPopups();
     handleOpenSuccess();
+  }
+
+  function handleSignIn(){
+    auth.login(email, password)
+    .then((res) => {
+      if(res){
+        setisSignedIn(true);
+      }
+      else{
+        console.log("login failed");
+      }
+    })
+    closeAllPopups();
   }
 
   function handleOpenSuccess(){
@@ -69,20 +89,7 @@ export default function App() {
     setisNavOpen(!isNavOpen);
   }
 
-//api
-function handleRegisterUser(name, email, password){
-  auth.register(name, email, password)
-  .then((res) => {
-    if(res){
-      //registration succeeded
-      console.log(res);
-    }
-    else{
-      //registration failed
-      console.log("registration failed");
-    }
-  })
-}
+
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
