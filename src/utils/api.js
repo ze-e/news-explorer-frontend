@@ -8,7 +8,8 @@ class Api{
     this.token = token;
   }
   
-  /* API FUNCTIONS */
+  /* API FUNCTIONS */\
+  //user
   getUser(){
     return fetch(`${this.baseURL}/users/me`,{
       headers: {
@@ -37,47 +38,47 @@ class Api{
     })
   }
 
-  editProfile(name, about){
-    return fetch(`${this.baseURL}/users/me`,{
-      method: "PATCH",
-      headers: {
-        authorization: this.token,
-        "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: name,
-          about: about
-        })
-    })
-    .then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.statusText}`);
-    })
-  }
+  // editProfile(name, about){
+  //   return fetch(`${this.baseURL}/users/me`,{
+  //     method: "PATCH",
+  //     headers: {
+  //       authorization: this.token,
+  //       "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //         name: name,
+  //         about: about
+  //       })
+  //   })
+  //   .then((res) => {
+  //     if(res.ok){
+  //       return res.json();
+  //     }
+  //     return Promise.reject(`Error: ${res.statusText}`);
+  //   })
+  // }
 
-  editAvatar(link){
-    return fetch(`${this.baseURL}/users/me/avatar`,{
-      method: "PATCH",
-      headers: {
-        authorization: this.token,
-        "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          avatar: link
-        })
-    })
-    .then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject(`editAvatar Error: ${res.statusText}`);
-    })
-  }
+  // editAvatar(link){
+  //   return fetch(`${this.baseURL}/users/me/avatar`,{
+  //     method: "PATCH",
+  //     headers: {
+  //       authorization: this.token,
+  //       "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //         avatar: link
+  //       })
+  //   })
+  //   .then((res) => {
+  //     if(res.ok){
+  //       return res.json();
+  //     }
+  //     return Promise.reject(`editAvatar Error: ${res.statusText}`);
+  //   })
+  // }
 
   addCard(name, link){
-    return fetch(`${this.baseURL}/cards`,{
+    return fetch(`${this.baseURL}/artiles`,{
       method: "POST",
       headers: {
         authorization: this.token,
@@ -96,8 +97,8 @@ class Api{
     })
   }
 
-  deleteCard(cardId){
-    return fetch(`${this.baseURL}/cards/${cardId}`,{
+  deleteCard(articleId){
+    return fetch(`${this.baseURL}/articles/${articleId}`,{
       method: "DELETE",
       headers: {
         authorization: this.token,
@@ -112,43 +113,43 @@ class Api{
     })
   }
 
-  changeLikeCardStatus(cardId, liked){
-    return liked ? this.deleteLike(cardId) : this.addLike(cardId);
-  }
+//   changeLikeCardStatus(cardId, liked){
+//     return liked ? this.deleteLike(cardId) : this.addLike(cardId);
+//   }
 
-  addLike(cardId){
-    return fetch(`${this.baseURL}/cards/${cardId}/likes`,{
-      method: "PUT",
-      headers: {
-        authorization: this.token,
-        "Content-Type": "application/json"
-        }
-    })
-    .then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject(`editLikes Error: ${res.statusText}`);
-    })
+//   addLike(cardId){
+//     return fetch(`${this.baseURL}/cards/${cardId}/likes`,{
+//       method: "PUT",
+//       headers: {
+//         authorization: this.token,
+//         "Content-Type": "application/json"
+//         }
+//     })
+//     .then((res) => {
+//       if(res.ok){
+//         return res.json();
+//       }
+//       return Promise.reject(`editLikes Error: ${res.statusText}`);
+//     })
 
-  }
+//   }
 
-  deleteLike(cardId){
-    return fetch(`${this.baseURL}/cards/${cardId}/likes`,{
-      method: "DELETE",
-      headers: {
-        authorization: this.token,
-        "Content-Type": "application/json"
-        }
-    })
-    .then((res) => {
-      if(res.ok){
-        return res.json();
-      }
-      return Promise.reject(`editLikes Error: ${res.statusText}`);
-    })
-  }
-}
+//   deleteLike(cardId){
+//     return fetch(`${this.baseURL}/cards/${cardId}/likes`,{
+//       method: "DELETE",
+//       headers: {
+//         authorization: this.token,
+//         "Content-Type": "application/json"
+//         }
+//     })
+//     .then((res) => {
+//       if(res.ok){
+//         return res.json();
+//       }
+//       return Promise.reject(`editLikes Error: ${res.statusText}`);
+//     })
+//   }
+// }
 
 const api = new Api({
   baseURL : baseURL, 

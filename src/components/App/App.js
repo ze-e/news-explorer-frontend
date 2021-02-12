@@ -104,13 +104,13 @@ export default function App() {
 
           //get cards
           api.getCards()
-          .then((data) => {  
+          .then((data) => {
             setCards(data)
           })
           .catch((err) => { 
             console.log(err);
           })
-          
+
         })
         .catch((err) => { 
           console.log(err);
