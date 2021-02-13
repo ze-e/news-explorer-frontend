@@ -21,7 +21,6 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
-import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function App() {
 
@@ -196,15 +195,14 @@ export default function App() {
             onOpenNav={handleNav}
             currentUser={currentUser}
             />
-            <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
-            <CurrentCardsContext.Provider value={cards}>
+            <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <Main 
               isSignedIn={isSignedIn}
               onSearch={handleSearch} 
+              cards={searchCards}
               fieldValidator={formValidator.fieldValidator}
               formValidator={formValidator.formValidator}
               />
-            </CurrentCardsContext.Provider>
           </div>
           </Route>
 
@@ -219,9 +217,7 @@ export default function App() {
               currentUser={currentUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <CurrentCardsContext.Provider value={cards}>
-                <SavedNews isSignedIn={isSignedIn}/>
-              </CurrentCardsContext.Provider>
+              <SavedNews isSignedIn={isSignedIn}/>
             </div>
           </ProtectedRoute>
 

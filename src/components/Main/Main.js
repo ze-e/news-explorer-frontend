@@ -8,6 +8,7 @@ export default function Main(props) {
 
   function handleSearch(searchValue){
     console.log(searchValue);
+    props.onSearch(searchValue);
     setShowResults(true);
   }
 
@@ -20,13 +21,13 @@ export default function Main(props) {
         and save them in your personal account.
       </h3> 
       <SearchForm 
-        onSearch={props.onSearch} 
+        onSearch={handleSearch} 
         formValidator={props.formValidator} 
         fieldValidator={props.fieldValidator}
       />
     </section>
     {showResults && 
-    <NewsCardList isSignedIn={props.isSignedIn}/>
+      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards}/>
     }
   </>
   ) 

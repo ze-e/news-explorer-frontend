@@ -16,9 +16,9 @@ export default function SearchForm(props) {
   function handleSearch(e){
     e.preventDefault();     
     //check if the form is valid before sending
-    if(!formInvalid){
+    // if(!formInvalid){
       props.onSearch(searchValue);
-    }
+    // }
   }
 
 const searchRef = React.useRef();
