@@ -185,7 +185,11 @@ export default function App() {
             />
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <CurrentCardsContext.Provider value={cards}>
-              <Main isSignedIn={isSignedIn}/>
+              <Main 
+              isSignedIn={isSignedIn} 
+              fieldValidator={formValidator.fieldValidator}
+              formValidator={formValidator.formValidator}
+              />
             </CurrentCardsContext.Provider>
           </div>
           </Route>

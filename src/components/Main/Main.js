@@ -6,8 +6,8 @@ export default function Main(props) {
 
   const [showResults, setShowResults] = React.useState(false);
 
-  function handleSearch(e){
-    e.preventDefault();
+  function handleSearch(searchValue){
+    console.log(searchValue);
     setShowResults(true);
   }
 
@@ -19,7 +19,11 @@ export default function Main(props) {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm 
+        onSearch={handleSearch} 
+        formValidator={props.formValidator} 
+        fieldValidator={props.fieldValidator}
+      />
     </section>
     {showResults && 
     <NewsCardList isSignedIn={props.isSignedIn}/>
