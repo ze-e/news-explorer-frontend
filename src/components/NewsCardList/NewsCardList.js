@@ -4,7 +4,7 @@ import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 
 //cards
-import CurrentCardsContext from '../../contexts/CurrentCardsContext';
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 import cardList from '../../config/testcards.json';
 import blankCardList from '../../config/testcards_blank.json';
 

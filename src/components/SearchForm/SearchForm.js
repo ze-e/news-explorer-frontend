@@ -25,15 +25,8 @@ export default function SearchForm(props) {
 const searchRef = React.useRef();
 
 function validateForm(){
-  props.formValidator(searchRef.current,'.popup__input') ? setformInvalid(true) : setformInvalid(false);
+  props.formValidator(searchRef.current,'.search-field') ? setformInvalid(true) : setformInvalid(false);
 }
-
-  //reset fields when opened
-  React.useEffect(()=>{
-    setsearchValue('');
-    setsearchError('');
-    setformInvalid(true);
-  },[props.isOpen])
 
   return (
       <form className="search-form" onChange={validateForm} ref={searchRef}>

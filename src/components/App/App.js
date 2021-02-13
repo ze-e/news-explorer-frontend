@@ -15,7 +15,7 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
-import ProtectedRoute from '../../components/ProtectedRoute';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
