@@ -15,6 +15,8 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
+import ProtectedRoute from '../../components/ProtectedRoute';
+
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 
@@ -91,32 +93,50 @@ export default function App() {
     setisNavOpen(!isNavOpen);
   }
 
-    //get user and initial cards
+    //get user on signIn
     React.useEffect(()=>{
+      //check for user
+      if(localStorage.getItem('user')){
+        setcurrentUser(localStorage.getItem('user'));
+      }
+
       //get user from token
-      if (localStorage.getItem('token')) {
+      else if(localStorage.getItem('token')) {
         const token = localStorage.getItem('token');
         api.setToken(token);
         api.getUser()
         .then((data)=>{
-          setisSignedIn(true);
           setcurrentUser(data);
+          localStorage.setItem('user', currentUser);
+        })
+        .catch((err) => { 
+          setisSignedIn(false);
+          console.log(err);
+        })
+      }
+    },[currentUser, isSignedIn])
 
-          //get cards
-          api.getCards()
-          .then((data) => {
-            setCards(data)
-          })
-          .catch((err) => { 
-            console.log(err);
-          })
-
+    //get cards
+    React.useEffect(()=>{
+      //check for cards
+      if(localStorage.getItem('cards')){
+        setCards(localStorage.getItem('cards'));
+      }
+      
+      //get cards from user
+      else if(localStorage.getItem('token')) {
+        const token = localStorage.getItem('token');
+        api.setToken(token);
+        api.getCards()
+        .then((data) => {  
+          setCards(data)
+          localStorage.setItem('cards', cards);
         })
         .catch((err) => { 
           console.log(err);
         })
       }
-    },[currentUser, isSignedIn])
+    },[cards])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -165,9 +185,8 @@ export default function App() {
           </div>
           </Route>
 
-          <Route exact path="/saved-news">
-          {!isSignedIn ? <Redirect to="/" /> : 
-            (<div className="App__saved-news">
+          <ProtectedRoute exact path="/saved-news">
+            <div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
               onOpen={handleOpenSignIn} 
@@ -178,8 +197,8 @@ export default function App() {
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews isSignedIn={isSignedIn} cards={cards}/>
-            </div>)}
-          </Route>
+            </div>
+          </ProtectedRoute>
 
         </Switch>
       <About/>

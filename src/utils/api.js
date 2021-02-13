@@ -8,7 +8,7 @@ class Api{
     this.token = token;
   }
   
-  /* API FUNCTIONS */\
+  /* API FUNCTIONS */
   //user
   getUser(){
     return fetch(`${this.baseURL}/users/me`,{
@@ -149,8 +149,8 @@ class Api{
 //       return Promise.reject(`editLikes Error: ${res.statusText}`);
 //     })
 //   }
-// }
 
+}
 const api = new Api({
   baseURL : baseURL, 
 });
