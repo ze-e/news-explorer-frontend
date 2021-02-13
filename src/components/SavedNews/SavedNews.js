@@ -8,7 +8,7 @@ export default function SavedNews(props) {
     <div className="savedNews">
       <SavedNewsHeader />
       <h2 className="savedNews__title">Search Results</h2>
-      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards}/>
+      <NewsCardList isSignedIn={props.isSignedIn}/>
     </div>
   );
 }

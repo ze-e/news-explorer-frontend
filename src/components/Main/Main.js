@@ -22,7 +22,7 @@ export default function Main(props) {
       <SearchForm onSearch={handleSearch} />
     </section>
     {showResults && 
-    <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards}/>
+    <NewsCardList isSignedIn={props.isSignedIn}/>
     }
   </>
   ) 

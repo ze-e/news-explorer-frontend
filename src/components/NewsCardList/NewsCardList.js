@@ -2,12 +2,14 @@ import React from 'react';
 //components
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
+
+//cards
+import CurrentCardsContext from '../../contexts/CurrentCardsContext';
 import cardList from '../../config/testcards.json';
 import blankCardList from '../../config/testcards_blank.json';
 
-
 export default function NewsCardList(props) {
-  const cards = props.cards;
+  const cards = React.useContext(CurrentCardsContext);
 
   const [loading, setLoading] = React.useState(false);
 

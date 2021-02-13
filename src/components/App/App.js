@@ -19,6 +19,7 @@ import ProtectedRoute from '../../components/ProtectedRoute';
 
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function App() {
 
@@ -181,7 +182,9 @@ export default function App() {
             currentUser={currentUser}
             />
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
-            <Main isSignedIn={isSignedIn} cards={cards}/>
+            <CurrentCardsContext.Provider value={cards}>
+              <Main isSignedIn={isSignedIn}/>
+            </CurrentCardsContext.Provider>
           </div>
           </Route>
 
@@ -196,7 +199,9 @@ export default function App() {
               currentUser={currentUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <SavedNews isSignedIn={isSignedIn} cards={cards}/>
+              <CurrentCardsContext.Provider value={cards}>
+                <SavedNews isSignedIn={isSignedIn}/>
+              </CurrentCardsContext.Provider>
             </div>
           </ProtectedRoute>
 
