@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function NewsCard(props) {
 
   const [bookmarked, setBookmarked] = React.useState(false);
@@ -8,9 +9,13 @@ export default function NewsCard(props) {
     props.isSignedIn && setBookmarked(!bookmarked);
   }
 
+  function handleCardClick() {
+    window.location.href = `${props.link}`; 
+  }
+
   return (
     <>
-      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
+      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} onClick={handleCardClick}>
         <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
         <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`} onClick={handleBookmark}>

@@ -32,6 +32,8 @@ export default function App() {
   const [currentUser, setcurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
 
+  const [loading, isLoading] = React.useState(false);
+
   function closeAllPopups(){
     setIsSignInOpen(false);
     setIsSignUpOpen(false);
