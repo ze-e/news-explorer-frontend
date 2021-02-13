@@ -20,11 +20,7 @@ export default function Main(props) {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
-      <SearchForm 
-        onSearch={handleSearch} 
-        formValidator={props.formValidator} 
-        fieldValidator={props.fieldValidator}
-      />
+      <SearchForm onSearch={handleSearch} formValidator={props.formValidator} fieldValidator={props.fieldValidator}/>
     </section>
     {showResults && 
       <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards}/>

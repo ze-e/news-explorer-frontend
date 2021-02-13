@@ -13,12 +13,11 @@ export default function SearchForm(props) {
     props.formvalidator(e.target, setsearchError);
   }
 
-  function handleSearch(e){
-    e.preventDefault();     
+  function handleSearch(){
     //check if the form is valid before sending
-    // if(!formInvalid){
+     if(!formInvalid){
       props.onSearch(searchValue);
-    // }
+     }
   }
 
 const searchRef = React.useRef();
@@ -28,10 +27,10 @@ function validateForm(){
 }
 
   return (
-      <form className="search-form" ref={searchRef}>
-        <input className="search-field" type="text" placeholder="Nature"/>
-        <span className="search-error" id="search-error" minLength="1" >{searchError}</span>
-        <button className="search-button" type="button" onClick={handleSearch}>Search</button>
-      </form>
+    <form className="search-form" ref={searchRef} onChange={validateForm}>
+      <input className="search-field" type="text" name="search-field" placeholder="Nature" minLength="1" value={searchValue} onChange={handleInput}/>
+      <span className="search-error" id="search-error">{searchError}</span>
+      <button className="search-button" type="button" onClick={handleSearch(searchValue)}>Search</button>
+    </form>
   ) 
 }
