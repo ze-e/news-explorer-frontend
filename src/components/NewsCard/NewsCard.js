@@ -10,22 +10,22 @@ export default function NewsCard(props) {
   }
 
   function handleCardClick() {
-    window.location.href = `${props.link}`; 
+    window.location.href = `${props.card.url}`; 
   }
 
   return (
     <>
-      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} onClick={handleCardClick}>
+      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.urlToImage}")`}} onClick={handleCardClick}>
         <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
         <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`} onClick={handleBookmark}>
           {`${!props.isSignedIn ? "Sign in to save articles":"Remove from saved"}`}
         </button>
       </div>
-      <h4 className="newsCard__date">{props.card.date}</h4>
+      <h4 className="newsCard__date">{props.card.publishedAt}</h4>
       <h3 className="newsCard__title">{props.card.title}</h3>
       <p className="newsCard__description">{props.card.description}</p>
-      <p className="newsCard__source">{props.card.source}</p>
+      <p className="newsCard__source">{props.card.source.name}</p>
     </>
   );
 }

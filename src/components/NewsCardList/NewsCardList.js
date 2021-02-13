@@ -3,10 +3,6 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 
-//cards
-import cardList from '../../config/testcards.json';
-import blankCardList from '../../config/testcards_blank.json';
-
 export default function NewsCardList(props) {
 
   const cards = props.cards;

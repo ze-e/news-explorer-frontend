@@ -101,7 +101,9 @@ export default function App() {
   function handleSearch(keyword) {
     newsApi.getResults(keyword)        
     .then((data)=>{
-      setsearchCards(data);
+      const articles = data.articles;
+      articles.keyword = keyword;
+      setsearchCards(articles);
     })
     .catch((err) => { 
       console.log(err);
@@ -143,8 +145,8 @@ export default function App() {
         const token = localStorage.getItem('token');
         mainApi.setToken(token);
         mainApi.getCards()
-        .then((data) => {  
-          setCards(data)
+        .then((data) => { 
+          setCards(data);
           localStorage.setItem('cards', cards);
         })
         .catch((err) => { 
