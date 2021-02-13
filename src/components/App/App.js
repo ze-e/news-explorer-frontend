@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 //util
 import {formValidator} from '../../utils/formvalidator';
-import { api } from '../../utils/api';
+import { mainApi, newsApi } from '../../utils/MainApi';
 import { auth }  from '../../utils/auth';
 
 //components
@@ -106,8 +106,8 @@ export default function App() {
       //get user from token
       else if(localStorage.getItem('token')) {
         const token = localStorage.getItem('token');
-        api.setToken(token);
-        api.getUser()
+        mainApi.setToken(token);
+        mainApi.getUser()
         .then((data)=>{
           setcurrentUser(data);
           localStorage.setItem('user', currentUser);
@@ -129,8 +129,8 @@ export default function App() {
       //get cards from user
       else if(localStorage.getItem('token')) {
         const token = localStorage.getItem('token');
-        api.setToken(token);
-        api.getCards()
+        mainApi.setToken(token);
+        mainApi.getCards()
         .then((data) => {  
           setCards(data)
           localStorage.setItem('cards', cards);
