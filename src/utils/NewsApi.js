@@ -7,8 +7,8 @@ class NewsApi{
   }
 
   //api
-  getResults(){
-    return fetch(`${this.baseURL + this.APIkey}&from=${Date.now()}&to=${Date.now()+7}&pageSize=100`,{
+  getResults(keyword){
+    return fetch(`${this.baseURL + this.APIkey}q=${keyword}&from=${Date.now()}&to=${Date.now()+7}&pageSize=100`,{
       headers: {
         "Content-Type": "application/json"
       }

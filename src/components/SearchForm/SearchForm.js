@@ -6,7 +6,6 @@ export default function SearchForm(props) {
   const [setsearchError, searchError] = React.useState('');
   const [setformInvalid, formInvalid] = React.useState(true);
 
-
   function handleInput(e) {
     //set value
     setsearchValue(e.target.value);

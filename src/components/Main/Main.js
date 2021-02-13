@@ -20,7 +20,7 @@ export default function Main(props) {
         and save them in your personal account.
       </h3> 
       <SearchForm 
-        onSearch={handleSearch} 
+        onSearch={props.onSearch} 
         formValidator={props.formValidator} 
         fieldValidator={props.fieldValidator}
       />

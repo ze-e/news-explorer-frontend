@@ -3,7 +3,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 //util
 import {formValidator} from '../../utils/formvalidator';
-import { mainApi, newsApi } from '../../utils/MainApi';
+import { mainApi } from '../../utils/MainApi';
+import { newsApi } from '../../utils/NewsApi';
+
 import { auth }  from '../../utils/auth';
 
 //components
@@ -31,6 +33,7 @@ export default function App() {
 
   const [currentUser, setcurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
+  const [setsearchCards, searchCards] = React.useState([]);
 
   const [loading, isLoading] = React.useState(false);
 
@@ -94,6 +97,16 @@ export default function App() {
 
   function handleNav(){
     setisNavOpen(!isNavOpen);
+  }
+
+  function handleSearch(keyword) {
+    newsApi.getResults(keyword)        
+    .then((data)=>{
+      setsearchCards(data);
+    })
+    .catch((err) => { 
+      console.log(err);
+    })
   }
 
     //get user on signIn
@@ -186,7 +199,8 @@ export default function App() {
             <Navigation signedIn={isSignedIn}  onOpen={handleOpenSignIn} isOpen={isNavOpen}  onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <CurrentCardsContext.Provider value={cards}>
               <Main 
-              isSignedIn={isSignedIn} 
+              isSignedIn={isSignedIn}
+              onSearch={handleSearch} 
               fieldValidator={formValidator.fieldValidator}
               formValidator={formValidator.formValidator}
               />
