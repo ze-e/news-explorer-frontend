@@ -29,8 +29,8 @@ function validateForm(){
 }
 
   return (
-      <form className="search-form" onChange={validateForm} ref={searchRef}>
-        <input className="search-field" type="search" placeholder="Nature" value={searchValue} onChange={handleInput}/>
+      <form className="search-form" ref={searchRef}>
+        <input className="search-field" type="text" placeholder="Nature"/>
         <span className="search-error" id="search-error" minLength="1" >{searchError}</span>
         <button className="search-button" type="button" onClick={handleSearch}>Search</button>
       </form>
