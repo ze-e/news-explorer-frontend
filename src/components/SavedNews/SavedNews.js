@@ -5,9 +5,10 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 //cards
 import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
-const [setCards, cards] = React.useState([]);
-
 export default function SavedNews(props) {
+
+  const [setCards, cards] = React.useState([]);
+
   return (
     <div className="savedNews">
       <SavedNewsHeader />
