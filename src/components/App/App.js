@@ -5,7 +5,6 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import {formValidator} from '../../utils/formvalidator';
 import { mainApi } from '../../utils/MainApi';
 import { newsApi } from '../../utils/NewsApi';
-
 import { auth }  from '../../utils/auth';
 
 //components
@@ -86,6 +85,8 @@ export default function App() {
   function handleSignOut(){
     setcurrentUser({});
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
     setisSignedIn(false);
   }
 
@@ -109,51 +110,40 @@ export default function App() {
       console.log(err);
     })
   }
-
-    //get user on signIn
-    React.useEffect(()=>{
-      //check for user
-      if(localStorage.getItem('user')){
-        setcurrentUser(localStorage.getItem('user'));
-      }
-
-      //get user from token
-      else if(localStorage.getItem('token')) {
-        const token = localStorage.getItem('token');
-        mainApi.setToken(token);
-        mainApi.getUser()
-        .then((data)=>{
-          setcurrentUser(data);
-          localStorage.setItem('user', currentUser);
-        })
-        .catch((err) => { 
-          setisSignedIn(false);
-          console.log(err);
-        })
-      }
-    },[currentUser, isSignedIn])
+  //get user
+  React.useEffect(()=>{
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      mainApi.setToken(token);
+      setisSignedIn(true);
+      auth.authorize()
+      .then((data)=>{
+        localStorage.setItem('user', data);
+        setcurrentUser(data);
+      })
+      .catch((err) => { 
+        setisSignedIn(false);
+        console.log(err);
+      })
+    }
+  },[isSignedIn, currentUser])
 
     //get cards
-    React.useEffect(()=>{
-      //check for cards
-      if(localStorage.getItem('cards')){
-        setCards(localStorage.getItem('cards'));
-      }
-      
+    React.useEffect(()=>{      
       //get cards from user
-      else if(localStorage.getItem('token')) {
+      if(localStorage.getItem('token')) {
         const token = localStorage.getItem('token');
         mainApi.setToken(token);
         mainApi.getCards()
         .then((data) => { 
-          setCards(data);
           localStorage.setItem('cards', cards);
+          setCards(data);
         })
         .catch((err) => { 
           console.log(err);
         })
       }
-    },[cards])
+    },[currentUser, cards])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

@@ -28,7 +28,8 @@ class MainApi{
   getCards(){
     return fetch(`${this.baseURL}/articles`,{
       headers: {
-        authorization: this.token
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
     .then((res) => {
