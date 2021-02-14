@@ -16,8 +16,6 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 
@@ -188,17 +186,17 @@ export default function App() {
             currentUser={currentUser}
             />
             <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <Main 
-              isSignedIn={isSignedIn}
-              onSearch={handleSearch} 
-              cards={searchCards}
-              fieldValidator={formValidator.fieldValidator}
-              formValidator={formValidator.formValidator}
-              />
+            <Main 
+            isSignedIn={isSignedIn}
+            onSearch={handleSearch} 
+            cards={searchCards}
+            fieldValidator={formValidator.fieldValidator}
+            formValidator={formValidator.formValidator}
+            />
           </div>
           </Route>
 
-          <ProtectedRoute exact path="/saved-news">
+          <Route exact path="/saved-news">
             <div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
@@ -211,7 +209,7 @@ export default function App() {
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <SavedNews isSignedIn={isSignedIn}/>
             </div>
-          </ProtectedRoute>
+          </Route>
 
         </Switch>
       <About/>
