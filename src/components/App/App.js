@@ -18,6 +18,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function App() {
 
@@ -141,6 +142,7 @@ export default function App() {
           console.log(err);
         })
       }
+      console.log(cards);
     },[currentUser, cards])
 
   return (

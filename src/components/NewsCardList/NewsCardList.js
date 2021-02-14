@@ -3,21 +3,26 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 
+//cards
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
 export default function NewsCardList(props) {
 
-  const cards = props.cards;
+  const cards = [];
 
   const [loading, setLoading] = React.useState(false);
 
-  function handleLoading(props){
+  function handleLoading(){
     setLoading(false);
   }
 
   return (
+    <CurrentCardsContext.Provider value={cards}>
     <div className="newsCardList">
     <h3 className="newsCardList__title">Search results</h3>
       <div className="newsCardList__container">
-      {cards && cards.length > 0 ? 
+      {cards.length > 0 ? 
         cards.map(card => (
           <div className="newsCard" key={card._id}>
             <NewsCard card={card} isSignedIn={props.isSignedIn}/>
@@ -29,5 +34,6 @@ export default function NewsCardList(props) {
       </div>
       {cards.length > 0 && <button className="newsCardList__show-more">Show More</button>}
     </div>
+    </CurrentCardsContext.Provider>
   );
 }
