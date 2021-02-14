@@ -209,7 +209,9 @@ export default function App() {
               currentUser={currentUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <SavedNews isSignedIn={isSignedIn}/>
+              <CurrentCardsContext.Provider value={cards}>
+                <SavedNews isSignedIn={isSignedIn}/>
+              </CurrentCardsContext.Provider>
             </div>
           </Route>
 

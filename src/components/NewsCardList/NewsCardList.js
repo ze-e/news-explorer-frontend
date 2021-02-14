@@ -5,11 +5,10 @@ import Loading from '../Preloader/Preloader';
 
 //cards
 import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 export default function NewsCardList(props) {
 
-  const cards = [];
+  const cards = props.cards ? props.cards : React.useContext(CurrentCardsContext);
 
   const [loading, setLoading] = React.useState(false);
 

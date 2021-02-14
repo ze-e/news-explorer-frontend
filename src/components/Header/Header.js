@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 
 export default function Header(props) {
+
+  const User = React.useContext(CurrentUserContext);
+
   return (
     <>
     <nav className="header">
@@ -16,7 +20,7 @@ export default function Header(props) {
 
         </li>
         <li className={`header__item header__link_button ${!props.signedIn && 'header__link_hidden'}`}>
-          <div className="header__button">{props.currentUser.name}<button className="header__button-icon" onClick={props.onSignOut}></button></div>
+          <div className="header__button">{User.name}<button className="header__button-icon" onClick={props.onSignOut}></button></div>
         </li>
       </ul>
       <button className="header__collapse-button" onClick={props.onOpenNav}></button>

@@ -9,8 +9,9 @@ export default function SavedNews(props) {
     <div className="savedNews">
       <SavedNewsHeader />
       <h2 className="savedNews__title">Search Results</h2>
-      <NewsCardList isSignedIn={props.isSignedIn}/>
-
+      <CurrentCardsContext.Provider value={cards}>
+        <NewsCardList isSignedIn={props.isSignedIn}/>
+      </CurrentCardsContext.Provider>
     </div>
   );
 }
