@@ -85,6 +85,7 @@ export default function App() {
     setcurrentUser({});
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('cards');
 
     setisSignedIn(false);
   }
@@ -118,7 +119,6 @@ export default function App() {
         setisSignedIn(true);
         auth.authorize()
         .then((data)=>{
-          localStorage.setItem('user', data);
           setcurrentUser(data);
         })
         .catch((err) => { 
