@@ -8,7 +8,8 @@ import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function NewsCardList(props) {
 
-  const cards = props.cards ? props.cards : React.useContext(CurrentCardsContext);
+  const savedCards = React.useContext(CurrentCardsContext);
+  const cards = props.cards ? props.cards : savedCards;
 
   const [loading, setLoading] = React.useState(false);
 
