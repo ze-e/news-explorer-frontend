@@ -13,6 +13,11 @@ export default function NewsCard(props) {
     window.location.href = `${props.card.link}`; 
   }
 
+  function formatDate(date){
+    const formatedDate = new Date(date);
+    return new Intl.DateTimeFormat('en-US', {month:'long', day:'numeric', year:'numeric'}).format(formatedDate);
+  }
+
   return (
     <>
       <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} onClick={handleCardClick}>
@@ -22,7 +27,7 @@ export default function NewsCard(props) {
           {`${!props.isSignedIn ? "Sign in to save articles":"Remove from saved"}`}
         </button>
       </div>
-      <h4 className="newsCard__date">{props.card.date}</h4>
+      <h4 className="newsCard__date">{formatDate(props.card.date)}</h4>
       <h3 className="newsCard__title">{props.card.title}</h3>
       <p className="newsCard__description">{props.card.text}</p>
       <p className="newsCard__source">{props.card.name}</p>
