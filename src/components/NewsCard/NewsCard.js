@@ -1,19 +1,22 @@
 import React from 'react';
-
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function NewsCard(props) {
 
-  const [bookmarked, setBookmarked] = React.useState(false);
+const [bookmarked, setBookmarked] = React.useState(false);
+const savedCards = React.useContext(CurrentCardsContext);
+
+React.useEffect(()=>{
+  savedCards.some((card) => card.link === props.card.link) ? setBookmarked(true) : setBookmarked(false);
+},[])
 
   function handleClick() {
-    if(props.onSaveCard && props.isSignedIn && !bookmarked) {
+    if(props.onSaveCard && props.isSignedIn) {
       props.onSaveCard(props.card);
-      setBookmarked(!bookmarked);
     }
 
     else if(props.onDeleteCard && props.isSignedIn) {
       props.onDeleteCard(props.card._id);
-      setBookmarked(false);
     }
   }
 

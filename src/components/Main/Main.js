@@ -7,7 +7,6 @@ export default function Main(props) {
   const [showResults, setShowResults] = React.useState(false);
 
   function handleSearch(searchValue){
-    console.log(searchValue);
     props.onSearch(searchValue);
     setShowResults(true);
   }
