@@ -22,7 +22,7 @@ export default function NewsCardList(props) {
     <div className="newsCardList">
     <h3 className="newsCardList__title">Search results</h3>
       <div className="newsCardList__container">
-      {cards.length > 0 ? 
+      {Array.isArray(cards) && cards.length > 0 ? 
         cards.map(card => (
           <div className="newsCard" key={card._id}>
             <NewsCard card={card} isSignedIn={props.isSignedIn}/>

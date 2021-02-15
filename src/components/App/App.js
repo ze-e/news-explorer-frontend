@@ -30,7 +30,7 @@ export default function App() {
 
   const [currentUser, setcurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
-  const [setsearchCards, searchCards] = React.useState([]);
+  const [searchCards, setsearchCards] = React.useState([]);
 
   const [loading, isLoading] = React.useState(false);
 
@@ -100,11 +100,20 @@ export default function App() {
   }
 
   function handleSearch(keyword) {
-    newsApi.getResults(keyword)        
+    newsApi.getAllResults()        
     .then((data)=>{
       const articles = data.articles;
-      articles.keyword = keyword;
-      setsearchCards(articles);
+      const formattedCards = articles.map((article)=>{
+        formattedCards.keyword = keyword;
+        formattedCards.image = article.urlToImage;
+        formattedCards.link = article.url;
+        formattedCards.date = article.publishedAt;
+        formattedCards.title = article.title;
+        formattedCards.text = article.description;
+        formattedCards.source = article.source.name;
+
+      })
+      setsearchCards(formattedCards);
     })
     .catch((err) => { 
       console.log(err);

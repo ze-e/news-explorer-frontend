@@ -2,15 +2,15 @@ import React from 'react';
 
 export default function SearchForm(props) {
 
-  const [setsearchValue, searchValue] = React.useState('');
-  const [setsearchError, searchError] = React.useState('');
-  const [setformInvalid, formInvalid] = React.useState(true);
+  const [searchValue, setsearchValue] = React.useState('');
+  const [searchError, setsearchError] = React.useState('');
+  const [formInvalid, setformInvalid] = React.useState(true);
 
   function handleInput(e) {
     //set value
     setsearchValue(e.target.value);
     //set error
-    props.formvalidator(e.target, setsearchError);
+    props.fieldValidator(e.target, setsearchError);
   }
 
   function handleSearch(){
@@ -27,15 +27,10 @@ function validateForm(){
 }
 
   return (
-  // <form className="search-form" ref={searchRef} onChange={validateForm}>
-  //   <input className="search-field" type="text" name="search-field" placeholder="Nature" minLength="1" value={searchValue} onChange={handleInput}/>
-  //   <span className="search-error" id="search-error">{searchError}</span>
-  //   <button className="search-button" type="button" onClick={handleSearch}>Search</button>
-  // </form>
-  <form className="search-form">
-    <input className="search-field" type="text" name="search-field" placeholder="Nature" minLength="1"/>
-    <span className="search-error" id="search-error"></span>
-    <button className="search-button" type="button">Search</button>
+  <form className="search-form" ref={searchRef} onChange={validateForm}>
+    <input className="search-field" type="text" name="search-field" placeholder="Nature" minLength="1" value={searchValue} onChange={handleInput}/>
+    <span className="search-error" id="search-error">{searchError}</span>
+    <button className="search-button" type="button" onClick={handleSearch}>Search</button>
   </form>
   ) 
 }
