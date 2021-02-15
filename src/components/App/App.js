@@ -106,7 +106,7 @@ export default function App() {
     newsApi.getResults(keyword)        
     .then((data)=>{
       //format cards and set cards
-      const formattedCards = formatResults(data.articles);
+      const formattedCards = formatResults(data.articles, keyword);
       setsearchCards(formattedCards);
     })
     .catch((err) => { 
@@ -114,9 +114,9 @@ export default function App() {
     })
   }
 
-  function formatResults(results){
+  function formatResults(results, keyword){
     return results.map(result => ({ 
-      keyword : result.keyword,
+      keyword : keyword,
       image : result.urlToImage,
       link : result.url,
       date : result.publishedAt,
@@ -126,15 +126,39 @@ export default function App() {
     }));
   }
 
-  function handleSaveCard(card, {callback}) {
+  function handleSaveCard(card) {
     mainApi.addCard(card)
     .then((data)=>{
-      setCards(data);
-      callback();
+      getCards();
     })
     .catch((err) => { 
       console.log(err);
     })
+  }
+
+  function handleDeleteCard(card) {
+    mainApi.deleteCard(card)
+    .then((data)=>{
+      getCards();
+    })
+    .catch((err) => { 
+      console.log(err);
+    })
+  }
+
+  function getCards(){
+    if(localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      mainApi.setToken(token);
+      mainApi.getCards()
+      .then((data) => { 
+        setCards(data);
+      })
+      .catch((err) => { 
+        console.log(err);
+      })
+    }
+    console.log(cards);
   }
 
     //get user
@@ -161,18 +185,7 @@ export default function App() {
 
     //get cards from user
     React.useEffect(()=>{      
-      if(localStorage.getItem('token')) {
-        const token = localStorage.getItem('token');
-        mainApi.setToken(token);
-        mainApi.getCards()
-        .then((data) => { 
-          setCards(data);
-        })
-        .catch((err) => { 
-          console.log(err);
-        })
-      }
-      console.log(cards);
+      getCards();
     },[currentUser])
 
     //save cards to localStorage if they change

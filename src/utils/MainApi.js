@@ -44,7 +44,7 @@ class MainApi{
     return fetch(`${this.baseURL}/articles`,{
       method: "POST",
       headers: {
-        authorization: `Bearer ${localStorage.getItem('token')}`,
+        'authorization': `Bearer ${localStorage.getItem('token')}`,
         "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -69,7 +69,7 @@ class MainApi{
     return fetch(`${this.baseURL}/articles/${articleId}`,{
       method: "DELETE",
       headers: {
-        authorization: this.token,
+        'authorization': `Bearer ${localStorage.getItem('token')}`,
         "Content-Type": "application/json"
         }
     })
