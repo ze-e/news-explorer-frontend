@@ -100,10 +100,13 @@ export default function App() {
   }
 
   function handleSearch(keyword) {
+    //reset cards
+    setsearchCards([]);
+    //get cards
     newsApi.getAllResults()        
     .then((data)=>{
-      const articles = data.articles;
-      const formattedCards = formatResults(articles);
+      //format cards and set cards
+      const formattedCards = formatResults(data.articles);
       setsearchCards(formattedCards);
     })
     .catch((err) => { 
