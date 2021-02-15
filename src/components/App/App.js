@@ -103,21 +103,24 @@ export default function App() {
     newsApi.getAllResults()        
     .then((data)=>{
       const articles = data.articles;
-      const formattedCards = articles.map(article => ({ 
-        keyword : article.keyword,
-        image : article.urlToImage,
-        link : article.url,
-        date : article.publishedAt,
-        title : article.title,
-        text : article.description,
-        source : article.source.name
-       }));
-
+      const formattedCards = formatResults(articles);
       setsearchCards(formattedCards);
     })
     .catch((err) => { 
       console.log(err);
     })
+  }
+
+  function formatResults(results){
+    return results.map(result => ({ 
+      keyword : result.keyword,
+      image : result.urlToImage,
+      link : result.url,
+      date : result.publishedAt,
+      title : result.title,
+      text : result.description,
+      source : result.source.name
+    }));
   }
 
     //get user
