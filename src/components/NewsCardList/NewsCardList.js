@@ -10,6 +10,14 @@ export default function NewsCardList(props) {
 
   const savedCards = React.useContext(CurrentCardsContext);
   const cards = props.cards ? props.cards : savedCards;
+  const keywords = commonKeyword(cards.map(card => card.keyword));
+  
+  function commonKeyword(keywords){ 
+    return keywords.sort((a,b) =>
+      keywords.filter(keyword => keyword===a).length
+      - keywords.filter(keyword => keyword===b).length
+    );
+  }
 
   const [loading, setLoading] = React.useState(false);
 
