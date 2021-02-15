@@ -40,16 +40,21 @@ class MainApi{
     })
   }
 
-  addCard(name, link){
-    return fetch(`${this.baseURL}/artiles`,{
+  addCard({keyword,link,image,date,title,text,source}){
+    return fetch(`${this.baseURL}/articles`,{
       method: "POST",
       headers: {
-        authorization: this.token,
+        authorization: `Bearer ${localStorage.getItem('token')}`,
         "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          name: name,
-          link: link
+          keyword: keyword,
+          link: link,
+          image: image,
+          date: date,
+          title: title,
+          text: text,
+          source: source
         })
     })
     .then((res) => {

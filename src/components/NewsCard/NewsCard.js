@@ -6,7 +6,14 @@ export default function NewsCard(props) {
   const [bookmarked, setBookmarked] = React.useState(false);
 
   function handleBookmark() {
-    props.isSignedIn && setBookmarked(!bookmarked);
+    if(props.isSignedIn && !bookmarked) {
+      
+      setBookmarked(bookmarked)
+    }
+    else if(props.isSignedIn && bookmarked) {
+      
+      setBookmarked(!bookmarked)
+    }
   }
 
   function handleCardClick() {
@@ -20,7 +27,7 @@ export default function NewsCard(props) {
 
   return (
     <>
-      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} onClick={handleCardClick}>
+      <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
         <button className="newsCard__keyword">{props.card.keyword}</button>
         <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
         <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`} onClick={handleBookmark}>
@@ -28,7 +35,7 @@ export default function NewsCard(props) {
         </button>
       </div>
       <h4 className="newsCard__date">{formatDate(props.card.date)}</h4>
-      <h3 className="newsCard__title">{props.card.title}</h3>
+      <h3 className="newsCard__title" onClick={handleCardClick}>{props.card.title}</h3>
       <p className="newsCard__description">{props.card.text}</p>
       <p className="newsCard__source">{props.card.name}</p>
     </>
