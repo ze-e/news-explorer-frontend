@@ -77,7 +77,7 @@ function validateSignUpForm(){
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign in</h4>
       <p className="popup__input-label">Email</p>
-      <input className="popup__input" id="email-input" type="text" name="email" required minLength="2" maxLength="40" placeholder="Enter email" value={email} onChange={handleEmail} />
+      <input className="popup__input" id="email-input" type="text" name="email" required minLength="2" maxLength="40" placeholder="Enter email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" value={email} onChange={handleEmail} />
       <span className={`popup__input-error" ${emailError !=='' && 'popup__error_visible'}`} id="email-input-error">{emailError}</span>
       <p className="popup__input-label">Password</p>  
       <input className="popup__input" id="password-input" type="password" name="password" required minLength="2" maxLength="12" placeholder="Enter password" value={password} onChange={handlePassword} /> 
@@ -94,7 +94,7 @@ function validateSignUpForm(){
       <button className="popup__close" type="button" onClick={props.onClose}></button>
       <h4 className="popup__title">Sign up</h4>
       <p className="popup__input-label">Email</p>
-      <input className="popup__input" type="text" name="email" required minLength="2" maxLength="40" value={email} onChange={handleEmail} placeholder="Enter email"></input>
+      <input className="popup__input" type="text" name="email" required minLength="2" maxLength="40" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" value={email} onChange={handleEmail} placeholder="Enter email"></input>
       <span className={`popup__input-error ${emailError !=='' && 'popup__error_visible'}`} id="email-input-error">{emailError}</span>
       <p className="popup__input-label">Password</p>  
       <input className="popup__input" type="password" name="password" required minLength="2" maxLength="12" value={password} onChange={handlePassword} placeholder="Enter password"></input>  
