@@ -8,7 +8,7 @@ export default function NewsCard(props) {
   function handleClick() {
     if(props.onSaveCard && props.isSignedIn && !bookmarked) {
       props.onSaveCard(props.card);
-      setBookmarked(true);
+      setBookmarked(!bookmarked);
     }
 
     else if(props.onDeleteCard && props.isSignedIn) {

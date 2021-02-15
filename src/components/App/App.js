@@ -127,13 +127,18 @@ export default function App() {
   }
 
   function handleSaveCard(card) {
-    mainApi.addCard(card)
-    .then((data)=>{
-      getCards();
-    })
-    .catch((err) => { 
-      console.log(err);
-    })
+    //check if card already on list
+    if(!cards.some((item) => item.link === card.link))
+    {
+      mainApi.addCard(card)
+      .then((data)=>{
+        getCards();
+      })
+      .catch((err) => { 
+        console.log(err);
+      })
+    }
+    else(handleDeleteCard(card));
   }
 
   function handleDeleteCard(card) {
