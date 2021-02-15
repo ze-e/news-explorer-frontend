@@ -126,6 +126,17 @@ export default function App() {
     }));
   }
 
+  function handleSaveCard(card, {callback}) {
+    mainApi.addCard(card)
+    .then((data)=>{
+      setCards(data);
+      callback();
+    })
+    .catch((err) => { 
+      console.log(err);
+    })
+  }
+
     //get user
     React.useEffect(()=>{
       if (localStorage.getItem('token')) {
@@ -215,6 +226,7 @@ export default function App() {
             <Main 
             isSignedIn={isSignedIn}
             onSearch={handleSearch} 
+            onSaveCard={handleSaveCard}
             cards={searchCards}
             fieldValidator={formValidator.fieldValidator}
             formValidator={formValidator.formValidator}

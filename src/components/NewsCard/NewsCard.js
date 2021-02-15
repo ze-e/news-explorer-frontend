@@ -7,12 +7,10 @@ export default function NewsCard(props) {
 
   function handleBookmark() {
     if(props.isSignedIn && !bookmarked) {
-      
-      setBookmarked(bookmarked)
+      props.onSaveCard(props.card, {callback: setBookmarked(bookmarked)})
     }
     else if(props.isSignedIn && bookmarked) {
-      
-      setBookmarked(!bookmarked)
+      //props.deleteCard(props.card, {callback: setBookmarked(bookmarked)})
     }
   }
 

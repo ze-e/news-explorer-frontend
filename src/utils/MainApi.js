@@ -40,7 +40,7 @@ class MainApi{
     })
   }
 
-  addCard({keyword,link,image,date,title,text,source}){
+  addCard(card){
     return fetch(`${this.baseURL}/articles`,{
       method: "POST",
       headers: {
@@ -48,13 +48,13 @@ class MainApi{
         "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          keyword: keyword,
-          link: link,
-          image: image,
-          date: date,
-          title: title,
-          text: text,
-          source: source
+          keyword: card.keyword,
+          link: card.link,
+          image: card.image,
+          date: card.date,
+          title: card.title,
+          text: card.text,
+          source: card.source
         })
     })
     .then((res) => {
