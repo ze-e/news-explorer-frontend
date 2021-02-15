@@ -103,7 +103,7 @@ export default function App() {
     //reset cards
     setsearchCards([]);
     //get cards
-    newsApi.getAllResults()        
+    newsApi.getResults(keyword)        
     .then((data)=>{
       //format cards and set cards
       const formattedCards = formatResults(data.articles);
