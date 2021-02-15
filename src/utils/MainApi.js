@@ -45,7 +45,7 @@ class MainApi{
       method: "POST",
       headers: {
         'authorization': `Bearer ${localStorage.getItem('token')}`,
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           keyword: card.keyword,
@@ -70,7 +70,7 @@ class MainApi{
       method: "DELETE",
       headers: {
         'authorization': `Bearer ${localStorage.getItem('token')}`,
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
         }
     })
     .then((res) => {

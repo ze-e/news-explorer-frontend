@@ -240,7 +240,6 @@ export default function App() {
             isSignedIn={isSignedIn}
             onSearch={handleSearch} 
             onSaveCard={handleSaveCard}
-            onDeleteCard={handleDeleteCard}
             cards={searchCards}
             fieldValidator={formValidator.fieldValidator}
             formValidator={formValidator.formValidator}
@@ -260,7 +259,7 @@ export default function App() {
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <CurrentCardsContext.Provider value={cards}>
-                <SavedNews isSignedIn={isSignedIn}/>
+                <SavedNews isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
               </CurrentCardsContext.Provider>
             </div>
           </Route>

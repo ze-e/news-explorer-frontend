@@ -5,14 +5,15 @@ export default function NewsCard(props) {
 
   const [bookmarked, setBookmarked] = React.useState(false);
 
-  function handleBookmark() {
-    if(props.isSignedIn && !bookmarked) {
+  function handleClick() {
+    if(props.onSaveCard && props.isSignedIn && !bookmarked) {
       props.onSaveCard(props.card);
-      setBookmarked(bookmarked);
+      setBookmarked(true);
     }
-    else if(props.isSignedIn && bookmarked) {
-      props.onDeleteCard(props.card);
-      setBookmarked(!bookmarked);
+
+    else if(props.onDeleteCard && props.isSignedIn) {
+      props.onDeleteCard(props.card._id);
+      setBookmarked(false);
     }
   }
 
@@ -29,8 +30,8 @@ export default function NewsCard(props) {
     <>
       <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
         <button className="newsCard__keyword">{props.card.keyword}</button>
-        <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleBookmark}></button>
-        <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`} onClick={handleBookmark}>
+        <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleClick}></button>
+        <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`}>
           {`${!props.isSignedIn ? "Sign in to save articles":"Remove from saved"}`}
         </button>
       </div>
