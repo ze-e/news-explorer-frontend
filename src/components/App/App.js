@@ -240,6 +240,7 @@ export default function App() {
             isSignedIn={isSignedIn}
             onSearch={handleSearch} 
             onSaveCard={handleSaveCard}
+            onDeleteCard={handleDeleteCard}
             cards={searchCards}
             fieldValidator={formValidator.fieldValidator}
             formValidator={formValidator.formValidator}

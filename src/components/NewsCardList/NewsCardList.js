@@ -25,7 +25,7 @@ export default function NewsCardList(props) {
       {Array.isArray(cards) && cards.length > 0 ? 
         cards.map(card => (
           <div className="newsCard" key={card._id}>
-            <NewsCard card={card} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard}/>
+            <NewsCard card={card} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
           </div>
         ))
         :

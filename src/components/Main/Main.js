@@ -23,7 +23,7 @@ export default function Main(props) {
       <SearchForm onSearch={handleSearch} formValidator={props.formValidator} fieldValidator={props.fieldValidator}/>
     </section>
     {showResults && 
-      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards} onSaveCard={props.onSaveCard}/>
+      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
     }
   </>
   ) 
