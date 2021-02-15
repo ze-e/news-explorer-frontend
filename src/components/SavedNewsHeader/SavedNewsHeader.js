@@ -1,4 +1,6 @@
 import React from 'react';
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
+
 
 export default function SavedNewsHeader(props) {
 
@@ -17,7 +19,12 @@ export default function SavedNewsHeader(props) {
       <p className="SavedNewsHeader__caption">Saved articles</p>
       <h2 className="SavedNewsHeader__title">myName, you have {cards.length} saved articles</h2>
       <h3 className="SavedNewsHeader__keywords-title">By Keywords: 
-        <span className="SavedNewsHeader__keywords-list"> {keywords[0] && `${keywords[0]}, `} {keywords[1] && `${keywords[1]}, `} {keywords.length() > 3  ? `and ${keywords.length()-2} others` : keywords[2] && `${keywords[2]}`}</span>
+        <span className="SavedNewsHeader__keywords-list"> 
+          {keywords[0] && `${keywords[0]}, `} 
+          {keywords[1] && `${keywords[1]}, `} 
+          {keywords.length > 3  ? `and ${keywords.length-2} others` : 
+          keywords[2] && `${keywords[2]}`}
+        </span>
       </h3>
     </section>
   ) 
