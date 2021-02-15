@@ -103,16 +103,16 @@ export default function App() {
     newsApi.getAllResults()        
     .then((data)=>{
       const articles = data.articles;
-      const formattedCards = articles.map((article)=>{
-        formattedCards.keyword = keyword;
-        formattedCards.image = article.urlToImage;
-        formattedCards.link = article.url;
-        formattedCards.date = article.publishedAt;
-        formattedCards.title = article.title;
-        formattedCards.text = article.description;
-        formattedCards.source = article.source.name;
+      const formattedCards = articles.map(article => ({ 
+        keyword : article.keyword,
+        image : article.urlToImage,
+        link : article.url,
+        date : article.publishedAt,
+        title : article.title,
+        text : article.description,
+        source : article.source.name
+       }));
 
-      })
       setsearchCards(formattedCards);
     })
     .catch((err) => { 
