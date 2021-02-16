@@ -11,13 +11,8 @@ export default function NewsCardList(props) {
   const savedCards = React.useContext(CurrentCardsContext);
   const cards = props.cards ? props.cards : savedCards;
 
-  const [loading, setLoading] = React.useState(false);
   const [itemsToShow, setitemsToShow] = React.useState(3);
   const [showMoreButton, setshowMoreButton] = React.useState(true);
-
-  function handleLoading(){
-    setLoading(false);
-  }
 
   function handleMoreButton(){
     if(itemsToShow + 3 < cards.length){
@@ -51,7 +46,7 @@ export default function NewsCardList(props) {
           </div>
         ))
         :
-        <Loading loading={false} handleLoading={handleLoading} />
+        <Loading loading={props.loading} />
       }
       </div>
       {showMoreButton && <button className="newsCardList__show-more" onClick={handleMoreButton}>Show More</button>}

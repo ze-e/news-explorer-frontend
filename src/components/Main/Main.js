@@ -7,8 +7,8 @@ export default function Main(props) {
   const [showResults, setShowResults] = React.useState(false);
 
   function handleSearch(searchValue){
-    props.onSearch(searchValue);
     setShowResults(true);
+    props.onSearch(searchValue);
   }
 
   return (
@@ -22,7 +22,7 @@ export default function Main(props) {
       <SearchForm onSearch={handleSearch} formValidator={props.formValidator} fieldValidator={props.fieldValidator}/>
     </section>
     {showResults && 
-      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards} onSaveCard={props.onSaveCard}/>
+      <NewsCardList isSignedIn={props.isSignedIn} cards={props.cards} onSaveCard={props.onSaveCard} loading={props.loading}/>
     }
   </>
   ) 

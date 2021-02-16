@@ -32,7 +32,7 @@ export default function App() {
   const [savedCards, setsavedCards] = React.useState([]);
   const [searchCards, setsearchCards] = React.useState([]);
 
-  const [loading, isLoading] = React.useState(false);
+  const [loadingResults, setloadingResults] = React.useState(false);
 
   function closeAllPopups(){
     setIsSignInOpen(false);
@@ -100,6 +100,8 @@ export default function App() {
   }
 
   function handleSearch(keyword) {
+    //set loading
+    setloadingResults(true);
     //reset cards
     setsearchCards([]);
     //get cards
@@ -111,6 +113,10 @@ export default function App() {
     })
     .catch((err) => { 
       console.log(err);
+    })
+    .finally(()=>{
+      //set loading
+      setloadingResults(false);
     })
   }
 
@@ -254,6 +260,7 @@ export default function App() {
             cards={searchCards}
             fieldValidator={formValidator.fieldValidator}
             formValidator={formValidator.formValidator}
+            loading={loadingResults}
             />
           </div>
           </Route>
