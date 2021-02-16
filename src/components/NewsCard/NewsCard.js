@@ -10,12 +10,9 @@ React.useEffect(()=>{
   if(savedCards){
     const savedCard = savedCards.find((card) => card.link === props.card.link);
     if(savedCard){
-      console.log(`${props.card.title.slice(0,10)} in bookmarked as ${savedCard.title.slice(0,10)}`);
-      console.log(savedCards);
       setBookmarked(true);
     }
     else{
-      console.log("card not bookmarked");
       setBookmarked(false);
     }
   }
