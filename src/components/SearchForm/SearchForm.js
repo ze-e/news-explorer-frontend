@@ -13,7 +13,8 @@ export default function SearchForm(props) {
     props.fieldValidator(e.target, setsearchError);
   }
 
-  function handleSearch(){
+  function handleSearch(e){
+    e.preventDefault();     
     //check if the form is valid before sending
      if(!formInvalid){
       props.onSearch(searchValue);
