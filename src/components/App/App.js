@@ -115,9 +115,10 @@ export default function App() {
   }
 
   function formatResults(results, keyword){
+    const defaultImage ='https://images.unsplash.com/photo-1585829365295-ab7cd400c167';
     return results.map(result => ({ 
       keyword : keyword,
-      image : !result.urlToImage ? 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167':result.urlToImage,
+      image : !result.urlToImage ? defaultImage:result.urlToImage,
       link : result.url,
       date : result.publishedAt,
       title : result.title,
