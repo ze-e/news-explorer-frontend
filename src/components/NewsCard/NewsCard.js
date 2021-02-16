@@ -7,7 +7,18 @@ const [bookmarked, setBookmarked] = React.useState(false);
 const savedCards = React.useContext(CurrentCardsContext);
 
 React.useEffect(()=>{
-  //savedCards.some((card) => card.link === props.card.link) ? setBookmarked(true) : setBookmarked(false);
+  if(savedCards){
+    const savedCard = savedCards.find((card) => card.link === props.card.link);
+    if(savedCard){
+      console.log(`${props.card.title.slice(0,10)} in bookmarked as ${savedCard.title.slice(0,10)}`);
+      console.log(savedCards);
+      setBookmarked(true);
+    }
+    else{
+      console.log("card not bookmarked");
+      setBookmarked(false);
+    }
+  }
 },[savedCards])
 
   function handleClick() {

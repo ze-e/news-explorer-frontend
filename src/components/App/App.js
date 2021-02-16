@@ -129,7 +129,6 @@ export default function App() {
 
   function handleSaveCard(card) {
     //check if card already on list
-    console.log(card);
     if(!savedCards.some((item) => item.link === card.link))
     {
       mainApi.addCard(card)
@@ -142,10 +141,7 @@ export default function App() {
       })
     }
     else{
-      console.log("card deleted!");
       const savedCard = savedCards.find((item)=> item.link === card.link);
-      console.log(savedCard._id);
-
       handleDeleteCard(savedCard);
     };
   }
@@ -153,6 +149,7 @@ export default function App() {
   function handleDeleteCard(card) {
     mainApi.deleteCard(card._id)
     .then((data)=>{
+      console.log("card deleted!");
       getCards();
     })
     .catch((err) => { 
