@@ -30,7 +30,6 @@ export default function NewsCardList(props) {
 
   React.useEffect(()=>{
     if(cards.length === 0 || itemsToShow === cards.length){
-      console.log(`${cards.length},${itemsToShow}`);
       setshowMoreButton(false)
     }
     else if(cards.length > 0 && itemsToShow < cards.length){
