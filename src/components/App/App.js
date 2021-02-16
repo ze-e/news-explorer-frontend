@@ -90,6 +90,7 @@ export default function App() {
     localStorage.removeItem('user');
     localStorage.removeItem('cards');
 
+    setsearchCards([]);
     setisSignedIn(false);
   }
 
