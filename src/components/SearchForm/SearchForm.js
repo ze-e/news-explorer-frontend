@@ -27,10 +27,10 @@ function validateForm(){
 }
 
   return (
-  <form className="search-form" ref={searchRef} onChange={validateForm}>
+  <form className="search-form" ref={searchRef} onChange={validateForm} onSubmit={handleSearch}>
     <input className="search-field" type="text" name="search-field" placeholder="Nature" minLength="1" value={searchValue} onChange={handleInput}/>
     <span className="search-error" id="search-error">{searchError}</span>
-    <button className="search-button" type="button" onClick={handleSearch}>Search</button>
+    <button className="search-button" type="submit" >Search</button>
   </form>
   ) 
 }
