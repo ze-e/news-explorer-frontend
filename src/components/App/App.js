@@ -174,6 +174,7 @@ export default function App() {
       mainApi.getCards()
       .then((data) => { 
         setsavedCards(data);
+        localStorage.setItem('cards', searchCards);
       })
       .catch((err) => { 
         console.log(err);
@@ -215,10 +216,12 @@ export default function App() {
       getCards();
     },[currentUser])
 
-    //save cards to localStorage if they change
-    React.useEffect(()=>{      
-      localStorage.setItem('cards', savedCards);
-    },[savedCards])
+    //get seached cards from localStorage
+    React.useEffect(()=>{   
+      if (localStorage.getItem('cards')) {   
+        setsearchCards(localStorage.getItem('cards'));
+      }
+    },[])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -265,13 +268,13 @@ export default function App() {
             />
             <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <Main 
-            isSignedIn={isSignedIn}
-            onSearch={handleSearch} 
-            onSaveCard={handleSaveCard}
-            cards={searchCards}
-            fieldValidator={formValidator.fieldValidator}
-            formValidator={formValidator.formValidator}
-            loading={loadingResults}
+              isSignedIn={isSignedIn}
+              onSearch={handleSearch} 
+              onSaveCard={handleSaveCard}
+              cards={searchCards}
+              fieldValidator={formValidator.fieldValidator}
+              formValidator={formValidator.formValidator}
+              loading={loadingResults}
             />
           </div>
           </Route>
