@@ -29,7 +29,7 @@ export default function App() {
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
   const [currentUser, setcurrentUser] = React.useState({});
-  const [cards, setCards] = React.useState([]);
+  const [savedCards, setsavedCards] = React.useState([]);
   const [searchCards, setsearchCards] = React.useState([]);
 
   const [loading, isLoading] = React.useState(false);
@@ -117,7 +117,7 @@ export default function App() {
   function formatResults(results, keyword){
     return results.map(result => ({ 
       keyword : keyword,
-      image : result.urlToImage,
+      image : !result.urlToImage ? 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167':result.urlToImage,
       link : result.url,
       date : result.publishedAt,
       title : result.title,
@@ -128,21 +128,29 @@ export default function App() {
 
   function handleSaveCard(card) {
     //check if card already on list
-    if(!cards.some((item) => item.link === card.link))
+    console.log(card);
+    if(!savedCards.some((item) => item.link === card.link))
     {
       mainApi.addCard(card)
       .then((data)=>{
+        console.log("card added!");
         getCards();
       })
       .catch((err) => { 
         console.log(err);
       })
     }
-    else(handleDeleteCard(card));
+    else{
+      console.log("card deleted!");
+      const savedCard = savedCards.find((item)=> item.link === card.link);
+      console.log(savedCard._id);
+
+      handleDeleteCard(savedCard);
+    };
   }
 
   function handleDeleteCard(card) {
-    mainApi.deleteCard(card)
+    mainApi.deleteCard(card._id)
     .then((data)=>{
       getCards();
     })
@@ -157,13 +165,13 @@ export default function App() {
       mainApi.setToken(token);
       mainApi.getCards()
       .then((data) => { 
-        setCards(data);
+        setsavedCards(data);
       })
       .catch((err) => { 
         console.log(err);
       })
     }
-    console.log(cards);
+    console.log(savedCards);
   }
 
     //get user
@@ -195,8 +203,8 @@ export default function App() {
 
     //save cards to localStorage if they change
     React.useEffect(()=>{      
-      localStorage.setItem('cards', cards);
-    },[cards])
+      localStorage.setItem('cards', savedCards);
+    },[savedCards])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -263,7 +271,7 @@ export default function App() {
               currentUser={currentUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <CurrentCardsContext.Provider value={cards}>
+              <CurrentCardsContext.Provider value={savedCards}>
                 <SavedNews isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
               </CurrentCardsContext.Provider>
             </div>

@@ -7,8 +7,8 @@ const [bookmarked, setBookmarked] = React.useState(false);
 const savedCards = React.useContext(CurrentCardsContext);
 
 React.useEffect(()=>{
-  savedCards.some((card) => card.link === props.card.link) ? setBookmarked(true) : setBookmarked(false);
-},[])
+  //savedCards.some((card) => card.link === props.card.link) ? setBookmarked(true) : setBookmarked(false);
+},[savedCards])
 
   function handleClick() {
     if(props.onSaveCard && props.isSignedIn) {
@@ -16,7 +16,7 @@ React.useEffect(()=>{
     }
 
     else if(props.onDeleteCard && props.isSignedIn) {
-      props.onDeleteCard(props.card._id);
+      props.onDeleteCard(props.card);
     }
   }
 
