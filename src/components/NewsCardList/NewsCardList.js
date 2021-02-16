@@ -30,12 +30,13 @@ export default function NewsCardList(props) {
 
   React.useEffect(()=>{
     if(cards.length === 0 || itemsToShow === cards.length){
+      console.log(`${cards.length},${itemsToShow}`);
       setshowMoreButton(false)
     }
-    else(cards.length > 0 && itemsToShow < cards.length){
+    else if(cards.length > 0 && itemsToShow < cards.length){
       setshowMoreButton(true)
     }
-  },[itemsToShow])
+  },[cards, itemsToShow])
 
   return (
     <div className="newsCardList">
@@ -45,7 +46,7 @@ export default function NewsCardList(props) {
         cards.slice(0, itemsToShow).map(card => (
           <div className="newsCard" key={card._id}>
             <CurrentCardsContext.Provider value={savedCards}>
-            <NewsCard card={card} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
+              <NewsCard card={card} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
             </CurrentCardsContext.Provider>
 
           </div>
@@ -54,7 +55,7 @@ export default function NewsCardList(props) {
         <Loading loading={false} handleLoading={handleLoading} />
       }
       </div>
-      {showMoreButton && <button className="newsCardList__show-more">Show More</button>}
+      {showMoreButton && <button className="newsCardList__show-more" onClick={handleMoreButton}>Show More</button>}
     </div>
   );
 }
