@@ -32,7 +32,10 @@ export default function App() {
   const [savedCards, setsavedCards] = React.useState([]);
   const [searchCards, setsearchCards] = React.useState([]);
 
+  //loading
   const [loadingResults, setloadingResults] = React.useState(false);
+  const [loadingUser, setloadingUser] = React.useState(false);
+
 
   function closeAllPopups(){
     setIsSignInOpen(false);
@@ -167,6 +170,7 @@ export default function App() {
     if(localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       mainApi.setToken(token);
+      //load cards
       mainApi.getCards()
       .then((data) => { 
         setsavedCards(data);
@@ -184,6 +188,9 @@ export default function App() {
         const token = localStorage.getItem('token');
         mainApi.setToken(token);
         setisSignedIn(true);
+
+        //load user
+        setloadingUser(true);
         auth.authorize()
         .then((data)=>{
           setcurrentUser(data);
@@ -191,6 +198,9 @@ export default function App() {
         .catch((err) => { 
           setisSignedIn(false);
           console.log(err);
+        })
+        .finally(()=>{
+          setloadingUser(false);
         })
       }
     },[isSignedIn])
@@ -251,6 +261,7 @@ export default function App() {
             signedIn={isSignedIn} 
             onOpenNav={handleNav}
             currentUser={currentUser}
+            loading={loadingUser}
             />
             <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
             <Main 
@@ -274,6 +285,7 @@ export default function App() {
               signedIn={isSignedIn} 
               onOpenNav={handleNav}
               currentUser={currentUser}
+              loading={loadingUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
               <CurrentCardsContext.Provider value={savedCards}>
