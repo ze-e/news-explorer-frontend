@@ -16,6 +16,8 @@ import Footer from '../Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
+
 //context
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
@@ -280,7 +282,8 @@ export default function App() {
           </div>
           </Route>
 
-          <Route exact path="/saved-news">
+          <ProtectedRoute exact path="/saved-news" 
+            children={
             <div className="App__saved-news">
               <Header
               onSignin={handleSignIn} 
@@ -295,8 +298,8 @@ export default function App() {
               <CurrentCardsContext.Provider value={savedCards}>
                 <SavedNews isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
               </CurrentCardsContext.Provider>
-            </div>
-          </Route>
+            </div>}
+          />
 
         </Switch>
       <About/>
