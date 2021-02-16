@@ -113,6 +113,7 @@ export default function App() {
       //format cards and set cards
       const formattedCards = formatResults(data.articles, keyword);
       setsearchCards(formattedCards);
+      localStorage.setItem('cards', searchCards);
     })
     .catch((err) => { 
       console.log(err);
@@ -174,7 +175,6 @@ export default function App() {
       mainApi.getCards()
       .then((data) => { 
         setsavedCards(data);
-        localStorage.setItem('cards', searchCards);
       })
       .catch((err) => { 
         console.log(err);
