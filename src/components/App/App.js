@@ -170,6 +170,28 @@ export default function App() {
     })
   }
 
+  function getUser(){
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      mainApi.setToken(token);
+      setisSignedIn(true);
+
+      //load user
+      setloadingUser(true);
+      auth.authorize()
+      .then((data)=>{
+        setcurrentUser(data);
+      })
+      .catch((err) => { 
+        setisSignedIn(false);
+        console.log(err);
+      })
+      .finally(()=>{
+        setloadingUser(false);
+      })
+    }
+  }
+
   function getCards(){
     if(localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
@@ -186,29 +208,6 @@ export default function App() {
     console.log(savedCards);
   }
 
-    //get user
-    React.useEffect(()=>{
-      if (localStorage.getItem('token')) {
-        const token = localStorage.getItem('token');
-        mainApi.setToken(token);
-        setisSignedIn(true);
-
-        //load user
-        setloadingUser(true);
-        auth.authorize()
-        .then((data)=>{
-          setcurrentUser(data);
-        })
-        .catch((err) => { 
-          setisSignedIn(false);
-          console.log(err);
-        })
-        .finally(()=>{
-          setloadingUser(false);
-        })
-      }
-    },[isSignedIn])
-
     //save user to localstorage if it changes
     React.useEffect(()=>{
       localStorage.setItem('user', currentUser);
@@ -219,10 +218,13 @@ export default function App() {
       getCards();
     },[currentUser])
 
-    //get seached cards from localStorage
+    //get from localStorage
     React.useEffect(()=>{   
-      if (localStorage.getItem('cards')) {   
-        setsearchCards(localStorage.getItem('cards'));
+      if (localStorage.getItem('user')) {   
+        setcurrentUser(localStorage.getItem('user'));
+      }
+      else if(localStorage.getItem('token')) {   
+        getUser();
       }
     },[])
 

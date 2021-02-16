@@ -13,8 +13,9 @@ export default function Main(props) {
 
   //reload last searched cards
   React.useEffect(()=>{   
-    if (localStorage.getItem('cards')) {   
-      setShowResults(true);
+    if (localStorage.getItem('cards')) {  
+      const cards = localStorage.getItem('cards');
+      cards.length > 0 && setShowResults(true);
     }
   },[])
 

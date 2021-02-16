@@ -5,7 +5,7 @@ const ProtectedRoute = (props) => {
   return (
     <Route exact={props.exact} path={props.path}>
       {
-        () => props.loggedIn ? props.children : <Redirect to='/' />
+        () => localStorage.getItem('cards') ? props.children : <Redirect to='/' />
       }
     </Route>
 )}
