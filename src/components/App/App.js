@@ -108,11 +108,11 @@ export default function App() {
   function handleSearch(keyword) {
     //set loading
     setloadingResults(true);
-    //reset cards
-    setsearchCards([]);
     //get cards
     newsApi.getResults(keyword)        
     .then((data)=>{
+      //reset cards
+      setsearchCards([]);
       //format cards and set cards
       const formattedCards = formatResults(data.articles, keyword);
       setsearchCards(formattedCards);
@@ -147,7 +147,7 @@ export default function App() {
       mainApi.addCard(card)
       .then((data)=>{
         console.log("card added!");
-        getCards();
+        getSavedCards();
       })
       .catch((err) => { 
         console.log(err);
@@ -163,7 +163,7 @@ export default function App() {
     mainApi.deleteCard(card._id)
     .then((data)=>{
       console.log("card deleted!");
-      getCards();
+      getSavedCards();
     })
     .catch((err) => { 
       console.log(err);
@@ -193,12 +193,12 @@ export default function App() {
     }
   }
 
-  function getCards(){
+  function getSavedCards(){
     if(localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       mainApi.setToken(token);
       //load cards
-      mainApi.getCards()
+      mainApi.getSavedCards()
       .then((data) => { 
         setsavedCards(data);
       })
@@ -214,12 +214,15 @@ export default function App() {
       if(localStorage.getItem('token')) {   
         getUser();
       }
+      else{
+        localStorage.setItem('cards', []);
+      }
     },[])
 
     //get cards from localStorage
     React.useEffect(()=>{   
       if(localStorage.getItem('user')) {   
-        getCards();
+        getSavedCards();
       }
     },[currentUser])
     
