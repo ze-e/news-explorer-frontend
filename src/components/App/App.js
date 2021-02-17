@@ -74,6 +74,7 @@ export default function App() {
   }
 
   function handleSignIn(email, password){
+    setloadingUser(true);
     auth.login(email, password)
     .then((res) => {
       if(res){
@@ -83,7 +84,10 @@ export default function App() {
         console.log("login failed");
       }
     })
-    closeAllPopups();
+    .finally(()=>{    
+      setloadingUser(false);
+      closeAllPopups();
+    })  
   }
 
   function handleSignOut(){
@@ -198,7 +202,7 @@ export default function App() {
       const token = localStorage.getItem('token');
       mainApi.setToken(token);
       //load cards
-      mainApi.getSavedCards()
+      mainApi.getCards()
       .then((data) => { 
         setsavedCards(data);
       })
@@ -245,6 +249,7 @@ export default function App() {
       fieldValidator={formValidator.fieldValidator}
       formValidator={formValidator.formValidator}
       type={'signUp'}
+      isLoading={loadingUser}
     />  
 
     <PopupWithForm 
