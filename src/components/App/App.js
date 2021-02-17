@@ -77,7 +77,7 @@ export default function App() {
     auth.login(email, password)
     .then((res) => {
       if(res){
-        setisSignedIn(true);
+        getUser();
       }
       else{
         console.log("login failed");
@@ -174,13 +174,14 @@ export default function App() {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       mainApi.setToken(token);
-      setisSignedIn(true);
 
       //load user
       setloadingUser(true);
       auth.authorize()
       .then((data)=>{
+        setisSignedIn(true);
         setcurrentUser(data);
+        localStorage.setItem('user', currentUser);
       })
       .catch((err) => { 
         setisSignedIn(false);
@@ -208,25 +209,13 @@ export default function App() {
     console.log(savedCards);
   }
 
-    //save user to localstorage if it changes
-    React.useEffect(()=>{
-      localStorage.setItem('user', currentUser);
-    },[currentUser])
-
-    //get cards from user
-    React.useEffect(()=>{      
-      getCards();
-    },[currentUser])
-
     //get from localStorage
     React.useEffect(()=>{   
-      if (localStorage.getItem('user')) {   
-        setcurrentUser(localStorage.getItem('user'));
-      }
-      else if(localStorage.getItem('token')) {   
+      if(localStorage.getItem('token')) {   
         getUser();
       }
     },[])
+
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
