@@ -27,7 +27,7 @@ export default function NewsCardList(props) {
     if(cards.length === 0 || itemsToShow === cards.length){
       setshowMoreButton(false)
     }
-    else if(cards.length > 0 && itemsToShow < cards.length){
+    else if(cards.length > 3 && itemsToShow < cards.length){
       setshowMoreButton(true)
     }
   },[cards, itemsToShow])

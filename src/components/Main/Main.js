@@ -7,9 +7,12 @@ export default function Main(props) {
   const [showResults, setShowResults] = React.useState(false);
 
   function handleSearch(searchValue){
-    setShowResults(true);
     props.onSearch(searchValue);
   }
+
+  React.useEffect(()=>{
+    localStorage.getItem('cards').length > 0 ? setShowResults(true) : setShowResults(false); 
+  },[props.cards])
 
   return (
   <>

@@ -46,10 +46,12 @@ React.useEffect(()=>{
           {`${!props.isSignedIn ? "Sign in to save articles":"Remove from saved"}`}
         </button>
       </div>
-      <h4 className="newsCard__date">{formatDate(props.card.date)}</h4>
-      <h3 className="newsCard__title" onClick={handleCardClick}>{props.card.title}</h3>
-      <p className="newsCard__description">{props.card.text}</p>
-      <p className="newsCard__source">{props.card.name}</p>
+      <div onClick={handleCardClick}>
+        <h4 className="newsCard__date">{formatDate(props.card.date)}</h4>
+        <h3 className="newsCard__title">{props.card.title}</h3>
+        <p className="newsCard__description">{props.card.text}</p>
+        <p className="newsCard__source">{props.card.name}</p>
+      </div>
     </>
   );
 }
