@@ -216,7 +216,6 @@ export default function App() {
       }
     },[])
 
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
     <PopupWithForm 

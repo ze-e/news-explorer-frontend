@@ -5,7 +5,7 @@ const ProtectedRoute = (props) => {
   return (
     <Route exact={props.exact} path={props.path}>
       {
-        () => localStorage.getItem('cards') ? props.children : <Redirect to='/' />
+        () => localStorage.getItem('token') ? props.children : <Redirect to='/' />
       }
     </Route>
 )}
