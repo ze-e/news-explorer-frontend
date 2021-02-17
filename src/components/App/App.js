@@ -214,9 +214,6 @@ export default function App() {
       if(localStorage.getItem('token')) {   
         getUser();
       }
-      else{
-        localStorage.setItem('cards', []);
-      }
     },[])
 
     //get cards from localStorage
