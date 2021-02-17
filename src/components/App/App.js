@@ -92,10 +92,7 @@ export default function App() {
 
   function handleSignOut(){
     setcurrentUser({});
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    localStorage.removeItem('cards');
-
+    localStorage.clear();
     setsearchCards([]);
     setisSignedIn(false);
   }
@@ -117,6 +114,7 @@ export default function App() {
     .then((data)=>{
       //reset cards
       setsearchCards([]);
+      localStorage.removeItem('cards');
       //format cards and set cards
       const formattedCards = formatResults(data.articles, keyword);
       setsearchCards(formattedCards);
@@ -220,13 +218,19 @@ export default function App() {
       }
     },[])
 
-    //get cards from localStorage
+    //get saved cards from localStorage
     React.useEffect(()=>{   
       if(localStorage.getItem('user')) {   
         getSavedCards();
       }
     },[currentUser])
     
+
+    //reset cards when window is closed
+    React.useEffect(()=>{      
+      setsearchCards([]);
+      localStorage.removeItem('cards');
+    },[])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
