@@ -224,7 +224,6 @@ export default function App() {
         getSavedCards();
       }
     },[currentUser])
-    
 
     //reset cards when window is closed
     React.useEffect(()=>{      

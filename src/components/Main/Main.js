@@ -8,11 +8,12 @@ export default function Main(props) {
 
   function handleSearch(searchValue){
     props.onSearch(searchValue);
+    setShowResults(true);
   }
 
-  React.useEffect(()=>{
-    (localStorage.getItem('cards') && localStorage.getItem('cards').length > 0) ? setShowResults(true) : setShowResults(false); 
-  },[localStorage.getItem('cards')])
+  // React.useEffect(()=>{
+  //   (localStorage.getItem('cards') && (localStorage.getItem('cards').length > 0 || props.loading)) ? setShowResults(true) : setShowResults(false); 
+  // },[localStorage.getItem('cards')])
 
   return (
   <>
