@@ -209,12 +209,20 @@ export default function App() {
     console.log(savedCards);
   }
 
-    //get from localStorage
+    //get user from localStorage
     React.useEffect(()=>{   
       if(localStorage.getItem('token')) {   
         getUser();
       }
     },[])
+
+    //get cards from localStorage
+    React.useEffect(()=>{   
+      if(localStorage.getItem('user')) {   
+        getCards();
+      }
+    },[currentUser])
+    
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
