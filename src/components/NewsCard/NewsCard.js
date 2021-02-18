@@ -1,10 +1,10 @@
 import React from 'react';
-import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
+// import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function NewsCard(props) {
 
 const [bookmarked, setBookmarked] = React.useState(false);
-const savedCards = React.useContext(CurrentCardsContext);
+// const savedCards = React.useContext(CurrentCardsContext);
 
 //boomark card if it is in saved cards
 
