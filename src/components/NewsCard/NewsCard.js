@@ -1,12 +1,9 @@
 import React from 'react';
-// import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function NewsCard(props) {
 
+// eslint-disable-next-line no-unused-vars
 const [bookmarked, setBookmarked] = React.useState(false);
-// const savedCards = React.useContext(CurrentCardsContext);
-
-//boomark card if it is in saved cards
 
   function handleClick() {
     if(props.onSaveCard && props.isSignedIn) {

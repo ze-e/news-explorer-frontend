@@ -216,13 +216,15 @@ export default function App() {
       if(localStorage.getItem('token')) {   
         getUser();
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     //get saved cards from localStorage
     React.useEffect(()=>{   
-      if(localStorage.getItem('user')) {   
+      if(localStorage.getItem('user')) { 
         getSavedCards();
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[currentUser])
 
     //reset cards when window is closed
