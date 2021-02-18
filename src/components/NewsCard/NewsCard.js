@@ -7,8 +7,10 @@ const [bookmarked, setBookmarked] = React.useState(false);
 const savedCards = React.useContext(CurrentCardsContext);
 
 //boomark card if it is in saved cards
-if(savedCards.some((item) => item.link === props.card.link)){
-  setBookmarked(true);
+if(savedCards){
+  if(savedCards.some((item) => item.link === props.card.link)){
+    setBookmarked(true);
+  }
 }
 
   function handleClick() {
