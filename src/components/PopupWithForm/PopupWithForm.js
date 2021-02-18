@@ -39,7 +39,7 @@ export default function PopupWithForm(props) {
 
   function handleUsername(e) {
     //set value
-    setUsername(e.target.value);
+    setUsername(()=>{return e.target.value.replace(" ","_")});
     //set error
     props.fieldValidator(e.target, setUsernameError);
   }
@@ -97,10 +97,10 @@ function validateSignUpForm(){
       <input className="popup__input" type="text" name="email" required minLength="2" maxLength="40" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" required value={email} onChange={handleEmail} placeholder="Enter email"></input>
       <span className={`popup__input-error ${emailError !=='' && 'popup__error_visible'}`} id="email-input-error">{emailError}</span>
       <p className="popup__input-label">Password</p>  
-      <input className="popup__input" type="password" name="password" required minLength="2" maxLength="12" required value={password} onChange={handlePassword} placeholder="Enter password"></input>  
-      <span className={`popup__input-error ${passwordError !=='' && 'popup__error_visible'}`} id="password-input-error">{passwordError}</span>
+      <input className="popup__input" type="password" name="password" required minLength="7" maxLength="12" pattern="[\w\d\S]{7,12}" required value={password} onChange={handlePassword} placeholder="Enter password"></input>  
+      <span className={`popup__input-error ${passwordError !=='' && 'popup__error_visible'}`} id="password-input-error" >{passwordError}</span>
       <p className="popup__input-label">Username</p>  
-      <input className="popup__input" type="text" name="username" required minLength="2" maxLength="12" required value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
+      <input className="popup__input" type="text" name="username" required minLength="2" maxLength="12" pattern="[\w\d\S]{1,12}" required value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
       <span className={`popup__input-error ${usernameError !=='' && 'popup__error_visible'}`} id="username-input-error">{usernameError}</span>     
       <button className={`popup__submit ${signUpFormInvalid && 'popup__submit_disabled'}`} disabled={signUpFormInvalid} type="submit">Sign up</button>
       <p className="popup__link-text">or <button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>

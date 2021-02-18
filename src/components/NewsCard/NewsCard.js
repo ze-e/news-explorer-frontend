@@ -7,17 +7,6 @@ const [bookmarked, setBookmarked] = React.useState(false);
 const savedCards = React.useContext(CurrentCardsContext);
 
 //boomark card if it is in saved cards
-React.useEffect(()=>{
-  if(savedCards){
-    const savedCard = savedCards.find((card) => card.link === props.card.link);
-    if(savedCard){
-      setBookmarked(true);
-    }
-    else{
-      setBookmarked(false);
-    }
-  }
-},[savedCards])
 
   function handleClick() {
     if(props.onSaveCard && props.isSignedIn) {
