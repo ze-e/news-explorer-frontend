@@ -2,8 +2,7 @@ import React from 'react';
 
 export default function NewsCard(props) {
 
-// eslint-disable-next-line no-unused-vars
-const [bookmarked, setBookmarked] = React.useState(false);
+//const [bookmarked, setBookmarked] = React.useState(false);
 
   function handleClick() {
     if(props.onSaveCard && props.isSignedIn) {
@@ -28,7 +27,7 @@ const [bookmarked, setBookmarked] = React.useState(false);
     <>
       <div className="newsCard__image" style={{backgroundImage:`url("${props.card.image}")`}} >
         <button className="newsCard__keyword">{props.card.keyword}</button>
-        <button className={`newsCard__button ${bookmarked && "newsCard__button_marked"}`} onClick={handleClick}></button>
+        <button className={`newsCard__button ${props.bookmarked && "newsCard__button_marked"}`} onClick={handleClick}></button>
         <button className={`newsCard__button-hover ${props.isSignedIn && "newsCard__button-hover_signedIn"}`}>
           {`${!props.isSignedIn ? "Sign in to save articles":"Remove from saved"}`}
         </button>

@@ -3,13 +3,9 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
 
-//cards
-import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
-
 export default function NewsCardList(props) {
 
-  const savedCards = React.useContext(CurrentCardsContext);
-  const cards = props.cards ? props.cards : savedCards;
+  const cards = props.searchCards ? props.searchCards : props.savedCards;
 
   const [itemsToShow, setitemsToShow] = React.useState(3);
   const [showMoreButton, setshowMoreButton] = React.useState(true);
@@ -39,10 +35,7 @@ export default function NewsCardList(props) {
       {Array.isArray(cards) && cards.length > 0 ? 
         cards.slice(0, itemsToShow).map(card => (
           <div className="newsCard" key={card._id}>
-            <CurrentCardsContext.Provider value={savedCards}>
-              <NewsCard card={card} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
-            </CurrentCardsContext.Provider>
-
+            <NewsCard card={card} bookmarked={props.savedCards.some((item) => item.link === card.link)} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
           </div>
         ))
         :
