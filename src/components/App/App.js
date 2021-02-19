@@ -236,6 +236,7 @@ export default function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
+    <CurrentCardsContext.Provider value={savedCards}>
     <PopupWithForm 
       isOpen={isSignInOpen} 
       onOpen={handleOpenSignUp}
@@ -313,6 +314,8 @@ export default function App() {
       <About/>
       <Footer/>
     </div>
+    </CurrentCardsContext.Provider>
     </CurrentUserContext.Provider>
+
   );
 }
