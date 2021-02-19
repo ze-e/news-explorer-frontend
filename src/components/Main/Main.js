@@ -11,9 +11,9 @@ export default function Main(props) {
     setShowResults(true);
   }
 
-  // React.useEffect(()=>{
-  //   (localStorage.getItem('cards') && (localStorage.getItem('cards').length > 0 || props.loading)) ? setShowResults(true) : setShowResults(false); 
-  // },[localStorage.getItem('cards')])
+  React.useEffect(()=>{
+    (props.searchCards && props.searchCards.length > 0) && setShowResults(true); 
+  },[props.searchCards])
 
   return (
   <>
