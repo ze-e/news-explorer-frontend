@@ -93,6 +93,7 @@ export default function App() {
   function handleSignOut(){
     setcurrentUser({});
     localStorage.clear();
+    setsavedCards([]);
     setsearchCards([]);
     setisSignedIn(false);
   }
