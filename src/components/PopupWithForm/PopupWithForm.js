@@ -82,7 +82,7 @@ function validateSignUpForm(){
       <p className="popup__input-label">Password</p>  
       <input className="popup__input" id="password-input" type="password" name="password" required minLength="2" maxLength="12" placeholder="Enter password" value={password} onChange={handlePassword} /> 
       <span className={`popup__input-error" ${passwordError !=='' && 'popup__error_visible'}`} id="password-input-error">{passwordError}</span>
-      <button className={`popup__submit ${signInFormInvalid && 'popup__submit_disabled'}`} disabled={signInFormInvalid} type="submit">{props.isLoading ? "Loading..." : "Sign in"}</button>
+      <button className={`popup__submit ${(props.loading || signInFormInvalid) && 'popup__submit_disabled'}`} disabled={props.loading || signInFormInvalid} type="submit">{props.isLoading ? "Loading..." : "Sign in"}</button>
       <p className="popup__link-text">or <button className="popup__link" type="button"  onClick={props.onOpen}>Sign up</button></p>
     </form>
     </div>
@@ -102,7 +102,7 @@ function validateSignUpForm(){
       <p className="popup__input-label">Username</p>  
       <input className="popup__input" type="text" name="username" required minLength="2" maxLength="12" pattern="[\w\d\S]{1,12}" value={username} onChange={handleUsername} placeholder="Enter your username"></input>  
       <span className={`popup__input-error ${usernameError !=='' && 'popup__error_visible'}`} id="username-input-error">{usernameError}</span>     
-      <button className={`popup__submit ${signUpFormInvalid && 'popup__submit_disabled'}`} disabled={signUpFormInvalid} type="submit">Sign up</button>
+      <button className={`popup__submit ${(props.loading || signUpFormInvalid) && 'popup__submit_disabled'}`} disabled={props.loading || signUpFormInvalid} type="submit">{props.isLoading ? "Loading..." : "Sign up"}</button>
       <p className="popup__link-text">or <button className="popup__link" type="button" onClick={props.onOpen}>Sign in</button></p>
     </form>
     </div>

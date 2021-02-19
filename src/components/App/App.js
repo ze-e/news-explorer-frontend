@@ -56,6 +56,7 @@ export default function App() {
   }
 
   function handleSignUp(username, email, password){
+    setloadingUser(true);
     mainApi.register(username, email, password)
     .then((res) => {
       if(res){
@@ -68,8 +69,12 @@ export default function App() {
         console.log("registration failed");
       }
     })
-    closeAllPopups();
-    handleOpenSuccess();
+    .finally(()=>{    
+      setloadingUser(false);
+      closeAllPopups();
+      handleOpenSuccess();
+    })  
+
   }
 
   function handleSignIn(email, password){
@@ -240,8 +245,8 @@ export default function App() {
       onSignIn={handleSignIn} 
       fieldValidator={formValidator.fieldValidator}
       formValidator={formValidator.formValidator}
-
       type={'signIn'}
+      isLoading={loadingUser}
     />
 
     <PopupWithForm 
