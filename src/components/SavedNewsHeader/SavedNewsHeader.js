@@ -17,7 +17,7 @@ export default function SavedNewsHeader(props) {
   return (
     <section className="SavedNewsHeader">
       <p className="SavedNewsHeader__caption">Saved articles</p>
-      <h2 className="SavedNewsHeader__title">{User ? `${User.name}, you`: "you"} have {cards.length} saved articles</h2>
+      <h2 className="SavedNewsHeader__title">{User.name ? `${User.name}, you`: "You"} have {cards.length} saved articles</h2>
       <h3 className="SavedNewsHeader__keywords-title">{keywords.length > 0 && "By Keywords: "} 
         <span className="SavedNewsHeader__keywords-list"> 
           {keywords[0] && `${keywords[0]}`} 
