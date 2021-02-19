@@ -26,7 +26,7 @@ export default function Main(props) {
       <SearchForm onSearch={handleSearch} formValidator={props.formValidator} fieldValidator={props.fieldValidator}/>
     </section>
     {showResults && 
-      <NewsCardList isSignedIn={props.isSignedIn} searchCards={props.searchCards} onSaveCard={props.onSaveCard} loading={props.loading}/>
+      <NewsCardList isSignedIn={props.isSignedIn} searchCards={props.searchCards} onSaveCard={props.onSaveCard} onOpenSignin={props.onOpenSignin} loading={props.loading}/>
     }
   </>
   ) 

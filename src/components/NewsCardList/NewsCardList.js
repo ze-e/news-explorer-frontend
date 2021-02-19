@@ -38,7 +38,7 @@ export default function NewsCardList(props) {
       {Array.isArray(cards) && cards.length > 0 ? 
         cards.slice(0, itemsToShow).map(card => (
           <div className="newsCard" key={card._id}>
-            <NewsCard card={card} bookmarked={savedCards.some((item) => item.link === card.link)} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onDeleteCard={props.onDeleteCard}/>
+            <NewsCard card={card} bookmarked={props.isSignedIn && savedCards.some((item) => item.link === card.link)} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onOpenSignin={props.onOpenSignin} onDeleteCard={props.onDeleteCard}/>
           </div>
         ))
         :

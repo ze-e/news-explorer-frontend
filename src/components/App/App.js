@@ -94,6 +94,7 @@ export default function App() {
     setsearchCards([]);
     setcurrentUser({});
     setsavedCards([]);
+    localStorage.clear();
     setisSignedIn(false);
   }
 
@@ -281,6 +282,7 @@ export default function App() {
               isSignedIn={isSignedIn}
               onSearch={handleSearch} 
               onSaveCard={handleSaveCard}
+              onOpenSignin={handleOpenSignIn}
               searchCards={searchCards}
               fieldValidator={formValidator.fieldValidator}
               formValidator={formValidator.formValidator}

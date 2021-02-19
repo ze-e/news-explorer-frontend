@@ -2,15 +2,16 @@ import React from 'react';
 
 export default function NewsCard(props) {
 
-//const [bookmarked, setBookmarked] = React.useState(false);
-
   function handleClick() {
-    if(props.onSaveCard && props.isSignedIn) {
+    if(props.isSignedIn && props.onSaveCard) {
       props.onSaveCard(props.card);
     }
 
-    else if(props.onDeleteCard && props.isSignedIn) {
+    else if(props.isSignedIn && props.onDeleteCard) {
       props.onDeleteCard(props.card);
+    }
+    else if(!props.isSignedIn){
+      props.onOpenSignin && props.onOpenSignin();
     }
   }
 
