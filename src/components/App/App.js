@@ -26,6 +26,7 @@ export default function App() {
   const [isSignInOpen, setIsSignInOpen] = React.useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = React.useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = React.useState(false);
+  const [isErrorOpen, setIsErrorOpen] = React.useState(false);
   const [isSignedIn, setisSignedIn] = React.useState(false);
   const [isNavOpen, setisNavOpen] = React.useState(false);
 
@@ -42,6 +43,7 @@ export default function App() {
     setIsSignInOpen(false);
     setIsSignUpOpen(false);
     setIsSuccessOpen(false);
+    setIsErrorOpen(false);
     setisNavOpen(false);
   }
 
@@ -61,18 +63,18 @@ export default function App() {
     .then((res) => {
       if(res){
         //registration succeeded
+        handleOpenSuccess();
         handleSignIn(email, password);
         console.log(res);
       }
       else{
         //registration failed
+        handleOpenError();
         console.log("registration failed");
       }
     })
     .finally(()=>{    
       setloadingUser(false);
-      closeAllPopups();
-      handleOpenSuccess();
     })  
 
   }
@@ -83,14 +85,15 @@ export default function App() {
     .then((res) => {
       if(res){
         getUser();
+        closeAllPopups();
       }
       else{
+        handleOpenError();
         console.log("login failed");
       }
     })
     .finally(()=>{    
       setloadingUser(false);
-      closeAllPopups();
     })  
   }
 
@@ -104,6 +107,11 @@ export default function App() {
   function handleOpenSuccess(){
     closeAllPopups();
     setIsSuccessOpen(true);
+  }
+
+  function handleOpenError(){
+    closeAllPopups();
+    setIsErrorOpen(true);
   }
 
   function handleNav(){
@@ -189,6 +197,7 @@ export default function App() {
       })
       .catch((err) => { 
         setisSignedIn(false);
+        handleOpenError();
         console.log(err);
       })
       .finally(()=>{
@@ -265,6 +274,12 @@ export default function App() {
       onOpen={handleOpenSignIn}
       onClose={closeAllPopups} 
       type={'success'}
+    /> 
+
+    <PopupWithForm 
+      isOpen={isErrorOpen} 
+      onClose={closeAllPopups} 
+      type={'error'}
     /> 
 
     <div className="App">
