@@ -73,6 +73,10 @@ export default function App() {
         console.log("registration failed");
       }
     })
+    .catch(()=>{
+      handleOpenError();
+      console.log("registration failed");
+    })
     .finally(()=>{    
       setloadingUser(false);
     })  
@@ -91,6 +95,10 @@ export default function App() {
         handleOpenError();
         console.log("login failed");
       }
+    })
+    .catch(()=>{
+      handleOpenError();
+      console.log("login failed");
     })
     .finally(()=>{    
       setloadingUser(false);
