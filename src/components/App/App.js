@@ -91,10 +91,9 @@ export default function App() {
   }
 
   function handleSignOut(){
-    setcurrentUser({});
-    localStorage.clear();
-    setsavedCards([]);
     setsearchCards([]);
+    setcurrentUser({});
+    setsavedCards([]);
     setisSignedIn(false);
   }
 
@@ -115,11 +114,9 @@ export default function App() {
     .then((data)=>{
       //reset cards
       setsearchCards([]);
-      localStorage.removeItem('cards');
       //format cards and set cards
       const formattedCards = formatResults(data.articles, keyword);
       setsearchCards(formattedCards);
-      localStorage.setItem('cards', searchCards);
     })
     .catch((err) => { 
       console.log(err);
@@ -204,6 +201,7 @@ export default function App() {
       mainApi.getCards()
       .then((data) => { 
         setsavedCards(data);
+        localStorage.setItem('cards', savedCards);
       })
       .catch((err) => { 
         console.log(err);
@@ -212,27 +210,26 @@ export default function App() {
     console.log(savedCards);
   }
 
-    //get user from localStorage
-    React.useEffect(()=>{   
-      if(localStorage.getItem('token')) {   
-        getUser();
+    //get info from localStorage
+    React.useEffect(()=>{ 
+      if(localStorage.getItem('token')){
+        if(localStorage.getItem('cards')) {   
+          setsavedCards(localStorage.getItem('cards'))
+          getSavedCards();
+        } 
+        if(localStorage.getItem('user')) {   
+          setcurrentUser(localStorage.getItem('user'))
+        } 
+      getUser();
       }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
-    //get saved cards from localStorage
-    React.useEffect(()=>{   
-      if(localStorage.getItem('user')) { 
-        getSavedCards();
-      }
+    //get info from localStorage
+    React.useEffect(()=>{ 
+      getSavedCards();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[currentUser])
-
-    //reset cards when window is closed
-    React.useEffect(()=>{      
-      setsearchCards([]);
-      localStorage.removeItem('cards');
-    },[])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
