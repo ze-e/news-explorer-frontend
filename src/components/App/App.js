@@ -304,7 +304,7 @@ export default function App() {
               loading={loadingUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-                <SavedNews savedCards={savedCards} isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
+              <SavedNews savedCards={savedCards} isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
             </div>}
           />
 
