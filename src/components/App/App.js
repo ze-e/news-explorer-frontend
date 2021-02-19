@@ -285,7 +285,6 @@ export default function App() {
               onSearch={handleSearch} 
               onSaveCard={handleSaveCard}
               searchCards={searchCards}
-              savedCards={savedCards}
               fieldValidator={formValidator.fieldValidator}
               formValidator={formValidator.formValidator}
               loading={loadingResults}
@@ -306,7 +305,7 @@ export default function App() {
               loading={loadingUser}
               />
               <Navigation signedIn={isSignedIn} onOpen={handleOpenSignIn} isOpen={isNavOpen} onOpenNav={handleNav} onSignIn={handleSignIn}/>
-              <SavedNews savedCards={savedCards} isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
+              <SavedNews isSignedIn={isSignedIn} onDeleteCard={handleDeleteCard}/>
             </div>}
           />
 

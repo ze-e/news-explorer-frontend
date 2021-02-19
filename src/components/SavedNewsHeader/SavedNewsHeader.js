@@ -1,10 +1,9 @@
 import React from 'react';
-//import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function SavedNewsHeader(props) {
 
- // const cards = React.useContext(CurrentCardsContext);
-  const cards = props.savedCards;
+  const cards = React.useContext(CurrentCardsContext);
   const keywords = commonKeyword(cards.map(card => card.keyword));
   
   function commonKeyword(keywords){ 

@@ -6,9 +6,9 @@ export default function SavedNews(props) {
 
   return (
     <div className="savedNews">
-      <SavedNewsHeader savedCards={props.savedCards}/>
+      <SavedNewsHeader/>
       <h2 className="savedNews__title">Search Results</h2>
-        <NewsCardList savedCards={props.savedCards} isSignedIn={props.isSignedIn} onDeleteCard={props.onDeleteCard}/>
+        <NewsCardList isSignedIn={props.isSignedIn} onDeleteCard={props.onDeleteCard}/>
     </div>
   );
 }
