@@ -1,21 +1,24 @@
-import {baseURL} from '../config/config';
+import {baseURL as BASE_URL} from '../config/config';
 
 class MainApi{
-  constructor({baseURL}){
-    this.baseURL = baseURL;
+  constructor({BASE_URL}){
+    this.BASE_URL = BASE_URL;
   }
 
   setToken(token){
-    this.token = token;
+    this.token = `Bearer ${token}`;
   }
   
   /* API FUNCTIONS */
   //user
-  getUser(){
-    return fetch(`${this.baseURL}/users/me`,{
+  register(name, email, password){
+    return fetch(`${BASE_URL}/signup`, {
+      method: 'POST',
       headers: {
-        authorization: this.token
-      }
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({"name" : name, "email" : email, "password" : password})
     })
     .then((res) => {
       if(res.ok){
@@ -24,12 +27,46 @@ class MainApi{
       return Promise.reject(`Error: ${res.statusText}`);
     })
   }
-  
-  getCards(){
-    return fetch(`${this.baseURL}/articles`,{
+
+  login(email, password){
+    return fetch(`${BASE_URL}/signin`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({"email" : email, "password" : password})
+    })
+    .then((response) => response.json())
+    .then((res) => {
+      if(res.token){
+        this.setToken(res.token);
+        localStorage.setItem('token', res.token);
+        return res;
+      }
+    })
+  }
+
+  authorize(){
+    return fetch(`${BASE_URL}/users/me`, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'authorization': `Bearer ${localStorage.getItem('token')}`
+        'authorization': this.token
+      }
+    })
+    .then((res) => {
+      if(res.ok){
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.statusText}`);
+    })  
+  }
+  
+  getCards(){
+    return fetch(`${this.BASE_URL}/articles`,{
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': this.token
       }
     })
     .then((res) => {
@@ -41,11 +78,11 @@ class MainApi{
   }
 
   addCard(card){
-    return fetch(`${this.baseURL}/articles`,{
+    return fetch(`${this.BASE_URL}/articles`,{
       method: "POST",
       headers: {
-        'authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': this.token
         },
         body: JSON.stringify({
           keyword: card.keyword,
@@ -66,11 +103,11 @@ class MainApi{
   }
 
   deleteCard(articleId){
-    return fetch(`${this.baseURL}/articles/${articleId}`,{
+    return fetch(`${this.BASE_URL}/articles/${articleId}`,{
       method: "DELETE",
       headers: {
-        'authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': this.token
         }
     })
     .then((res) => {
@@ -82,7 +119,7 @@ class MainApi{
   }
 }
 const mainApi = new MainApi({
-  baseURL : baseURL, 
+  BASE_URL : BASE_URL, 
 });
 
 export {mainApi};

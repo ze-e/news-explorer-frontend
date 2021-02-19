@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import {formValidator} from '../../utils/formvalidator';
 import { mainApi } from '../../utils/MainApi';
 import { newsApi } from '../../utils/NewsApi';
-import { auth }  from '../../utils/auth';
 
 //components
 import Header from '../Header/Header';
@@ -57,7 +56,7 @@ export default function App() {
   }
 
   function handleSignUp(username, email, password){
-    auth.register(username, email, password)
+    mainApi.register(username, email, password)
     .then((res) => {
       if(res){
         //registration succeeded
@@ -75,7 +74,7 @@ export default function App() {
 
   function handleSignIn(email, password){
     setloadingUser(true);
-    auth.login(email, password)
+    mainApi.login(email, password)
     .then((res) => {
       if(res){
         getUser();
@@ -91,7 +90,6 @@ export default function App() {
   }
 
   function handleSignOut(){
-    setsearchCards([]);
     setcurrentUser({});
     setsavedCards([]);
     localStorage.clear();
@@ -178,7 +176,7 @@ export default function App() {
 
       //load user
       setloadingUser(true);
-      auth.authorize()
+      mainApi.authorize()
       .then((data)=>{
         setisSignedIn(true);
         setcurrentUser(data);
