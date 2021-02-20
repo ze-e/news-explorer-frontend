@@ -8,6 +8,7 @@ import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 export default function NewsCardList(props) {
 
   const savedCards = React.useContext(CurrentCardsContext);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const cards = props.searchCards ? props.searchCards : savedCards ? savedCards : [];
 
   const [itemsToShow, setitemsToShow] = React.useState(3);
