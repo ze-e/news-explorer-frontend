@@ -8,7 +8,7 @@ export default function Footer() {
       
       <div className="footer__links">     
         <ul className="footer__nav">
-          <li className="footer__nav-item"><NavLink to="/main" className="footer__nav-link">Home</NavLink></li>
+          <li className="footer__nav-item"><NavLink to="/" className="footer__nav-link">Home</NavLink></li>
           <li className="footer__nav-item"><a href="https://practicum.yandex.com/" target="_blank" rel="noreferrer" className="footer__nav-link">Practicum by Yandex</a></li>
         </ul>
         
