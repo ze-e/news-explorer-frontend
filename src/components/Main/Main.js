@@ -6,10 +6,14 @@ export default function Main(props) {
 
   const [showResults, setShowResults] = React.useState(false);
 
-  function handleSearch(e){
-    e.preventDefault();
+  function handleSearch(searchValue){
+    props.onSearch(searchValue);
     setShowResults(true);
   }
+
+  React.useEffect(()=>{
+    (props.searchCards && props.searchCards.length > 0) && setShowResults(true); 
+  },[props.searchCards])
 
   return (
   <>
@@ -19,10 +23,10 @@ export default function Main(props) {
         Find the latest news on any topic 
         and save them in your personal account.
       </h3> 
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm onSearch={handleSearch} formValidator={props.formValidator} fieldValidator={props.fieldValidator}/>
     </section>
     {showResults && 
-    <NewsCardList isSignedIn={props.isSignedIn}/>
+      <NewsCardList isSignedIn={props.isSignedIn} searchCards={props.searchCards} onSaveCard={props.onSaveCard} onOpenSignin={props.onOpenSignin} loading={props.loading}/>
     }
   </>
   ) 

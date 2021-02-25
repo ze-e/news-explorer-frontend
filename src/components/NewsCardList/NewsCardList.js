@@ -2,35 +2,51 @@ import React from 'react';
 //components
 import NewsCard from '../NewsCard/NewsCard';
 import Loading from '../Preloader/Preloader';
-import cardList from '../../config/testcards.json';
-import blankCardList from '../../config/testcards_blank.json';
 
+import {CurrentCardsContext} from '../../contexts/CurrentCardsContext';
 
 export default function NewsCardList(props) {
-  const cards = cardList;
-  //const cards = blankCardList;
 
-  const [loading, setLoading] = React.useState(false);
+  const savedCards = React.useContext(CurrentCardsContext);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const cards = props.searchCards ? props.searchCards : savedCards ? savedCards : [];
 
-  function handleLoading(props){
-    setLoading(false);
+  const [itemsToShow, setitemsToShow] = React.useState(3);
+  const [showMoreButton, setshowMoreButton] = React.useState(true);
+
+  function handleMoreButton(){
+    if(itemsToShow + 3 < cards.length){
+      setitemsToShow(itemsToShow + 3);
+    }
+    else if(itemsToShow < cards.length){
+      setitemsToShow(cards.length);
+    }
   }
+
+  React.useEffect(()=>{
+    if(cards.length === 0 || itemsToShow === cards.length){
+      setshowMoreButton(false)
+    }
+    else if(cards.length > 3 && itemsToShow < cards.length){
+      setshowMoreButton(true)
+    }
+  },[cards, itemsToShow])
 
   return (
     <div className="newsCardList">
     <h3 className="newsCardList__title">Search results</h3>
       <div className="newsCardList__container">
-      {cards.length > 0 ? 
-        cards.map(card => (
+      {Array.isArray(cards) && cards.length > 0 ? 
+        cards.slice(0, itemsToShow).map(card => (
           <div className="newsCard" key={card._id}>
-            <NewsCard card={card} isSignedIn={props.isSignedIn}/>
+            <NewsCard card={card} bookmarked={props.isSignedIn && savedCards.some((item) => item.link === card.link)} isSignedIn={props.isSignedIn} onSaveCard={props.onSaveCard} onOpenSignin={props.onOpenSignin} onDeleteCard={props.onDeleteCard}/>
           </div>
         ))
         :
-        <Loading loading={true} handleLoading={handleLoading} />
+        <Loading loading={props.loading} />
       }
       </div>
-      {cards.length > 0 && <button className="newsCardList__show-more">Show More</button>}
+      {showMoreButton && <button className="newsCardList__show-more" onClick={handleMoreButton}>Show More</button>}
     </div>
   );
 }

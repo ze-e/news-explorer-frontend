@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="about">
       <div className="about__img-container">
-        <img className="about__img" src={avatar} alt="profile-picture" />
+        <img className="about__img" src={avatar} alt="avatar" />
       </div>
       <div className="about__text">
         <h2 className="about__title">About the author</h2>
