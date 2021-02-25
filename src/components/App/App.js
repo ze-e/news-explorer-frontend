@@ -292,7 +292,7 @@ export default function App() {
 
     <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/main">
           <div className="App__main-bg">
             <Header 
             onSignin={handleSignIn} 
